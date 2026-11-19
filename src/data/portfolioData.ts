@@ -70,6 +70,8 @@ export const PROFILE_DATA = {
   email: 'krishakp1412@gmail.com',
   linkedinDisplay: 'linkedin.com/in/krisha-patel-a21534433',
   linkedinUrl: 'https://www.linkedin.com/in/krisha-patel-a21534433',
+  githubDisplay: 'github.com/krishapatel-creates',
+  githubUrl: 'https://github.com/krishapatel-creates',
   photoUrl: '/assets/aistudio/IMG_4541_45cfd35c.jpeg',
   resumePdfUrl: '/assets/aistudio/Krisha_Patel_Resume__5__771f14fc.pdf',
   summary:

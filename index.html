@@ -905,6 +905,16 @@
               <span class="truncate">linkedin.com/in/krisha-patel-a21534433</span>
             </a>
 
+            <a
+              href="https://github.com/krishapatel-creates"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3 py-2 border-b border-[#D8DCE3] hover:opacity-75 transition-opacity"
+            >
+              <i data-lucide="arrow-up-right" class="w-4 h-4 shrink-0"></i>
+              <span class="truncate">github.com/krishapatel-creates</span>
+            </a>
+
             <p class="pt-3 text-[11px] font-normal normal-case tracking-normal text-[#3A434E]">
               © 2026 Krisha Patel · Grounded strictly in verified resume &amp; certificate records.
             </p>
@@ -1008,6 +1018,8 @@
           email: 'krishakp1412@gmail.com',
           linkedinDisplay: 'linkedin.com/in/krisha-patel-a21534433',
           linkedinUrl: 'https://www.linkedin.com/in/krisha-patel-a21534433',
+          githubDisplay: 'github.com/krishapatel-creates',
+          githubUrl: 'https://github.com/krishapatel-creates',
           photoUrl: './assets/aistudio/IMG_4541_45cfd35c.jpeg',
           resumePdfUrl: './assets/aistudio/Krisha_Patel_Resume__5__771f14fc.pdf',
           summary:
@@ -1288,7 +1300,7 @@
           activeSkillTrace: null,
           featuredProjectId: PROJECTS_DATA[0].id,
           projectUrls: {},
-          githubUrl: '',
+          githubUrl: PROFILE_DATA.githubUrl,
           editingGithub: false,
           flippedCerts: {},
         };
@@ -1921,8 +1933,8 @@
             });
           } else if (state.githubUrl) {
             slot.innerHTML = `
-              <a href="${esc(state.githubUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#153358] text-white text-xs font-semibold">
-                <i data-lucide="link-2" class="w-4 h-4"></i>
+              <a href="${esc(state.githubUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#153358] text-white text-xs font-semibold hover:bg-[#0E2440] transition-colors">
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                 <span>GitHub</span>
               </a>
             `;
@@ -2166,7 +2178,7 @@
                 <div class="text-center border-b border-neutral-300 pb-5 mb-6">
                   <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-900">KRISHA PATEL</h1>
                   <p class="text-xs md:text-sm text-neutral-600 mt-1.5">${esc(PROFILE_DATA.location)} · ${esc(PROFILE_DATA.phone)} · ${esc(PROFILE_DATA.email)}</p>
-                  <p class="text-xs text-neutral-600 mt-0.5 font-mono-data">${esc(PROFILE_DATA.linkedinDisplay)}</p>
+                  <p class="text-xs text-neutral-600 mt-0.5 font-mono-data">${esc(PROFILE_DATA.linkedinDisplay)} · ${esc(PROFILE_DATA.githubDisplay)}</p>
                 </div>
                 <section class="mb-5">
                   <h2 class="text-xs font-bold tracking-wider text-neutral-900 border-b border-neutral-200 pb-1 mb-2">SUMMARY</h2>

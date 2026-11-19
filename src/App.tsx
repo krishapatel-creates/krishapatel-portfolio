@@ -84,7 +84,9 @@ export default function App() {
 
   // Editable [Add Link] slots
   const [projectUrls, setProjectUrls] = useState<Record<string, string>>({});
-  const [socialLinks, setSocialLinks] = useState<Record<string, string>>({});
+  const [socialLinks, setSocialLinks] = useState<Record<string, string>>({
+    GitHub: PROFILE_DATA.githubUrl,
+  });
   const [editingSocialKey, setEditingSocialKey] = useState<string | null>(null);
   const [socialDraft, setSocialDraft] = useState('');
   const [copiedEmail, setCopiedEmail] = useState(false);
