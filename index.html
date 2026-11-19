@@ -1,0 +1,2512 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krisha Patel — Electronics, SOLIDWORKS CAD &amp; Digital Strategy Portfolio</title>
+    <meta
+      name="description"
+      content="Interactive portfolio of Krisha Patel, B.Tech Electronics & Communication Engineering student at Karnavati University."
+    />
+    <meta property="og:title" content="Krisha Patel — Portfolio" />
+    <meta
+      property="og:description"
+      content="Interactive portfolio of Krisha Patel, B.Tech Electronics & Communication Engineering student at Karnavati University."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500&family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        background-color: #153358;
+        color: #ffffff;
+        overflow-x: hidden;
+      }
+
+      .font-fraunces {
+        font-family: 'Fraunces', Georgia, serif;
+      }
+
+      .font-oswald {
+        font-family: 'Oswald', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      .font-mono-data {
+        font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* Polaroid Frames */
+      .polaroid-frame {
+        background-color: #ffffff;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+        transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 240ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .polaroid-frame:hover {
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.28);
+      }
+
+      /* Smartphone Bezel */
+      .phone-mockup {
+        border: 4px solid #111111;
+        border-radius: 26px;
+        box-shadow: 0 18px 40px rgba(21, 51, 88, 0.24);
+      }
+
+      /* Rotating Circular Stamp */
+      @keyframes stampSpin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .animate-stamp-spin {
+        animation: stampSpin 24s linear infinite;
+      }
+
+      /* Corner Sticker Hover */
+      .sticker-badge {
+        transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .sticker-badge:hover {
+        transform: translateY(-4px) scale(1.04);
+      }
+
+      /* Inspector Grid Overlays */
+      body.inspector-on .inspector-dark {
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+        background-size: 32px 32px;
+      }
+
+      body.inspector-on .inspector-light {
+        background-image: linear-gradient(to right, rgba(21, 51, 88, 0.07) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(21, 51, 88, 0.07) 1px, transparent 1px);
+        background-size: 32px 32px;
+      }
+
+      .inspector-only {
+        display: none;
+      }
+
+      body.inspector-on .inspector-only {
+        display: block;
+      }
+
+      body.inspector-on .inspector-only-flex {
+        display: flex;
+      }
+
+      .inspector-only-flex {
+        display: none;
+      }
+
+      /* 3D Flip Credential Vault */
+      .perspective-1200 {
+        perspective: 1200px;
+      }
+
+      .flip-inner {
+        position: relative;
+        width: 100%;
+        min-height: 295px;
+        transform-style: preserve-3d;
+        transition: transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .flip-face {
+        position: absolute;
+        inset: 0;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+      }
+
+      .flip-back {
+        transform: rotateY(180deg);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .animate-stamp-spin {
+          animation: none;
+        }
+        .polaroid-frame,
+        .sticker-badge,
+        .flip-inner {
+          transition: none;
+        }
+      }
+
+      /* Print Resume Sheet */
+      @media print {
+        body * {
+          visibility: hidden !important;
+        }
+        #printable-resume-sheet,
+        #printable-resume-sheet * {
+          visibility: visible !important;
+        }
+        #printable-resume-sheet {
+          position: fixed !important;
+          inset: 0 !important;
+          width: 100% !important;
+          height: auto !important;
+          margin: 0 !important;
+          padding: 24px !important;
+          background: #ffffff !important;
+          color: #111111 !important;
+          box-shadow: none !important;
+          border: none !important;
+          overflow: visible !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-[#153358] text-white antialiased selection:bg-white selection:text-[#153358]">
+    <!-- FLOATING TOP UTILITY BAR -->
+    <header class="sticky top-0 z-40 px-4 sm:px-6 pt-3 pb-2 pointer-events-none">
+      <div
+        class="max-w-6xl mx-auto pointer-events-auto rounded-full bg-[#0E2440]/95 backdrop-blur-md border border-[#2E5280] px-5 py-2.5 flex items-center justify-between gap-4 shadow-xl"
+      >
+        <a
+          href="#slide-1"
+          class="font-oswald text-base sm:text-lg font-bold tracking-tight uppercase text-white whitespace-nowrap shrink-0"
+        >
+          Krisha Patel
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-5 text-xs font-medium text-[#D0DAE6]">
+          <a href="#slide-2" class="hover:text-white transition-colors whitespace-nowrap shrink-0">About</a>
+          <a href="#slide-3" class="hover:text-white transition-colors whitespace-nowrap shrink-0">Education</a>
+          <a href="#slide-4" class="hover:text-white transition-colors whitespace-nowrap shrink-0">Skills &amp; Certs</a>
+          <a href="#slide-5" class="hover:text-white transition-colors whitespace-nowrap shrink-0">Projects</a>
+          <a href="#slide-8" class="hover:text-white transition-colors whitespace-nowrap shrink-0">Experience</a>
+        </nav>
+
+        <div class="flex items-center gap-2 shrink-0">
+          <button
+            type="button"
+            id="btn-open-cmd"
+            class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-medium rounded-full bg-[#153358] hover:bg-[#1D4475] border border-[#2E5280] text-[#D0DAE6] hover:text-white transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+          >
+            <i data-lucide="command" class="w-3 h-3"></i>
+            <span>Cmd+K</span>
+          </button>
+
+          <button
+            type="button"
+            id="btn-inspector-toggle"
+            role="switch"
+            aria-checked="false"
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wide rounded-full border border-[#2E5280] bg-[#153358] text-[#D0DAE6] hover:border-white hover:text-white transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+          >
+            <i data-lucide="eye" class="w-3 h-3"></i>
+            <span class="hidden sm:inline">Inspector Mode</span>
+            <span class="sm:hidden">X-Ray</span>
+          </button>
+
+          <button
+            type="button"
+            id="btn-open-resume"
+            class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-wide rounded-full bg-white text-[#153358] hover:bg-[#F4F4F2] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+          >
+            <i data-lucide="file-text" class="w-3 h-3"></i>
+            <span>Resume</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- INSPECTOR TELEMETRY BAR (visible when Inspector Mode is ON) -->
+    <div
+      id="inspector-bar"
+      class="inspector-only sticky top-[62px] z-30 bg-[#0B1B30]/95 backdrop-blur-md border-y border-[#3B6496] px-6 py-2"
+    >
+      <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4 text-[11px] font-mono-data text-[#D0DAE6]">
+        <span>PROFESSOR INSPECTOR ACTIVE · 10-SLIDE NAVY (#153358) / OFF-WHITE (#F4F4F2) DECK</span>
+        <div class="flex flex-wrap items-center gap-4">
+          <span id="tel-fps">FPS: 60</span>
+          <span id="tel-dom">DOM NODES: 0</span>
+          <span id="tel-vp">VIEWPORT: 1440×900</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILL CROSS-HIGHLIGHT BANNER -->
+    <div
+      id="skill-trace-bar"
+      class="hidden sticky top-[62px] z-30 bg-[#0E2440]/95 backdrop-blur-md border-y border-white/25 px-6 py-2"
+    >
+      <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs">
+        <span id="skill-trace-label" class="font-mono-data text-white"></span>
+        <button
+          type="button"
+          id="btn-clear-skill"
+          class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white text-[#153358] font-semibold text-xs cursor-pointer"
+        >
+          <i data-lucide="x" class="w-3 h-3"></i>
+          <span>Clear</span>
+        </button>
+      </div>
+    </div>
+
+    <main>
+      <!-- =====================================================================
+           SLIDE 1 — HERO BANNER (#153358 Navy)
+      ====================================================================== -->
+      <section
+        id="slide-1"
+        class="inspector-dark relative bg-[#153358] text-white pt-6 pb-16 sm:pt-10 sm:pb-24 px-6 overflow-hidden"
+      >
+        <div class="max-w-6xl mx-auto relative">
+          <!-- 4 Corner Sticker Badges -->
+          <div class="hidden md:flex sticker-badge absolute top-2 left-0 w-20 h-20 rounded-2xl bg-white text-[#153358] border-2 border-white shadow-[0_12px_28px_rgba(0,0,0,0.22)] flex-col items-center justify-center -rotate-12 p-2">
+            <i data-lucide="cpu" class="w-7 h-7"></i>
+            <span class="font-oswald text-[10px] font-bold uppercase mt-1">ARDUINO</span>
+          </div>
+
+          <div class="hidden md:flex sticker-badge absolute top-2 right-0 w-20 h-20 rounded-2xl bg-white text-[#153358] border-2 border-white shadow-[0_12px_28px_rgba(0,0,0,0.22)] flex-col items-center justify-center rotate-12 p-2">
+            <i data-lucide="box" class="w-7 h-7"></i>
+            <span class="font-oswald text-[10px] font-bold uppercase mt-1">3D CAD</span>
+          </div>
+
+          <div class="hidden md:flex sticker-badge absolute bottom-2 left-4 w-20 h-20 rounded-full bg-white text-[#153358] border-2 border-white shadow-[0_12px_28px_rgba(0,0,0,0.22)] flex-col items-center justify-center -rotate-6 p-2">
+            <i data-lucide="code-2" class="w-6 h-6"></i>
+            <span class="font-oswald text-[10px] font-bold uppercase mt-1">C / ECE</span>
+          </div>
+
+          <div class="hidden md:flex sticker-badge absolute bottom-2 right-4 w-20 h-20 rounded-2xl bg-white text-[#153358] border-2 border-white shadow-[0_12px_28px_rgba(0,0,0,0.22)] flex-col items-center justify-center rotate-6 p-2">
+            <i data-lucide="award" class="w-6 h-6"></i>
+            <span class="font-oswald text-[10px] font-bold uppercase mt-1 text-center leading-tight">SIH TOP 100</span>
+          </div>
+
+          <!-- Arched White "Portfolio" SVG Title -->
+          <div class="flex flex-col items-center justify-center relative pt-2">
+            <svg
+              viewBox="0 0 800 185"
+              class="w-full max-w-[680px] h-auto overflow-visible -mb-10 sm:-mb-14 pointer-events-none select-none"
+              aria-label="Portfolio"
+            >
+              <defs>
+                <path id="hero-arch-curve" d="M 70,175 Q 400,25 730,175" />
+              </defs>
+              <text fill="#FFFFFF" class="font-fraunces font-bold" font-size="112" text-anchor="middle">
+                <textPath href="#hero-arch-curve" startOffset="50%">Portfolio</textPath>
+              </text>
+            </svg>
+
+            <!-- Center Portrait + Radiating Callouts -->
+            <div class="relative w-full max-w-4xl flex items-center justify-center py-4">
+              <div class="hidden md:flex flex-col items-center gap-1 absolute top-14 left-4 sm:left-16 md:left-28 pointer-events-none">
+                <span class="text-xs font-medium tracking-wide text-[#D0DAE6] bg-[#0E2440]/80 border border-[#2E5280] px-3 py-1 rounded-full">ece undergrad</span>
+                <svg viewBox="0 0 88 32" class="w-16 h-6 text-[#D0DAE6]/70" fill="none">
+                  <path d="M 10 24 Q 44 10 78 26" stroke="currentColor" stroke-width="1.3" stroke-dasharray="3 3" />
+                </svg>
+              </div>
+
+              <div class="hidden md:flex flex-col items-center gap-1 absolute top-14 right-4 sm:right-16 md:right-28 pointer-events-none">
+                <span class="text-xs font-medium tracking-wide text-[#D0DAE6] bg-[#0E2440]/80 border border-[#2E5280] px-3 py-1 rounded-full">solidworks cad</span>
+                <svg viewBox="0 0 88 32" class="w-16 h-6 text-[#D0DAE6]/70" fill="none">
+                  <path d="M 78 24 Q 44 10 10 26" stroke="currentColor" stroke-width="1.3" stroke-dasharray="3 3" />
+                </svg>
+              </div>
+
+              <div class="hidden md:flex flex-col items-center gap-1 absolute top-1/2 -translate-y-4 left-2 sm:left-10 md:left-20 pointer-events-none">
+                <span class="text-xs font-medium tracking-wide text-[#D0DAE6] bg-[#0E2440]/80 border border-[#2E5280] px-3 py-1 rounded-full">arduino &amp; c</span>
+                <svg viewBox="0 0 88 32" class="w-16 h-6 text-[#D0DAE6]/70" fill="none">
+                  <path d="M 8 18 Q 42 4 76 16" stroke="currentColor" stroke-width="1.3" stroke-dasharray="3 3" />
+                </svg>
+              </div>
+
+              <div class="hidden md:flex flex-col items-center gap-1 absolute top-1/2 -translate-y-4 right-2 sm:right-10 md:right-20 pointer-events-none">
+                <span class="text-xs font-medium tracking-wide text-[#D0DAE6] bg-[#0E2440]/80 border border-[#2E5280] px-3 py-1 rounded-full">ai foundations</span>
+                <svg viewBox="0 0 88 32" class="w-16 h-6 text-[#D0DAE6]/70" fill="none">
+                  <path d="M 76 18 Q 42 4 8 16" stroke="currentColor" stroke-width="1.3" stroke-dasharray="3 3" />
+                </svg>
+              </div>
+
+              <div class="hidden md:flex flex-col items-center gap-1 absolute bottom-12 left-8 sm:left-24 md:left-36 pointer-events-none">
+                <span class="text-xs font-medium tracking-wide text-[#D0DAE6] bg-[#0E2440]/80 border border-[#2E5280] px-3 py-1 rounded-full">social strategy</span>
+                <svg viewBox="0 0 88 32" class="w-16 h-6 text-[#D0DAE6]/70" fill="none">
+                  <path d="M 10 8 Q 44 26 78 10" stroke="currentColor" stroke-width="1.3" stroke-dasharray="3 3" />
+                </svg>
+              </div>
+
+              <!-- Centered Portrait Cutout Frame -->
+              <div class="relative z-10 w-64 h-80 sm:w-72 sm:h-96 rounded-t-full rounded-b-3xl bg-white p-2 shadow-[0_18px_42px_rgba(0,0,0,0.32)] group">
+                <div class="w-full h-full rounded-t-full rounded-b-2xl overflow-hidden bg-[#0E2440] relative">
+                  <img
+                    id="profile-photo"
+                    src="./assets/aistudio/IMG_4539__1__b843ef36.jpeg"
+                    alt="Krisha Patel portrait"
+                    referrerpolicy="no-referrer"
+                    class="w-full h-full object-cover object-[50%_32%] scale-[1.18] transition-transform duration-300 group-hover:scale-[1.24]"
+                  />
+
+                  <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#153358] via-[#153358]/80 to-transparent pt-10 pb-3 px-4 text-center">
+                    <p class="font-oswald text-xl uppercase tracking-wide text-white">Krisha Patel</p>
+                    <p class="text-[11px] text-[#D0DAE6]">B.Tech ECE · Karnavati University</p>
+                  </div>
+
+                  <div class="absolute top-4 inset-x-0 flex justify-center gap-2 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity">
+                    <button
+                      type="button"
+                      id="btn-upload-photo"
+                      class="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-semibold rounded-full bg-white text-[#153358] shadow-lg cursor-pointer"
+                    >
+                      <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+                      <span>Upload Photo</span>
+                    </button>
+                    <button
+                      type="button"
+                      id="btn-reset-photo"
+                      aria-label="Reset photo"
+                      class="hidden p-1.5 rounded-full bg-[#153358] text-white shadow-lg cursor-pointer"
+                    >
+                      <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <input id="input-photo-file" type="file" accept="image/*" class="hidden" aria-label="Upload custom profile photo preview" />
+            </div>
+
+            <!-- Hero Actions -->
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+              <button
+                type="button"
+                id="btn-open-summary"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#153358] font-semibold text-xs uppercase tracking-wider hover:bg-[#F4F4F2] transition-colors cursor-pointer shadow-lg"
+              >
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                <span>30s Professor Summary</span>
+              </button>
+              <a
+                href="#slide-5"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0E2440] border border-[#2E5280] text-white font-semibold text-xs uppercase tracking-wider hover:border-white transition-colors cursor-pointer"
+              >
+                <span>Explore Projects</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <p class="inspector-only mt-6 text-center font-mono-data text-[11px] text-[#D0DAE6]">
+            INSPECTOR NOTE: SVG textPath arch + centered cutout polaroid frame + 4 CSS-rotated sticker badges.
+          </p>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SLIDE 2 — ABOUT ME (#F4F4F2 Off-White)
+      ====================================================================== -->
+      <section id="slide-2" class="inspector-light relative bg-[#F4F4F2] text-[#153358] py-20 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative">
+          <div class="lg:col-span-5 flex items-center justify-center relative py-4">
+            <svg
+              viewBox="0 0 180 180"
+              aria-hidden="true"
+              class="animate-stamp-spin pointer-events-none select-none w-56 h-56 absolute -top-6 -left-4 opacity-60"
+            >
+              <defs>
+                <path id="stamp-light" d="M 90, 90 m -66, 0 a 66,66 0 1,1 132,0 a 66,66 0 1,1 -132,0" />
+              </defs>
+              <text fill="#94A3B8" font-size="10" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" letter-spacing="2.4">
+                <textPath href="#stamp-light" startOffset="0%">IT'S NOT JUST BUILDING · IT'S VIBING WITH VISUALS ·</textPath>
+              </text>
+            </svg>
+
+            <div class="polaroid-frame relative z-10 p-4 pb-8 w-72 sm:w-80 -rotate-3 hover:rotate-0">
+              <div class="w-full aspect-[4/4] overflow-hidden bg-[#153358]">
+                <img
+                  id="about-polaroid-photo"
+                  src="./assets/aistudio/IMG_4539__1__b843ef36.jpeg"
+                  alt="Krisha Patel workspace portrait"
+                  referrerpolicy="no-referrer"
+                  class="w-full h-full object-cover object-[50%_30%] scale-125"
+                />
+              </div>
+              <div class="pt-4 flex items-center justify-between text-xs text-[#3A434E]">
+                <span class="font-fraunces font-semibold text-base text-[#153358]">Krisha Patel</span>
+                <span class="font-mono-data">Ahmedabad, Gujarat</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 space-y-6">
+            <h2 class="font-oswald text-4xl sm:text-5xl font-bold uppercase tracking-[-0.01em] leading-[1.02] text-[#153358]">
+              About me
+            </h2>
+            <div class="space-y-4 text-[15px] text-[#3A434E] leading-[1.6]">
+              <p>
+                First-year Electronics and Communication Engineering student at Karnavati University. Developing practical knowledge of Arduino, C programming, and SOLIDWORKS 3D CAD alongside core electronics fundamentals. Contributing through teamwork, clear communication, and structured problem-solving during project work.
+              </p>
+              <p>
+                Beyond core circuit prototyping in Arduino and C programming, I actively apply 3D parametric modeling in SOLIDWORKS to real engineering builds such as a multi-rotor Quadcopter airframe, and bring clear multi-channel communication from my experience as Social Media Manager at Paaji Ki Kaksha. I speak English, Hindi, Gujarati.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-[#D8DCE3] grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <p class="font-oswald text-lg font-bold text-[#153358]">01. Discover</p>
+                <p class="text-xs text-[#3A434E] mt-1 leading-relaxed">
+                  Analyze problem statements, mechanical tolerances, circuit requirements, or audience objectives.
+                </p>
+              </div>
+              <div>
+                <p class="font-oswald text-lg font-bold text-[#153358]">02. Define</p>
+                <p class="text-xs text-[#3A434E] mt-1 leading-relaxed">
+                  Map hardware components, CAD assembly mates, sensor inputs, or content calendars into milestones.
+                </p>
+              </div>
+              <div>
+                <p class="font-oswald text-lg font-bold text-[#153358]">03. Design</p>
+                <p class="text-xs text-[#3A434E] mt-1 leading-relaxed">
+                  Draft 3D part assemblies in SOLIDWORKS, electrical schematics, or visual brand assets in Canva.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SLIDE 3 — EDUCATION BACKGROUND (#153358 Navy)
+      ====================================================================== -->
+      <section id="slide-3" class="inspector-dark relative bg-[#153358] text-white py-20 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative">
+          <div class="lg:col-span-4 space-y-8">
+            <h2 class="font-oswald text-4xl sm:text-5xl font-bold uppercase tracking-[-0.01em] leading-[1.02] text-white">
+              Education<br />Background
+            </h2>
+
+            <div class="polaroid-frame p-3.5 pb-6 w-64 -rotate-[5deg] hover:rotate-0 text-[#153358]">
+              <div class="bg-[#0E2440] text-white p-5 aspect-[4/3] flex flex-col justify-between">
+                <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
+                <div>
+                  <p class="font-oswald text-lg uppercase">Karnavati University</p>
+                  <p class="text-xs text-[#D0DAE6] mt-0.5">B.Tech Electronics &amp; Communication Engineering</p>
+                </div>
+              </div>
+              <p class="pt-3 font-mono-data text-xs font-semibold text-[#153358]">GANDHINAGAR · EXPECTED 2030</p>
+            </div>
+          </div>
+
+          <div class="lg:col-span-3 flex justify-center">
+            <div class="polaroid-frame p-3.5 pb-6 w-64 rotate-3 hover:rotate-0 text-[#153358]">
+              <div class="bg-[#F4F4F2] border border-[#D8DCE3] p-5 aspect-[4/3] flex flex-col justify-between">
+                <i data-lucide="award" class="w-8 h-8 text-[#153358]"></i>
+                <div>
+                  <p class="font-oswald text-lg uppercase text-[#153358]">Campus Milestones</p>
+                  <p class="text-xs text-[#3A434E] mt-1">SIH 2026 Top 100 · IIT Bombay Techfest Workshop · Cultural Club</p>
+                </div>
+              </div>
+              <p class="pt-3 font-mono-data text-xs font-semibold text-[#153358]">ACTIVE COHORT 2026</p>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 space-y-6 border-l border-white/25 pl-6 sm:pl-8" id="education-timeline"></div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SLIDE 4 — SKILLS, TOOLS & VERIFIED CERTIFICATIONS (#F4F4F2 Off-White)
+      ====================================================================== -->
+      <section id="slide-4" class="inspector-light relative bg-[#F4F4F2] text-[#153358] py-20 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto space-y-14">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-7 space-y-6">
+              <div class="space-y-2">
+                <h2 class="font-oswald text-4xl sm:text-5xl font-bold uppercase tracking-[-0.01em] leading-[1.02] text-[#153358]">
+                  Skills &amp; Expertise
+                </h2>
+                <p class="text-[14px] text-[#3A434E]">
+                  Click any tool or capability badge below to highlight every project, experience role, and certificate where it was applied across all slides.
+                </p>
+              </div>
+              <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-3"></div>
+            </div>
+
+            <div class="lg:col-span-5 bg-white border border-[#D8DCE3] rounded-2xl p-6 pb-0 overflow-hidden shadow-[0_12px_28px_rgba(21,51,88,0.08)] flex flex-col justify-between">
+              <div class="space-y-4">
+                <p class="font-oswald text-xl uppercase font-bold text-[#153358]">
+                  Core Engineering &amp; Strategy Pillars
+                </p>
+                <ul class="space-y-2 text-sm text-[#3A434E]">
+                  <li>• 3D Mechanical Modeling &amp; Assemblies (SOLIDWORKS 2024)</li>
+                  <li>• Embedded Microcontroller Firmware (Arduino &amp; C)</li>
+                  <li>• AI Foundations &amp; Applied Automation Concepts</li>
+                  <li>• Social Media Marketing &amp; Content Strategy</li>
+                </ul>
+              </div>
+              <div class="mt-6 flex justify-center">
+                <div class="w-48 h-44 rounded-t-full overflow-hidden border-4 border-[#153358] border-b-0 bg-[#153358]">
+                  <img
+                    id="skills-portrait-photo"
+                    src="./assets/aistudio/IMG_4539__1__b843ef36.jpeg"
+                    alt="Krisha Patel profile accent"
+                    referrerpolicy="no-referrer"
+                    class="w-full h-full object-cover object-[50%_30%] scale-125"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-8 border-t border-[#D8DCE3] space-y-6">
+            <div>
+              <h3 class="font-oswald text-2xl sm:text-3xl font-bold uppercase text-[#153358] flex items-center gap-2">
+                <i data-lucide="shield-check" class="w-6 h-6"></i>
+                <span>Verified Certifications (5)</span>
+              </h3>
+              <p class="text-xs text-[#3A434E] mt-1">
+                Click any card to flip 180° for coursework highlights, or open the original attached document.
+              </p>
+            </div>
+            <div id="certifications-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SLIDE 5 — PREVIOUS PROJECTS SHOWCASE (#153358 Navy)
+      ====================================================================== -->
+      <section id="slide-5" class="inspector-dark relative bg-[#153358] text-white py-20 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+          <div class="lg:col-span-5 flex flex-col justify-between space-y-8">
+            <div id="featured-project-spotlight" class="space-y-4"></div>
+
+            <h2 class="font-oswald text-5xl sm:text-6xl font-bold uppercase tracking-[-0.01em] leading-[0.95] text-white pt-4">
+              Previous<br />Projects
+            </h2>
+          </div>
+
+          <div id="projects-grid" class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SLIDE 6 — PROFILES & IMPACT (#F4F4F2 Off-White)
+      ====================================================================== -->
+      <section id="slide-6" class="inspector-light relative bg-[#F4F4F2] text-[#153358] py-20 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto space-y-10">
+          <h2 class="font-oswald text-4xl sm:text-5xl font-bold uppercase tracking-[-0.01em] leading-[1.02] text-[#153358]">
+            Profiles &amp; Impact
+          </h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-7 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-0 relative py-4">
+              <button
+                type="button"
+                id="btn-phone-summary"
+                class="phone-mockup w-60 h-[410px] bg-[#153358] text-white p-4 flex flex-col justify-between text-left sm:-mr-6 z-10 hover:-translate-y-2 transition-transform cursor-pointer"
+              >
+                <div class="space-y-3">
+                  <div class="w-16 h-1.5 rounded-full bg-white/25 mx-auto"></div>
+                  <div class="flex items-center gap-3 pt-2">
+                    <img
+                      id="phone-avatar-photo"
+                      src="./assets/aistudio/IMG_4539__1__b843ef36.jpeg"
+                      alt="Krisha Patel avatar"
+                      referrerpolicy="no-referrer"
+                      class="w-11 h-11 rounded-full object-cover object-[50%_30%] border-2 border-white"
+                    />
+                    <div>
+                      <p class="font-oswald text-sm uppercase font-bold">Krisha Patel</p>
+                      <p class="text-[10px] text-[#D0DAE6]">B.Tech ECE · Karnavati Univ.</p>
+                    </div>
+                  </div>
+                  <div class="p-3 rounded-xl bg-[#0E2440] border border-[#2E5280] space-y-1">
+                    <p class="font-mono-data text-[10px] text-[#D0DAE6]">ACTIVE CAD BUILD</p>
+                    <p class="text-xs font-semibold">Quadcopter 3D Design in SOLIDWORKS</p>
+                  </div>
+                  <div class="p-3 rounded-xl bg-[#0E2440] border border-[#2E5280] space-y-1">
+                    <p class="font-mono-data text-[10px] text-[#D0DAE6]">VERIFIED RECOGNITION</p>
+                    <p class="text-xs font-semibold">SIH 2026 Top 100 · Team RuptureX</p>
+                  </div>
+                </div>
+                <div class="text-center pt-2 border-t border-[#2E5280]">
+                  <span class="text-[11px] font-semibold text-white">Tap for 30s Executive Brief</span>
+                </div>
+              </button>
+
+              <a
+                href="#slide-8"
+                class="phone-mockup w-60 h-[410px] bg-white text-[#153358] p-4 flex flex-col justify-between text-left sm:mt-10 z-20 hover:-translate-y-2 transition-transform cursor-pointer"
+              >
+                <div class="space-y-3">
+                  <div class="w-16 h-1.5 rounded-full bg-[#153358]/20 mx-auto"></div>
+                  <div class="pt-2">
+                    <p class="font-mono-data text-[10px] text-[#3A434E]">MAY – SEP 2026</p>
+                    <p class="font-oswald text-lg uppercase font-bold text-[#153358]">Paaji Ki Kaksha</p>
+                    <p class="text-xs text-[#3A434E]">Social Media Manager</p>
+                  </div>
+                  <div class="p-3 rounded-xl bg-[#F4F4F2] border border-[#D8DCE3] space-y-1.5 text-xs text-[#3A434E]">
+                    <p>• Multi-channel content planning</p>
+                    <p>• Classroom-aligned storytelling</p>
+                    <p>• Engagement metrics analysis</p>
+                  </div>
+                  <div class="p-3 rounded-xl bg-[#153358] text-white space-y-1">
+                    <p class="font-mono-data text-[10px] text-[#D0DAE6]">STACK</p>
+                    <p class="text-xs font-semibold">Canva · Content Strategy · Analytics</p>
+                  </div>
+                </div>
+                <div class="text-center pt-2 border-t border-[#E2E6EC]">
+                  <span class="text-[11px] font-semibold text-[#153358]">Tap for Full Experience</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="lg:col-span-5 space-y-8">
+              <div class="space-y-5">
+                <div class="flex items-baseline gap-4 border-b border-[#D8DCE3] pb-3">
+                  <span class="font-oswald text-3xl sm:text-4xl font-bold text-[#153358] shrink-0">TOP 100</span>
+                  <p class="text-sm text-[#3A434E] leading-snug">Teams · Smart India Hackathon 2026 Preliminary (Team RuptureX)</p>
+                </div>
+                <div class="flex items-baseline gap-4 border-b border-[#D8DCE3] pb-3">
+                  <span class="font-oswald text-3xl sm:text-4xl font-bold text-[#153358] shrink-0">52ND</span>
+                  <p class="text-sm text-[#3A434E] leading-snug">Rank secured in first competitive hackathon</p>
+                </div>
+                <div class="flex items-baseline gap-4 border-b border-[#D8DCE3] pb-3">
+                  <span class="font-oswald text-3xl sm:text-4xl font-bold text-[#153358] shrink-0">5 CERTS</span>
+                  <p class="text-sm text-[#3A434E] leading-snug">Verified credentials across CAD, AI Foundations &amp; PMI Leadership</p>
+                </div>
+                <div class="flex items-baseline gap-4 border-b border-[#D8DCE3] pb-3">
+                  <span class="font-oswald text-3xl sm:text-4xl font-bold text-[#153358] shrink-0">10 HRS</span>
+                  <p class="text-sm text-[#3A434E] leading-snug">SOLIDWORKS 2024 Essential Training applied to Quadcopter 3D</p>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-3">
+                <a
+                  href="https://www.linkedin.com/in/krisha-patel-a21534433"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#153358] text-white text-xs font-semibold hover:bg-[#0E2440] transition-colors"
+                >
+                  <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                  <span>LinkedIn</span>
+                </a>
+                <button
+                  type="button"
+                  id="btn-impact-resume"
+                  class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white border border-[#153358] text-[#153358] text-xs font-semibold hover:bg-[#EEF2F7] transition-colors cursor-pointer"
+                >
+                  <i data-lucide="file-text" class="w-4 h-4"></i>
+                  <span>Resume PDF</span>
+                </button>
+                <button
+                  type="button"
+                  id="btn-impact-email"
+                  class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white border border-[#153358] text-[#153358] text-xs font-semibold hover:bg-[#EEF2F7] transition-colors cursor-pointer"
+                >
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                  <span>Email</span>
+                </button>
+                <span id="github-link-slot"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SLIDE 7 — FEATURED WORK (#153358 Navy)
+      ====================================================================== -->
+      <section id="slide-7" class="inspector-dark relative bg-[#153358] text-white py-20 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto space-y-10">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+            <h2 class="font-oswald text-4xl sm:text-6xl font-bold uppercase tracking-[-0.01em] leading-[1.0] text-white">
+              Featured Work
+            </h2>
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="px-5 py-2 rounded-full bg-white text-[#153358] font-oswald text-sm uppercase font-bold tracking-wide shadow-md">Karnavati University</span>
+              <span class="px-5 py-2 rounded-full bg-white text-[#153358] font-oswald text-sm uppercase font-bold tracking-wide shadow-md">Team RuptureX · SIH 2026</span>
+              <span class="px-5 py-2 rounded-full bg-white text-[#153358] font-oswald text-sm uppercase font-bold tracking-wide shadow-md">Paaji Ki Kaksha</span>
+            </div>
+          </div>
+
+          <div id="featured-vertical-cards" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4"></div>
+
+          <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <span class="px-5 py-2 rounded-full bg-white text-[#153358] font-oswald text-xs uppercase font-bold tracking-wider">SOLIDWORKS 2024</span>
+            <span class="px-5 py-2 rounded-full bg-white text-[#153358] font-oswald text-xs uppercase font-bold tracking-wider">IIT Bombay Techfest</span>
+            <span class="px-5 py-2 rounded-full bg-white text-[#153358] font-oswald text-xs uppercase font-bold tracking-wider">Jio Institute AI</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SLIDE 8 — WORKING EXPERIENCE (#F4F4F2 Off-White)
+      ====================================================================== -->
+      <section id="slide-8" class="inspector-light relative bg-[#F4F4F2] text-[#153358] py-20 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto space-y-12">
+          <h2 class="font-oswald text-4xl sm:text-5xl font-bold uppercase tracking-[-0.01em] leading-[1.02] text-[#153358]">
+            Working<br />Experience
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-[#D8DCE3] pt-8">
+            <div id="exp-col-paaji" class="space-y-3 transition-opacity duration-200">
+              <p class="font-oswald text-3xl font-bold text-[#153358]">MAY–SEP 2026</p>
+              <h3 class="text-[13px] font-bold uppercase tracking-wider text-[#153358]">
+                SOCIAL MEDIA MANAGER — PAAJI KI KAKSHA, AHMEDABAD
+              </h3>
+              <p class="text-[14px] text-[#3A434E] leading-[1.6]">
+                Coordinated social media content management across multiple channels to enhance brand visibility. Crafted classroom-aligned captions and stories, managed scheduling calendars, and analyzed audience engagement metrics.
+              </p>
+            </div>
+
+            <div id="exp-col-sih" class="space-y-3 transition-opacity duration-200">
+              <p class="font-oswald text-3xl font-bold text-[#153358]">SEP 2026</p>
+              <h3 class="text-[13px] font-bold uppercase tracking-wider text-[#153358]">
+                TEAM RUPTUREX — SMART INDIA HACKATHON 2026
+              </h3>
+              <p class="text-[14px] text-[#3A434E] leading-[1.6]">
+                Contributed to Team RuptureX during the Preliminary Smart India Hackathon 2026 held at Karnavati University, Gandhinagar—proudly nominated among the Top 100 Teams representing the university.
+              </p>
+            </div>
+
+            <div id="exp-col-campus" class="space-y-3 transition-opacity duration-200">
+              <p class="font-oswald text-3xl font-bold text-[#153358]">2024–2026</p>
+              <h3 class="text-[13px] font-bold uppercase tracking-wider text-[#153358]">
+                HACKATHONS, TECHFEST &amp; CULTURAL CLUB
+              </h3>
+              <p class="text-[14px] text-[#3A434E] leading-[1.6]">
+                Secured 52nd rank in a first hackathon, participated in an IIT Bombay Techfest workshop, and volunteered actively with the Cultural Club while building foundational ECE hardware prototypes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SLIDE 9 — PASSION PROJECT / CAPSTONE SPOTLIGHT (#153358 Navy)
+      ====================================================================== -->
+      <section id="slide-9" class="inspector-dark relative bg-[#153358] text-white py-20 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative">
+          <svg
+            viewBox="0 0 180 180"
+            aria-hidden="true"
+            class="animate-stamp-spin pointer-events-none select-none w-52 h-52 absolute -bottom-10 -right-4 opacity-70"
+          >
+            <defs>
+              <path id="stamp-navy" d="M 90, 90 m -66, 0 a 66,66 0 1,1 132,0 a 66,66 0 1,1 -132,0" />
+            </defs>
+            <text fill="#2E5280" font-size="10" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" letter-spacing="2.4">
+              <textPath href="#stamp-navy" startOffset="0%">IT'S NOT JUST BUILDING · IT'S VIBING WITH VISUALS ·</textPath>
+            </text>
+          </svg>
+
+          <div class="lg:col-span-7 space-y-6">
+            <h2 class="font-oswald text-4xl sm:text-5xl font-bold uppercase tracking-[-0.01em] leading-[1.02] text-white">
+              Passion Project
+            </h2>
+
+            <div class="rounded-2xl bg-[#0B1B30] border-4 border-white/20 p-4 shadow-2xl">
+              <div class="flex items-center gap-1.5 pb-3">
+                <span class="w-2.5 h-2.5 rounded-full bg-white/30"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-white/30"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-white/30"></span>
+                <span class="ml-2 font-mono-data text-[10px] text-[#D0DAE6]">SOLIDWORKS 2024 · ACTIVE CAPSTONE</span>
+              </div>
+              <div id="passion-quadcopter-widget"></div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 space-y-5 relative z-10">
+            <h3 class="font-oswald text-2xl uppercase font-bold tracking-wide text-white">
+              Quadcopter 3D Design in SOLIDWORKS
+            </h3>
+            <p class="text-[15px] text-[#D0DAE6] leading-[1.6]">
+              Designing a balanced, lightweight multi-rotor airframe requires precise arm symmetry, motor mount clearances, and central hub structural integrity prior to fabrication.
+            </p>
+            <p class="text-[15px] text-[#D0DAE6] leading-[1.6]">
+              Parametric central chassis plates, 4 symmetric radial arms, brushless motor mount housings, landing skids, and propeller guards constrained inside a SOLIDWORKS top-level assembly.
+            </p>
+            <div class="pt-2">
+              <button
+                type="button"
+                id="btn-inspect-quadcopter"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#153358] font-semibold text-xs uppercase tracking-wider hover:bg-[#F4F4F2] transition-colors cursor-pointer"
+              >
+                <span>Inspect CAD Case Study</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SLIDE 10 — FOOTER & CONTACT (#F4F4F2 Off-White)
+      ====================================================================== -->
+      <footer id="slide-10" class="inspector-light relative bg-[#F4F4F2] text-[#153358] py-20 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+          <div class="lg:col-span-7 space-y-6">
+            <h2 class="font-oswald text-4xl sm:text-6xl font-bold uppercase tracking-[-0.01em] leading-[0.98] text-[#153358]">
+              Let's work together<br />and create<br />something great!
+            </h2>
+
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <button
+                type="button"
+                id="btn-footer-contact"
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#153358] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#0E2440] transition-colors cursor-pointer"
+              >
+                <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                <span>Send Me a Message</span>
+              </button>
+              <button
+                type="button"
+                id="btn-footer-resume"
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-[#153358] text-[#153358] text-xs font-semibold uppercase tracking-wider hover:bg-[#EEF2F7] transition-colors cursor-pointer"
+              >
+                <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+                <span>Download Formatted Resume</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 space-y-3 text-xs font-semibold uppercase tracking-wider text-[#153358]">
+            <button
+              type="button"
+              id="btn-copy-email"
+              class="flex items-center gap-3 py-2 border-b border-[#D8DCE3] w-full text-left hover:opacity-75 transition-opacity cursor-pointer"
+            >
+              <i data-lucide="mail" class="w-4 h-4 shrink-0"></i>
+              <span id="copy-email-text">krishakp1412@gmail.com</span>
+            </button>
+
+            <a
+              href="tel:7900845624"
+              class="flex items-center gap-3 py-2 border-b border-[#D8DCE3] hover:opacity-75 transition-opacity"
+            >
+              <i data-lucide="phone" class="w-4 h-4 shrink-0"></i>
+              <span>+91 7900845624</span>
+            </a>
+
+            <div class="flex items-center gap-3 py-2 border-b border-[#D8DCE3]">
+              <i data-lucide="map-pin" class="w-4 h-4 shrink-0"></i>
+              <span>Ahmedabad, Gujarat</span>
+            </div>
+
+            <a
+              href="https://www.linkedin.com/in/krisha-patel-a21534433"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3 py-2 border-b border-[#D8DCE3] hover:opacity-75 transition-opacity"
+            >
+              <i data-lucide="arrow-up-right" class="w-4 h-4 shrink-0"></i>
+              <span class="truncate">linkedin.com/in/krisha-patel-a21534433</span>
+            </a>
+
+            <p class="pt-3 text-[11px] font-normal normal-case tracking-normal text-[#3A434E]">
+              © 2026 Krisha Patel · Grounded strictly in verified resume &amp; certificate records.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- =======================================================================
+         MODALS & DRAWERS (Vanilla JS Controlled)
+    ======================================================================== -->
+    <!-- 1. Project Case Study Sandbox Drawer -->
+    <div
+      id="modal-project"
+      class="hidden fixed inset-0 z-50 flex justify-end bg-black/80 backdrop-blur-sm"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        id="modal-project-panel"
+        class="relative w-full max-w-2xl h-full bg-[#102744] border-l border-[#2E5280] text-white shadow-2xl overflow-y-auto flex flex-col"
+      ></div>
+    </div>
+
+    <!-- 2. Certificate Document Modal -->
+    <div
+      id="modal-certificate"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm p-4 md:p-8 overflow-y-auto"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        id="modal-certificate-panel"
+        class="relative w-full max-w-4xl bg-[#102744] border border-[#2E5280] text-white rounded-2xl shadow-2xl overflow-hidden my-auto"
+      ></div>
+    </div>
+
+    <!-- 3. Printable Resume Modal -->
+    <div
+      id="modal-resume"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 md:p-8 overflow-y-auto"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        id="modal-resume-panel"
+        class="relative w-full max-w-4xl bg-[#102744] border border-[#2E5280] text-white rounded-2xl shadow-2xl overflow-hidden my-auto"
+      ></div>
+    </div>
+
+    <!-- 4. 30-Second Quick Summary Modal -->
+    <div
+      id="modal-summary"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        id="modal-summary-panel"
+        class="relative w-full max-w-2xl bg-[#102744] border border-[#2E5280] text-white rounded-2xl shadow-2xl overflow-hidden"
+      ></div>
+    </div>
+
+    <!-- 5. Contact Modal -->
+    <div
+      id="modal-contact"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        id="modal-contact-panel"
+        class="relative w-full max-w-lg bg-[#102744] border border-[#2E5280] text-white rounded-2xl shadow-2xl overflow-hidden"
+      ></div>
+    </div>
+
+    <!-- 6. Command Palette Modal (Cmd/Ctrl + K) -->
+    <div
+      id="modal-command"
+      class="hidden fixed inset-0 z-50 flex items-start justify-center bg-black/80 backdrop-blur-sm pt-16 sm:pt-24 px-4"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        id="modal-command-panel"
+        class="w-full max-w-2xl bg-[#102744] border border-[#2E5280] text-white rounded-2xl shadow-2xl overflow-hidden"
+      ></div>
+    </div>
+
+    <!-- =======================================================================
+         SELF-CONTAINED PORTFOLIO DATA & VANILLA JS ENGINE
+    ======================================================================== -->
+    <script>
+      (function () {
+        // 1. GROUNDED PORTFOLIO DATA (Strictly from attached resume, photo, CAD project, and 5 certificates)
+        const PROFILE_DATA = {
+          fullName: 'Krisha Patel',
+          primaryTitle: 'Electronics & Communication Engineering Student',
+          location: 'Ahmedabad, Gujarat',
+          phone: '7900845624',
+          email: 'krishakp1412@gmail.com',
+          linkedinDisplay: 'linkedin.com/in/krisha-patel-a21534433',
+          linkedinUrl: 'https://www.linkedin.com/in/krisha-patel-a21534433',
+          photoUrl: './assets/aistudio/IMG_4539__1__b843ef36.jpeg',
+          resumePdfUrl: './assets/aistudio/Krisha_Patel_Resume__5__771f14fc.pdf',
+          summary:
+            'First-year Electronics and Communication Engineering student at Karnavati University. Developing practical knowledge of Arduino, C programming, and SOLIDWORKS 3D CAD alongside core electronics fundamentals. Contributing through teamwork, clear communication, and structured problem-solving during project work.',
+          languages: ['English', 'Hindi', 'Gujarati'],
+          accomplishments: [
+            'Secured 52nd rank in a first hackathon.',
+            'Participated in an IIT Bombay Techfest workshop.',
+            'Volunteered with the Cultural Club.',
+          ],
+        };
+
+        const EDUCATION_DATA = [
+          {
+            degree: 'B.Tech, Electronics & Communication Engineering',
+            institution: 'Karnavati University',
+            location: 'Gandhinagar',
+            period: 'Expected 2030',
+            detail: '',
+          },
+          {
+            degree: 'Senior Secondary Education (CBSE)',
+            institution: 'Kenalily School For Children',
+            location: 'Ahmedabad',
+            period: 'May 2026',
+            detail: 'Class XII: 69%',
+          },
+          {
+            degree: 'Secondary Education (CBSE)',
+            institution: 'Kalorex Future School',
+            location: 'Ahmedabad',
+            period: 'May 2024',
+            detail: 'Class X: 88%',
+          },
+        ];
+
+        const PROJECTS_DATA = [
+          {
+            id: 'quadcopter-solidworks',
+            index: '01',
+            title: 'Quadcopter 3D Design in SOLIDWORKS',
+            category: 'CAD & Mechanical',
+            status: 'Active Project',
+            typeLabel: '3D CAD Assembly · Mechanical Design',
+            summary:
+              'Ongoing multi-part 3D quadcopter airframe and rotor assembly modeled in SOLIDWORKS, applying parametric sketching, extrusion features, and concentric/coincident assembly mates.',
+            problem:
+              'Designing a balanced, lightweight multi-rotor airframe requires precise arm symmetry, motor mount clearances, and central hub structural integrity prior to fabrication.',
+            architecture:
+              'Parametric central chassis plates, 4 symmetric radial arms, brushless motor mount housings, landing skids, and propeller guards constrained inside a SOLIDWORKS top-level assembly.',
+            outcome:
+              'Active ongoing CAD build applying competencies earned in the 10-hour SOLIDWORKS 2024 Essential Training certification toward real multi-part assembly modeling.',
+            technicalDetails: [
+              'Parametric X-frame geometry enabling synchronized arm-length and hub clearance adjustments.',
+              'Multi-body assembly hierarchy separating structural chassis, motor pods, and propeller profiles.',
+              'Evaluating center-of-gravity symmetry and rotor tip-to-tip clearance envelopes.',
+            ],
+            tools: ['SOLIDWORKS 2024', '3D Assembly Mates', 'Parametric Sketching'],
+            linkedSkills: ['SOLIDWORKS 2024', 'Problem-Solving', 'Creativity'],
+            interactiveType: 'quadcopter',
+          },
+          {
+            id: 'arduino-led',
+            index: '02',
+            title: 'Arduino LED Control',
+            category: 'Embedded & Arduino',
+            status: 'Completed Academic Work',
+            typeLabel: 'Embedded Hardware · Digital Output',
+            summary:
+              'Programmed an Arduino-based LED activity to demonstrate digital output control and timed ON/OFF operation.',
+            problem:
+              'Establishing deterministic hardware-level timing and safe current limiting when driving external optical indicators from microcontroller GPIO pins.',
+            architecture:
+              'Arduino digital output Pin 13 wired in series with a current-limiting resistor and LED, governed by a C/Arduino loop toggling HIGH (5V) and LOW (0V) states.',
+            outcome:
+              'Demonstrated reliable digital output switching and repeatable ON/OFF timing intervals on physical hardware.',
+            technicalDetails: [
+              'Configured digital GPIO pins on an Arduino microcontroller for clean HIGH/LOW switching.',
+              'Implemented deterministic timing intervals in C/Arduino syntax for rhythmic ON/OFF states.',
+              'Validated current-limiting resistor sizing and breadboard polarity.',
+            ],
+            tools: ['Arduino', 'C Programming', 'Basic Electronics'],
+            linkedSkills: ['Arduino', 'C Programming', 'Basic Electronics'],
+            interactiveType: 'led',
+          },
+          {
+            id: 'servo-potentiometer',
+            index: '03',
+            title: 'Potentiometer-Based Servo Motor Control',
+            category: 'Embedded & Arduino',
+            status: 'Completed Academic Work',
+            typeLabel: 'Analog Input · Actuation Control',
+            summary:
+              'Worked with an Arduino and potentiometer setup to control servo movement, exploring analog input readings and their relationship to angular position.',
+            problem:
+              'Translating continuous human-controlled analog voltage variations into smooth, proportional angular actuation on a standard hobby servo.',
+            architecture:
+              '10kΩ rotary potentiometer feeding analog pin A0 (0–1023 ADC counts), mapped linearly via map() in C to 0°–180° PWM duty pulses driving the servo actuator.',
+            outcome:
+              'Verified proportional real-time tracking between analog voltage divider input and mechanical servo shaft angle.',
+            technicalDetails: [
+              'Sampled continuous voltage dividers via analog input pins (0–1023 ADC resolution).',
+              'Mapped raw analog readings proportionally to 0°–180° PWM servo angular positions.',
+              'Observed real-time mechanical response and signal smoothing across rotation sweeps.',
+            ],
+            tools: ['Arduino', 'C Programming', 'Basic Electronics'],
+            linkedSkills: ['Arduino', 'C Programming', 'Basic Electronics', 'Problem-Solving'],
+            interactiveType: 'servo',
+          },
+          {
+            id: 'iron-conveyor-ai',
+            index: '04',
+            title: 'Iron-Conveyor Belt AI',
+            category: 'AI & Concept',
+            status: 'Team Project',
+            typeLabel: 'Team Project · AI & Hardware Concept',
+            summary:
+              'Collaborated with team members across multiple aspects of an AI-focused conveyor-belt project, contributing to its collective development.',
+            problem:
+              'Coordinating hardware conveyor mechanics with intelligent detection logic across a multidisciplinary student engineering team.',
+            architecture:
+              'Conveyor feed track paired with sensor/vision inspection stage and AI classification logic to trigger automated sorting decisions.',
+            outcome:
+              'Contributed across technical framing, team coordination, and collective system development.',
+            technicalDetails: [
+              'Coordinated across multidisciplinary teammates on an AI-integrated conveyor-belt concept.',
+              'Contributed to system workflow framing, communication, and collective milestone execution.',
+              'Bridged foundational AI concepts with practical hardware automation thinking.',
+            ],
+            tools: ['AI Tools', 'Teamwork', 'Problem-Solving'],
+            linkedSkills: ['AI Tools', 'AI Foundations & ML', 'Teamwork', 'Problem-Solving', 'Communication'],
+            interactiveType: 'conveyor',
+          },
+          {
+            id: 'study-helper-desk',
+            index: '05',
+            title: 'Study-Helper Desk',
+            category: 'AI & Concept',
+            status: 'Project Concept',
+            typeLabel: 'Project Concept · Interactive Design',
+            summary:
+              'Explored a student-support desk concept combining electronics, embedded systems and interactive design to assist study activities.',
+            problem:
+              'Students often lack integrated, distraction-free physical study tools that unify ambient lighting, focus pacing, and ergonomic awareness.',
+            architecture:
+              'Embedded microcontroller hub embedded within a study desk surface linking environmental sensors, timed focus indicators, and tactile controls.',
+            outcome:
+              'Formulated a human-centered embedded systems concept connecting core electronics with everyday student productivity.',
+            technicalDetails: [
+              'Conceptualized an ergonomic, electronics-assisted desk environment for focused student workflows.',
+              'Combined embedded microcontroller triggers with interactive user feedback principles.',
+              'Structured human-centered design considerations around daily study habits.',
+            ],
+            tools: ['Basic Electronics', 'Arduino', 'Interactive Design'],
+            linkedSkills: ['Basic Electronics', 'Arduino', 'Creativity', 'Problem-Solving'],
+            interactiveType: 'desk',
+          },
+        ];
+
+        const SKILLS_DATA = [
+          { name: 'SOLIDWORKS 2024', code: 'SW', icon: 'box', category: 'Technical' },
+          { name: 'Arduino', code: 'ARD', icon: 'cpu', category: 'Technical' },
+          { name: 'C Programming', code: 'C', icon: 'code-2', category: 'Technical' },
+          { name: 'Basic Electronics', code: 'ECE', icon: 'terminal', category: 'Technical' },
+          { name: 'Canva', code: 'CNV', icon: 'pen-tool', category: 'Creative & AI' },
+          { name: 'AI Tools', code: 'AI', icon: 'sparkles', category: 'Creative & AI' },
+          { name: 'AI Foundations & ML', code: 'ML', icon: 'sparkles', category: 'Creative & AI' },
+          { name: 'Content Strategy', code: 'STR', icon: 'wrench', category: 'Leadership & Strategy' },
+          { name: 'Social Media Marketing Management', code: 'SMM', icon: 'wrench', category: 'Leadership & Strategy' },
+        ];
+
+        const CERTIFICATIONS_DATA = [
+          {
+            id: 'sih-rupturex-2026',
+            title: 'Preliminary Smart India Hackathon 2026 — Certificate of Appreciation',
+            issuer: 'Karnavati University · Ministry of Education · AICTE · MoE Innovation Cell · KIIF',
+            date: '10th & 11th September 2026',
+            durationOrHours: '',
+            certificateId: 'KU-SIH36H-ACH-2026-0311',
+            signatory: 'Nir Gandhi (SPOC), Dr. Brinda Pandya (KIIF), Dr. Rebakah Geddam (UIT), Dr. Tariq Ali Saiyed (Registrar)',
+            category: 'Hackathon & Leadership',
+            skillsCovered: ['Problem-Solving', 'Teamwork', 'Innovation'],
+            linkedSkills: ['Problem-Solving', 'Teamwork', 'Communication'],
+            courseworkHighlights: [
+              'Represented Team RUPTUREX during the 36-hour Preliminary Smart India Hackathon 2026.',
+              'Proudly nominated among the Top 100 Teams representing Karnavati University.',
+              'Jointly issued by Karnavati Innovation & Incubation Foundation (KIIF) and MoE Innovation Cell.',
+            ],
+            teamOrHighlight: 'Team RUPTUREX · Nominated among Top 100 Teams representing Karnavati University',
+            fileUrl: './assets/aistudio/Krisha_Patel_-_RuptureX_76f9848d.pdf',
+            fileType: 'pdf',
+          },
+          {
+            id: 'solidworks-2024',
+            title: 'SOLIDWORKS 2024 Essential Training',
+            issuer: 'LinkedIn Learning',
+            date: 'Nov 19, 2026 at 12:17PM UTC',
+            durationOrHours: '10 hours',
+            certificateId: '97b13be4e9628d50cc2d19f323b40fe64e00c2f332c8f5830594504cc11e9b40',
+            signatory: 'Shea Hanson, Head of Learning Content Strategy',
+            category: 'Engineering & CAD',
+            skillsCovered: ['SOLIDWORKS'],
+            linkedSkills: ['SOLIDWORKS 2024', 'Creativity', 'Problem-Solving'],
+            courseworkHighlights: [
+              '10 hours of structured CAD modeling training in SOLIDWORKS 2024.',
+              'Parametric 2D sketching, 3D boss/cut extrusions, fillets, and reference geometry.',
+              'Multi-part assembly mates applied directly to Quadcopter 3D Design.',
+            ],
+            teamOrHighlight: '',
+            fileUrl: './assets/aistudio/KRISHA_PATEL_EDG_LINKEDIN_CERTIFICATE_9799f6a3.pdf',
+            fileType: 'pdf',
+          },
+          {
+            id: 'ai-thinking-machines',
+            title: 'Artificial Intelligence Foundations: Thinking Machines',
+            issuer: 'LinkedIn Learning',
+            date: 'Nov 19, 2026 at 06:23AM UTC',
+            durationOrHours: '1 hour 36 minutes',
+            certificateId: '926f338ce2d50089f13eee527c6a1a46cd651b25386d5d4e0fc0dab9dae04ca5',
+            signatory: 'Shea Hanson, Head of Learning Content Strategy',
+            category: 'AI & Foundations',
+            skillsCovered: ['Machine Learning', 'Artificial Intelligence (AI)'],
+            linkedSkills: ['AI Foundations & ML', 'AI Tools'],
+            courseworkHighlights: [
+              'Core concepts distinguishing narrow AI, machine learning pipelines, and neural architectures.',
+              'Data representation, supervised vs. unsupervised learning foundations.',
+              'Applied context informing AI-integrated hardware concepts such as Iron-Conveyor Belt AI.',
+            ],
+            teamOrHighlight: '',
+            fileUrl: './assets/aistudio/KRISHA_PATEL_FAI_LINKEDIN_CERTIFICATE_765c6b5d.pdf',
+            fileType: 'pdf',
+          },
+          {
+            id: 'jio-ai-foundation',
+            title: 'AI Foundation Course',
+            issuer: 'AI Classroom (Powered by JioPC · Designed by Jio Institute)',
+            date: '2026',
+            durationOrHours: '',
+            certificateId: 'ENMdW58JKX2WJ',
+            signatory: 'Jio Institute · AI Classroom',
+            category: 'AI & Foundations',
+            skillsCovered: ['Artificial Intelligence Foundations', 'AI Tools'],
+            linkedSkills: ['AI Foundations & ML', 'AI Tools'],
+            courseworkHighlights: [
+              'Curriculum designed by Jio Institute via AI Classroom (Powered by JioPC).',
+              'Practical foundations in modern AI systems and real-world tool integration.',
+              'Verifiable QR-encoded credential issued to Krisha Patel.',
+            ],
+            teamOrHighlight: '',
+            fileUrl: './assets/aistudio/KU202605162_KRISHA_PATEL_AI_FOUNDATION_COURSE_75290ce0.png',
+            fileType: 'image',
+          },
+          {
+            id: 'leadership-feedback',
+            title: 'Leadership through Feedback',
+            issuer: 'LinkedIn Learning · PMI® Registered Education Provider',
+            date: 'Nov 15, 2026 at 06:18PM UTC',
+            durationOrHours: '1.25 PDUs / Contact Hours (Activity #4101143NNS)',
+            certificateId: '0dc349912dd3d4a336d039ee1b4644afd0ef49a8f41d99f7ea3ed925632e02a6',
+            signatory: 'Shea Hanson, Head of Learning Content Strategy',
+            category: 'Hackathon & Leadership',
+            skillsCovered: ['Constructive Feedback', 'Leadership'],
+            linkedSkills: ['Social Media Marketing Management', 'Content Strategy'],
+            courseworkHighlights: [
+              'PMI® Registered Education Provider accredited coursework (Provider ID #4101 · 1.25 PDUs).',
+              'Structured delivery of actionable, constructive feedback in team environments.',
+              'Applied across hackathon teams and brand coordination at Paaji Ki Kaksha.',
+            ],
+            teamOrHighlight: '',
+            fileUrl: './assets/aistudio/KU202605162_KRISHA_PATEL_LINKEDIN_LEARNING_CERTIFICATE_1fc42e08.pdf',
+            fileType: 'pdf',
+          },
+        ];
+
+        // 2. APPLICATION STATE
+        let state = {
+          inspectorMode: false,
+          activeSkillTrace: null,
+          featuredProjectId: PROJECTS_DATA[0].id,
+          projectUrls: {},
+          githubUrl: '',
+          editingGithub: false,
+          customPhoto: null,
+          flippedCerts: {},
+        };
+
+        // 3. HELPER: SAFE HTML ESCAPING
+        function esc(str) {
+          return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+        }
+
+        function refreshIcons() {
+          if (window.lucide && typeof window.lucide.createIcons === 'function') {
+            window.lucide.createIcons();
+          }
+        }
+
+        // 4. INTERACTIVE HARDWARE / CAD WIDGET FACTORY
+        function createInteractiveWidgetHTML(project, compact, uidPrefix) {
+          const wrapClass = compact
+            ? 'w-full h-full bg-[#0E2440] border border-[#2E5280] rounded-[6px] p-3 flex flex-col justify-between'
+            : 'w-full min-h-[285px] bg-[#0E2440] border border-[#2E5280] rounded-xl p-5 flex flex-col justify-between';
+
+          const uid = `${uidPrefix}-${project.id}`;
+
+          if (project.interactiveType === 'quadcopter') {
+            return `
+              <div class="${wrapClass}" data-widget="quadcopter" data-uid="${uid}">
+                <div class="flex items-center justify-between text-[10px] font-mono-data uppercase tracking-[0.06em] text-[#D0DAE6]">
+                  <span>SOLIDWORKS · CAD</span>
+                  <span id="${uid}-readout">SPAN 310mm · CLR 59mm</span>
+                </div>
+                <div class="flex items-center justify-center my-1">
+                  <svg viewBox="0 0 260 150" class="${compact ? 'w-48 h-24' : 'w-72 h-44'}" aria-label="Quadcopter 3D assembly">
+                    <polygon points="130,18 232,72 130,126 28,72" fill="rgba(255,255,255,0.04)" stroke="#2E5280" stroke-width="1" stroke-dasharray="3 3" />
+                    <g id="${uid}-skid" transform="translate(0, 6)">
+                      <polygon points="130,62 162,79 130,96 98,79" fill="rgba(255,255,255,0.06)" stroke="#94A3B8" stroke-width="1.2" />
+                      <line x1="106" y1="84" x2="106" y2="96" stroke="#94A3B8" stroke-width="1.5" />
+                      <line x1="154" y1="84" x2="154" y2="96" stroke="#94A3B8" stroke-width="1.5" />
+                    </g>
+                    <g id="${uid}-frame" transform="translate(130, 74) scale(0.87) translate(-130, -74)">
+                      <line x1="72" y1="44" x2="188" y2="104" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" />
+                      <line x1="188" y1="44" x2="72" y2="104" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" />
+                      <polygon points="130,58 158,74 130,90 102,74" fill="#153358" stroke="#FFFFFF" stroke-width="1.6" />
+                      ${[
+                        [72, 44],
+                        [188, 44],
+                        [72, 104],
+                        [188, 104],
+                      ]
+                        .map(
+                          ([cx, cy]) => `
+                        <circle cx="${cx}" cy="${cy}" r="6.5" fill="#153358" stroke="#FFFFFF" stroke-width="1.3" />
+                        <g class="${uid}-rotor" transform="translate(0, -7)">
+                          <ellipse cx="${cx}" cy="${cy}" rx="16" ry="9" fill="rgba(255,255,255,0.08)" stroke="#FFFFFF" stroke-width="1.2" />
+                          <line x1="${cx - 14}" y1="${cy}" x2="${cx + 14}" y2="${cy}" stroke="#FFFFFF" stroke-width="1.3" />
+                        </g>`
+                        )
+                        .join('')}
+                    </g>
+                    <g id="${uid}-canopy" transform="translate(0, -5)">
+                      <polygon points="130,54 152,66 130,78 108,66" fill="rgba(255,255,255,0.18)" stroke="#FFFFFF" stroke-width="1.3" />
+                    </g>
+                  </svg>
+                </div>
+                <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-[#2E5280]">
+                  <label class="flex items-center gap-1.5 text-[10px] uppercase font-mono-data text-[#D0DAE6]">
+                    <span>Explode</span>
+                    <input type="range" min="0" max="28" value="${compact ? 8 : 16}" data-quad-explode="${uid}" class="w-14 accent-white cursor-pointer" />
+                  </label>
+                  ${
+                    !compact
+                      ? `<label class="flex items-center gap-1.5 text-[10px] uppercase font-mono-data text-[#D0DAE6]">
+                          <span>Span</span>
+                          <input type="range" min="220" max="450" step="10" value="310" data-quad-span="${uid}" class="w-16 accent-white cursor-pointer" />
+                        </label>`
+                      : ''
+                  }
+                  <button type="button" data-quad-spin="${uid}" class="px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] bg-[#153358] hover:bg-[#1D4475] border border-[#3B6496] text-white rounded cursor-pointer">
+                    Spin
+                  </button>
+                </div>
+              </div>
+            `;
+          }
+
+          if (project.interactiveType === 'led') {
+            return `
+              <div class="${wrapClass}" data-widget="led" data-uid="${uid}">
+                <div class="flex items-center justify-between text-[10px] font-mono-data uppercase tracking-[0.06em] text-[#D0DAE6]">
+                  <span>PIN 13 · DIGITAL</span>
+                  <span id="${uid}-state">HIGH (5.0V)</span>
+                </div>
+                <div class="flex items-center justify-center my-2">
+                  <div id="${uid}-bulb" class="w-14 h-14 rounded-full border border-white flex items-center justify-center transition-all duration-150" style="background: rgba(255,255,255,0.25); box-shadow: 0 0 28px rgba(255,255,255,0.55);">
+                    <div id="${uid}-core" class="w-5 h-5 rounded-full bg-white transition-colors duration-150"></div>
+                  </div>
+                </div>
+                ${
+                  !compact
+                    ? `<div id="${uid}-serial" class="mb-3 px-3 py-2 bg-[#153358] border border-[#2E5280] rounded font-mono-data text-[11px] text-white">serial&gt; digitalWrite(13, HIGH); // delay(650ms)</div>`
+                    : ''
+                }
+                <div class="flex items-center justify-between gap-2 pt-2 border-t border-[#2E5280]">
+                  <button type="button" data-led-toggle="${uid}" class="px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] bg-white text-[#153358] font-semibold rounded cursor-pointer">
+                    Toggle Pin 13
+                  </button>
+                  <span class="text-[10px] font-mono-data text-[#D0DAE6]">5V GPIO</span>
+                </div>
+              </div>
+            `;
+          }
+
+          if (project.interactiveType === 'servo') {
+            return `
+              <div class="${wrapClass}" data-widget="servo" data-uid="${uid}">
+                <div class="flex items-center justify-between text-[10px] font-mono-data uppercase tracking-[0.06em] text-[#D0DAE6]">
+                  <span id="${uid}-adc">A0 ADC: 512 (2.50V)</span>
+                  <span id="${uid}-deg">SERVO: 90°</span>
+                </div>
+                <div class="flex items-center justify-center my-1">
+                  <svg viewBox="0 0 180 100" class="w-40 h-20 overflow-visible" aria-label="Servo arm">
+                    <path d="M 20 85 A 70 70 0 0 1 160 85" fill="none" stroke="#2E5280" stroke-width="2" stroke-dasharray="4 4" />
+                    <g id="${uid}-arm" style="transform-origin: 90px 85px; transform: rotate(0deg); transition: transform 120ms ease;">
+                      <rect x="85" y="20" width="10" height="65" rx="5" fill="#FFFFFF" />
+                      <circle cx="90" cy="28" r="2.5" fill="#153358" />
+                    </g>
+                    <circle cx="90" cy="85" r="8.5" fill="#153358" stroke="#FFFFFF" stroke-width="1.6" />
+                  </svg>
+                </div>
+                ${
+                  !compact
+                    ? `<div id="${uid}-serial" class="mb-3 px-3 py-2 bg-[#153358] border border-[#2E5280] rounded font-mono-data text-[11px] text-white">serial&gt; map(512, 0, 1023, 0, 180) =&gt; 90° · PWM 1472µs</div>`
+                    : ''
+                }
+                <div class="flex items-center gap-3 pt-2 border-t border-[#2E5280]">
+                  <span class="text-[10px] font-mono-data text-[#D0DAE6]">POT</span>
+                  <input type="range" min="0" max="1023" value="512" data-servo-slider="${uid}" aria-label="Potentiometer input" class="w-full accent-white cursor-pointer" />
+                </div>
+              </div>
+            `;
+          }
+
+          if (project.interactiveType === 'conveyor') {
+            return `
+              <div class="${wrapClass}" data-widget="conveyor" data-uid="${uid}">
+                <div class="flex items-center justify-between text-[10px] font-mono-data uppercase tracking-[0.06em] text-[#D0DAE6]">
+                  <span id="${uid}-sample">AI · IRON ORE</span>
+                  <span id="${uid}-conf">CONF 92%</span>
+                </div>
+                <div class="flex items-center justify-center my-1">
+                  <svg viewBox="0 0 240 100" class="w-full max-w-[220px] h-20" aria-label="Conveyor AI">
+                    <rect x="20" y="62" width="200" height="20" rx="10" fill="none" stroke="#3B6496" stroke-width="1.8" />
+                    <circle cx="34" cy="72" r="5.5" fill="none" stroke="#FFFFFF" stroke-width="1.6" />
+                    <circle cx="120" cy="72" r="5.5" fill="none" stroke="#94A3B8" stroke-width="1.6" />
+                    <circle cx="206" cy="72" r="5.5" fill="none" stroke="#FFFFFF" stroke-width="1.6" />
+                    <rect id="${uid}-block" x="108" y="44" width="20" height="16" rx="2" fill="rgba(255,255,255,0.38)" stroke="#FFFFFF" stroke-width="1.4" />
+                    <path d="M 120 18 L 120 42" stroke="#FFFFFF" stroke-width="1.3" stroke-dasharray="3 3" />
+                    <rect x="92" y="4" width="56" height="15" rx="2" fill="#153358" stroke="#FFFFFF" stroke-width="1" />
+                    <text x="120" y="14" text-anchor="middle" fill="#FFFFFF" font-size="7" font-family="JetBrains Mono">AI SENSOR</text>
+                  </svg>
+                </div>
+                ${
+                  !compact
+                    ? `<div id="${uid}-serial" class="mb-3 px-3 py-2 bg-[#153358] border border-[#2E5280] rounded font-mono-data text-[11px] text-white">classifier&gt; sample="Iron Ore" score=92% =&gt; ACTUATE IRON DIVERT</div>`
+                    : ''
+                }
+                <div class="flex items-center justify-between gap-2 pt-2 border-t border-[#2E5280]">
+                  <button type="button" data-conveyor-sample="${uid}" class="px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] bg-[#153358] border border-[#3B6496] text-white rounded cursor-pointer">
+                    Cycle Sample
+                  </button>
+                  <span class="text-[10px] font-mono-data text-[#D0DAE6]">THR 78%</span>
+                </div>
+              </div>
+            `;
+          }
+
+          return `
+            <div class="${wrapClass}" data-widget="desk" data-uid="${uid}">
+              <div class="flex items-center justify-between text-[10px] font-mono-data uppercase tracking-[0.06em] text-[#D0DAE6]">
+                <span id="${uid}-mode">DESK · FOCUS</span>
+                <span>EMBEDDED</span>
+              </div>
+              <div class="flex items-center justify-center my-1">
+                <svg viewBox="0 0 240 100" class="w-full max-w-[210px] h-20" aria-label="Study-Helper Desk">
+                  <rect x="36" y="20" width="168" height="58" rx="3" fill="none" stroke="#3B6496" stroke-width="1.5" />
+                  <line x1="36" y1="60" x2="204" y2="60" stroke="#2E5280" stroke-width="1" />
+                  <rect x="52" y="30" width="54" height="22" rx="2" fill="rgba(255,255,255,0.22)" stroke="#FFFFFF" stroke-width="1.3" />
+                  <rect x="122" y="30" width="66" height="22" rx="2" fill="rgba(255,255,255,0.06)" stroke="#94A3B8" stroke-width="1" />
+                </svg>
+              </div>
+              ${
+                !compact
+                  ? `<div id="${uid}-serial" class="mb-3 px-3 py-2 bg-[#153358] border border-[#2E5280] rounded font-mono-data text-[11px] text-white">desk-os&gt; POMODORO MCU TIMER: 25:00 ACTIVE</div>`
+                  : ''
+              }
+              <div class="flex items-center justify-between gap-2 pt-2 border-t border-[#2E5280]">
+                <div class="flex items-center gap-1">
+                  ${['Focus', 'Ambient', 'Posture']
+                    .map(
+                      (m) => `
+                    <button type="button" data-desk-mode="${uid}" data-mode-val="${m}" class="px-2 py-1 text-[10px] uppercase tracking-[0.06em] rounded cursor-pointer ${
+                        m === 'Focus'
+                          ? 'bg-white text-[#153358] font-semibold'
+                          : 'bg-[#153358] border border-[#3B6496] text-[#D0DAE6]'
+                      }">${m}</button>`
+                    )
+                    .join('')}
+                </div>
+                <span class="text-[10px] text-[#D0DAE6] font-mono-data">05</span>
+              </div>
+            </div>
+          `;
+        }
+
+        function bindWidgetEvents(root) {
+          root.querySelectorAll('[data-quad-explode]').forEach((input) => {
+            input.addEventListener('click', (e) => e.stopPropagation());
+            input.addEventListener('input', (e) => {
+              const uid = input.getAttribute('data-quad-explode');
+              const val = Number(e.target.value);
+              const skid = document.getElementById(`${uid}-skid`);
+              const canopy = document.getElementById(`${uid}-canopy`);
+              if (skid) skid.setAttribute('transform', `translate(0, ${val * 0.65})`);
+              if (canopy) canopy.setAttribute('transform', `translate(0, ${-val * 0.55})`);
+              document.querySelectorAll(`.${uid}-rotor`).forEach((r) => {
+                r.setAttribute('transform', `translate(0, ${-val * 0.75})`);
+              });
+            });
+          });
+
+          root.querySelectorAll('[data-quad-span]').forEach((input) => {
+            input.addEventListener('click', (e) => e.stopPropagation());
+            input.addEventListener('input', (e) => {
+              const uid = input.getAttribute('data-quad-span');
+              const span = Number(e.target.value);
+              const clr = Math.round(span * 0.19);
+              const scale = (0.72 + ((span - 220) / 230) * 0.36).toFixed(2);
+              const frame = document.getElementById(`${uid}-frame`);
+              const readout = document.getElementById(`${uid}-readout`);
+              if (frame) frame.setAttribute('transform', `translate(130, 74) scale(${scale}) translate(-130, -74)`);
+              if (readout) readout.textContent = `SPAN ${span}mm · CLR ${clr}mm`;
+            });
+          });
+
+          root.querySelectorAll('[data-quad-spin]').forEach((btn) => {
+            let active = false;
+            btn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              active = !active;
+              btn.textContent = active ? 'Stop' : 'Spin';
+              const uid = btn.getAttribute('data-quad-spin');
+              document.querySelectorAll(`.${uid}-rotor ellipse`).forEach((el) => {
+                el.setAttribute('fill', active ? 'rgba(255,255,255,0.28)' : 'rgba(255,255,255,0.08)');
+              });
+            });
+          });
+
+          root.querySelectorAll('[data-led-toggle]').forEach((btn) => {
+            let on = true;
+            btn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              on = !on;
+              const uid = btn.getAttribute('data-led-toggle');
+              const bulb = document.getElementById(`${uid}-bulb`);
+              const core = document.getElementById(`${uid}-core`);
+              const stateEl = document.getElementById(`${uid}-state`);
+              const serial = document.getElementById(`${uid}-serial`);
+              if (bulb) {
+                bulb.style.background = on ? 'rgba(255,255,255,0.25)' : '#153358';
+                bulb.style.boxShadow = on ? '0 0 28px rgba(255,255,255,0.55)' : 'none';
+                bulb.style.borderColor = on ? '#FFFFFF' : '#2E5280';
+              }
+              if (core) core.style.background = on ? '#FFFFFF' : '#2E5280';
+              if (stateEl) stateEl.textContent = on ? 'HIGH (5.0V)' : 'LOW (0.0V)';
+              if (serial) serial.textContent = `serial> digitalWrite(13, ${on ? 'HIGH' : 'LOW'}); // manual`;
+            });
+          });
+
+          root.querySelectorAll('[data-servo-slider]').forEach((slider) => {
+            slider.addEventListener('click', (e) => e.stopPropagation());
+            slider.addEventListener('input', (e) => {
+              const uid = slider.getAttribute('data-servo-slider');
+              const adc = Number(e.target.value);
+              const deg = Math.round((adc / 1023) * 180);
+              const volt = ((adc / 1023) * 5).toFixed(2);
+              const pwm = Math.round(544 + (deg / 180) * (2400 - 544));
+              const arm = document.getElementById(`${uid}-arm`);
+              const adcEl = document.getElementById(`${uid}-adc`);
+              const degEl = document.getElementById(`${uid}-deg`);
+              const serial = document.getElementById(`${uid}-serial`);
+              if (arm) arm.style.transform = `rotate(${deg - 90}deg)`;
+              if (adcEl) adcEl.textContent = `A0 ADC: ${adc} (${volt}V)`;
+              if (degEl) degEl.textContent = `SERVO: ${deg}°`;
+              if (serial) serial.textContent = `serial> map(${adc}, 0, 1023, 0, 180) => ${deg}° · PWM ${pwm}µs`;
+            });
+          });
+
+          root.querySelectorAll('[data-conveyor-sample]').forEach((btn) => {
+            const samples = [
+              { name: 'Iron Ore', score: 92, action: 'ACTUATE IRON DIVERT' },
+              { name: 'Alloy Scrap', score: 81, action: 'ACTUATE IRON DIVERT' },
+              { name: 'Polymer', score: 34, action: 'PASS STANDARD LANE' },
+            ];
+            let idx = 0;
+            btn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              idx = (idx + 1) % samples.length;
+              const s = samples[idx];
+              const uid = btn.getAttribute('data-conveyor-sample');
+              const sEl = document.getElementById(`${uid}-sample`);
+              const cEl = document.getElementById(`${uid}-conf`);
+              const blk = document.getElementById(`${uid}-block`);
+              const serial = document.getElementById(`${uid}-serial`);
+              if (sEl) sEl.textContent = `AI · ${s.name.toUpperCase()}`;
+              if (cEl) cEl.textContent = `CONF ${s.score}%`;
+              if (blk) {
+                blk.setAttribute('fill', s.score >= 78 ? 'rgba(255,255,255,0.38)' : 'rgba(255,255,255,0.12)');
+                blk.setAttribute('x', String(60 + idx * 45));
+              }
+              if (serial) serial.textContent = `classifier> sample="${s.name}" score=${s.score}% => ${s.action}`;
+            });
+          });
+
+          root.querySelectorAll('[data-desk-mode]').forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              const uid = btn.getAttribute('data-desk-mode');
+              const mode = btn.getAttribute('data-mode-val');
+              const modeEl = document.getElementById(`${uid}-mode`);
+              const serial = document.getElementById(`${uid}-serial`);
+              if (modeEl) modeEl.textContent = `DESK · ${mode.toUpperCase()}`;
+              if (serial) {
+                serial.textContent =
+                  mode === 'Focus'
+                    ? 'desk-os> POMODORO MCU TIMER: 25:00 ACTIVE'
+                    : mode === 'Ambient'
+                    ? 'desk-os> LDR SENSOR: 340 LUX -> LED PWM 72%'
+                    : 'desk-os> ULTRASONIC ERGONOMIC DIST: 54 CM (OK)';
+              }
+              root.querySelectorAll(`[data-desk-mode="${uid}"]`).forEach((b) => {
+                const active = b.getAttribute('data-mode-val') === mode;
+                b.className = `px-2 py-1 text-[10px] uppercase tracking-[0.06em] rounded cursor-pointer ${
+                  active
+                    ? 'bg-white text-[#153358] font-semibold'
+                    : 'bg-[#153358] border border-[#3B6496] text-[#D0DAE6]'
+                }`;
+              });
+            });
+          });
+        }
+
+        // 5. RENDER FUNCTIONS
+        function renderEducation() {
+          const el = document.getElementById('education-timeline');
+          el.innerHTML = EDUCATION_DATA.map(
+            (edu) => `
+              <div class="relative">
+                <span aria-hidden="true" class="absolute -left-[31px] sm:-left-[39px] top-2 w-3 h-3 rounded-full bg-white border-2 border-[#153358]"></span>
+                <p class="font-oswald text-2xl sm:text-3xl font-semibold text-white">${esc(edu.period)}</p>
+                <h3 class="text-base font-semibold text-white mt-1">${esc(edu.degree)}</h3>
+                <p class="text-sm text-[#D0DAE6] mt-0.5">${esc(edu.institution)}, ${esc(edu.location)}${edu.detail ? ' — ' + esc(edu.detail) : ''}</p>
+              </div>
+            `
+          ).join('');
+        }
+
+        function renderSkills() {
+          const grid = document.getElementById('skills-grid');
+          grid.innerHTML = SKILLS_DATA.map((skill) => {
+            const active = state.activeSkillTrace === skill.name;
+            return `
+              <button
+                type="button"
+                data-skill-btn="${esc(skill.name)}"
+                aria-pressed="${active}"
+                class="p-3.5 rounded-xl border text-left flex items-center gap-3 transition-all cursor-pointer ${
+                  active
+                    ? 'bg-[#153358] text-white border-[#153358] shadow-lg'
+                    : 'bg-white text-[#153358] border-[#D8DCE3] hover:border-[#153358]'
+                }"
+              >
+                <div class="w-10 h-10 rounded-lg flex flex-col items-center justify-center shrink-0 font-oswald text-xs font-bold ${
+                  active ? 'bg-white text-[#153358]' : 'bg-[#153358] text-white'
+                }">
+                  <i data-lucide="${skill.icon}" class="w-4 h-4"></i>
+                  <span class="text-[8px] leading-none mt-0.5">${skill.code}</span>
+                </div>
+                <div class="min-w-0">
+                  <p class="text-xs font-bold leading-tight truncate">${esc(skill.name)}</p>
+                  <p class="text-[10px] mt-0.5 truncate ${active ? 'text-[#D0DAE6]' : 'text-[#64748B]'}">${esc(skill.category)}</p>
+                </div>
+              </button>
+            `;
+          }).join('');
+
+          grid.querySelectorAll('[data-skill-btn]').forEach((btn) => {
+            btn.addEventListener('click', () => {
+              const name = btn.getAttribute('data-skill-btn');
+              state.activeSkillTrace = state.activeSkillTrace === name ? null : name;
+              updateAllDynamicSections();
+            });
+          });
+        }
+
+        function renderCertifications() {
+          const grid = document.getElementById('certifications-grid');
+          grid.innerHTML = CERTIFICATIONS_DATA.map((cert) => {
+            const matches = !state.activeSkillTrace || cert.linkedSkills.includes(state.activeSkillTrace);
+            const dimmed = state.activeSkillTrace && !matches;
+            const highlighted = state.activeSkillTrace && matches;
+            const flipped = Boolean(state.flippedCerts[cert.id]);
+
+            return `
+              <div class="perspective-1200 min-h-[295px] transition-opacity duration-200 ${dimmed ? 'opacity-35' : 'opacity-100'}" data-cert-tilt="${cert.id}">
+                <div
+                  class="flip-inner cursor-pointer"
+                  data-cert-flip="${cert.id}"
+                  style="transform: rotateY(${flipped ? 180 : 0}deg);"
+                >
+                  <div class="flip-face p-5 rounded-xl bg-white border flex flex-col justify-between gap-3 shadow-[0_10px_24px_rgba(21,51,88,0.08)] ${
+                    highlighted ? 'border-[#153358] ring-2 ring-[#153358]' : 'border-[#D9DDE3] hover:border-[#153358]'
+                  }">
+                    <div class="space-y-2.5">
+                      <div class="flex items-center justify-between gap-2 text-[11px] font-medium text-[#3A434E]">
+                        <span class="inline-flex items-center gap-1.5 text-[#153358]">
+                          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                          <span>${esc(cert.category)}</span>
+                        </span>
+                        <span class="font-mono-data">${esc(cert.date.split(' at ')[0])}</span>
+                      </div>
+                      <h4 class="font-oswald text-lg uppercase tracking-tight font-bold text-[#153358] leading-snug">${esc(cert.title)}</h4>
+                      <p class="text-xs text-[#3A434E] leading-relaxed">${esc(cert.issuer)}</p>
+                      ${
+                        cert.teamOrHighlight
+                          ? `<p class="text-xs font-medium text-[#153358] bg-[#EEF2F7] border border-[#D0DAE6] rounded-md px-2.5 py-1.5">${esc(cert.teamOrHighlight)}</p>`
+                          : ''
+                      }
+                    </div>
+                    <div class="space-y-2 pt-3 border-t border-[#E6E8EC]">
+                      <p class="text-[11px] text-[#3A434E]">${esc(cert.skillsCovered.join(' · '))}</p>
+                      <div class="flex items-center justify-between gap-2">
+                        <span class="font-mono-data text-[10px] text-[#64748B] truncate max-w-[155px]">ID: ${esc(cert.certificateId)}</span>
+                        <span class="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wide text-[#153358]">
+                          <i data-lucide="rotate-cw" class="w-3 h-3"></i>
+                          <span>Flip</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flip-face flip-back p-5 rounded-xl bg-[#153358] border border-[#2E5280] text-white flex flex-col justify-between gap-3 shadow-xl">
+                    <div class="space-y-2.5 overflow-y-auto pr-1">
+                      <div class="flex items-center justify-between gap-2 text-[10px] uppercase tracking-[0.12em] font-mono-data text-[#D0DAE6]">
+                        <span>Verified Syllabus</span>
+                        <i data-lucide="rotate-cw" class="w-3.5 h-3.5"></i>
+                      </div>
+                      <ul class="space-y-1.5">
+                        ${cert.courseworkHighlights
+                          .map(
+                            (line) => `<li class="text-xs text-[#D0DAE6] flex items-start gap-2 leading-relaxed"><span class="text-white font-mono-data">—</span><span>${esc(line)}</span></li>`
+                          )
+                          .join('')}
+                      </ul>
+                      <div class="pt-2 border-t border-[#2E5280] space-y-1 text-[11px] text-[#D0DAE6]">
+                        <p><span class="text-white font-medium">Authority:</span> ${esc(cert.signatory)}</p>
+                        ${cert.durationOrHours ? `<p class="font-mono-data">Credit: ${esc(cert.durationOrHours)}</p>` : ''}
+                      </div>
+                    </div>
+                    <div class="flex items-center justify-between gap-2 pt-2.5 border-t border-[#2E5280]">
+                      <button type="button" data-cert-open="${cert.id}" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] uppercase tracking-[0.08em] font-semibold bg-white text-[#153358] hover:bg-[#F4F4F2] rounded-md cursor-pointer">
+                        <i data-lucide="file-check-2" class="w-3.5 h-3.5"></i>
+                        <span>Open Original</span>
+                      </button>
+                      <span class="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.08em] text-[#D0DAE6]">Front</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('');
+
+          grid.querySelectorAll('[data-cert-flip]').forEach((card) => {
+            card.addEventListener('click', () => {
+              const id = card.getAttribute('data-cert-flip');
+              state.flippedCerts[id] = !state.flippedCerts[id];
+              card.style.transform = `rotateY(${state.flippedCerts[id] ? 180 : 0}deg)`;
+            });
+          });
+
+          grid.querySelectorAll('[data-cert-open]').forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              const cert = CERTIFICATIONS_DATA.find((c) => c.id === btn.getAttribute('data-cert-open'));
+              if (cert) openCertificateModal(cert);
+            });
+          });
+        }
+
+        function renderProjects() {
+          const spotlightEl = document.getElementById('featured-project-spotlight');
+          const proj = PROJECTS_DATA.find((p) => p.id === state.featuredProjectId) || PROJECTS_DATA[0];
+
+          spotlightEl.innerHTML = `
+            <span class="font-mono-data text-xs uppercase tracking-wider text-[#D0DAE6]">Selected Spotlight · ${esc(proj.index)}</span>
+            <h3 class="font-oswald text-2xl sm:text-3xl font-bold uppercase text-white">${esc(proj.title)}</h3>
+            <p class="text-sm text-[#D0DAE6] leading-relaxed">${esc(proj.summary)}</p>
+            <ul class="space-y-2 text-sm text-[#D0DAE6]">
+              ${proj.technicalDetails.map((d) => `<li class="flex items-start gap-2"><span class="text-white font-bold">•</span><span>${esc(d)}</span></li>`).join('')}
+            </ul>
+            <div class="pt-2">
+              <button type="button" id="btn-spotlight-sandbox" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#153358] font-semibold text-xs uppercase tracking-wider hover:bg-[#F4F4F2] transition-colors cursor-pointer">
+                <span>Open Case Study Sandbox</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          `;
+
+          document.getElementById('btn-spotlight-sandbox').addEventListener('click', () => openProjectModal(proj));
+
+          const grid = document.getElementById('projects-grid');
+          grid.innerHTML = PROJECTS_DATA.map((p, idx) => {
+            const matches = !state.activeSkillTrace || p.linkedSkills.includes(state.activeSkillTrace);
+            const dimmed = state.activeSkillTrace && !matches;
+            const highlighted = state.activeSkillTrace && matches;
+
+            return `
+              <article
+                data-project-card="${p.id}"
+                class="rounded-[6px] bg-[#0E2440] border p-4 flex flex-col justify-between gap-3 cursor-pointer transition-all ${
+                  idx === 0 ? 'sm:col-span-2' : ''
+                } ${
+                  highlighted
+                    ? 'border-white ring-2 ring-white'
+                    : dimmed
+                    ? 'opacity-35 border-[#2E5280]'
+                    : 'border-[#2E5280] hover:border-white'
+                }"
+              >
+                <div class="flex items-center justify-between gap-2">
+                  <div>
+                    <p class="font-mono-data text-[10px] text-[#D0DAE6]">${esc(p.index)} · ${esc(p.status.toUpperCase())}</p>
+                    <h3 class="font-oswald text-lg uppercase font-bold text-white">${esc(p.title)}</h3>
+                  </div>
+                  <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#D0DAE6] shrink-0"></i>
+                </div>
+                <div class="h-44">${createInteractiveWidgetHTML(p, true, 'card')}</div>
+                <p class="text-[11px] text-[#D0DAE6]">${esc(p.tools.join(' · '))}</p>
+              </article>
+            `;
+          }).join('');
+
+          grid.querySelectorAll('[data-project-card]').forEach((card) => {
+            const id = card.getAttribute('data-project-card');
+            card.addEventListener('mouseenter', () => {
+              if (state.featuredProjectId !== id) {
+                state.featuredProjectId = id;
+                const p = PROJECTS_DATA.find((x) => x.id === id);
+                if (p) {
+                  spotlightEl.querySelector('span').textContent = `Selected Spotlight · ${p.index}`;
+                  spotlightEl.querySelector('h3').textContent = p.title;
+                  spotlightEl.querySelector('p').textContent = p.summary;
+                }
+              }
+            });
+            card.addEventListener('click', () => {
+              const p = PROJECTS_DATA.find((x) => x.id === id);
+              if (p) openProjectModal(p);
+            });
+          });
+
+          bindWidgetEvents(grid);
+        }
+
+        function renderFeaturedVertical() {
+          const el = document.getElementById('featured-vertical-cards');
+          el.innerHTML = PROJECTS_DATA.map(
+            (p) => `
+              <button
+                type="button"
+                data-vert-proj="${p.id}"
+                class="group aspect-[9/15] rounded-2xl bg-[#0E2440] border-2 border-white/25 hover:border-white p-4 flex flex-col justify-between text-left transition-all hover:-translate-y-1.5 cursor-pointer"
+              >
+                <div class="flex items-center justify-between text-[10px] font-mono-data text-[#D0DAE6]">
+                  <span>${esc(p.index)}</span>
+                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 group-hover:text-white"></i>
+                </div>
+                <div class="space-y-2">
+                  <p class="text-[10px] uppercase tracking-wider text-[#D0DAE6]">${esc(p.category)}</p>
+                  <h3 class="font-oswald text-lg uppercase font-bold text-white leading-tight">${esc(p.title)}</h3>
+                  <p class="text-xs text-[#D0DAE6] line-clamp-3 leading-relaxed">${esc(p.summary)}</p>
+                </div>
+                <div class="pt-3 border-t border-[#2E5280] text-[10px] font-mono-data text-white">${esc(p.tools[0])}</div>
+              </button>
+            `
+          ).join('');
+
+          el.querySelectorAll('[data-vert-proj]').forEach((btn) => {
+            btn.addEventListener('click', () => {
+              const p = PROJECTS_DATA.find((x) => x.id === btn.getAttribute('data-vert-proj'));
+              if (p) openProjectModal(p);
+            });
+          });
+        }
+
+        function renderPassionQuadcopter() {
+          const el = document.getElementById('passion-quadcopter-widget');
+          el.innerHTML = createInteractiveWidgetHTML(PROJECTS_DATA[0], false, 'passion');
+          bindWidgetEvents(el);
+        }
+
+        function renderGithubSlot() {
+          const slot = document.getElementById('github-link-slot');
+          if (state.editingGithub) {
+            slot.innerHTML = `
+              <form id="form-github" class="flex items-center gap-1.5">
+                <input type="url" id="input-github-url" placeholder="https://github.com/..." class="px-3 py-2 text-xs rounded-lg bg-white border border-[#153358] text-[#153358] w-44 focus:outline-none" />
+                <button type="submit" class="px-3 py-2 text-xs rounded-lg bg-[#153358] text-white font-semibold cursor-pointer">Save</button>
+              </form>
+            `;
+            document.getElementById('form-github').addEventListener('submit', (e) => {
+              e.preventDefault();
+              const val = document.getElementById('input-github-url').value.trim();
+              if (val) state.githubUrl = val;
+              state.editingGithub = false;
+              renderGithubSlot();
+              refreshIcons();
+            });
+          } else if (state.githubUrl) {
+            slot.innerHTML = `
+              <a href="${esc(state.githubUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#153358] text-white text-xs font-semibold">
+                <i data-lucide="link-2" class="w-4 h-4"></i>
+                <span>GitHub</span>
+              </a>
+            `;
+          } else {
+            slot.innerHTML = `
+              <button type="button" id="btn-edit-github" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-white border border-dashed border-[#153358] text-[#153358] text-xs font-semibold cursor-pointer">
+                <i data-lucide="link-2" class="w-4 h-4"></i>
+                <span>GitHub [Add Link]</span>
+              </button>
+            `;
+            document.getElementById('btn-edit-github').addEventListener('click', () => {
+              state.editingGithub = true;
+              renderGithubSlot();
+            });
+          }
+        }
+
+        function updateSkillTraceUI() {
+          const bar = document.getElementById('skill-trace-bar');
+          const label = document.getElementById('skill-trace-label');
+          const paajiExp = document.getElementById('exp-col-paaji');
+          const sihExp = document.getElementById('exp-col-sih');
+          const campusExp = document.getElementById('exp-col-campus');
+
+          if (!state.activeSkillTrace) {
+            bar.classList.add('hidden');
+            paajiExp.classList.remove('opacity-35');
+            sihExp.classList.remove('opacity-35');
+            campusExp.classList.remove('opacity-35');
+            return;
+          }
+
+          const count =
+            PROJECTS_DATA.filter((p) => p.linkedSkills.includes(state.activeSkillTrace)).length +
+            CERTIFICATIONS_DATA.filter((c) => c.linkedSkills.includes(state.activeSkillTrace)).length;
+
+          bar.classList.remove('hidden');
+          label.textContent = `SKILL HIGHLIGHTER: "${state.activeSkillTrace}" (${count} matching projects & credentials)`;
+
+          const paajiSkills = ['Canva', 'Content Strategy', 'Social Media Marketing Management'];
+          paajiExp.classList.toggle('opacity-35', !paajiSkills.includes(state.activeSkillTrace));
+          sihExp.classList.toggle('opacity-35', !['Problem-Solving', 'Teamwork'].includes(state.activeSkillTrace));
+          campusExp.classList.toggle('opacity-35', !['Arduino', 'Basic Electronics'].includes(state.activeSkillTrace));
+        }
+
+        function updateAllDynamicSections() {
+          updateSkillTraceUI();
+          renderSkills();
+          renderCertifications();
+          renderProjects();
+          refreshIcons();
+        }
+
+        // 6. MODALS
+        function closeAllModals() {
+          ['modal-project', 'modal-certificate', 'modal-resume', 'modal-summary', 'modal-contact', 'modal-command'].forEach((id) => {
+            document.getElementById(id).classList.add('hidden');
+          });
+        }
+
+        function openProjectModal(project) {
+          const modal = document.getElementById('modal-project');
+          const panel = document.getElementById('modal-project-panel');
+          const customUrl = state.projectUrls[project.id] || '';
+
+          panel.innerHTML = `
+            <div class="sticky top-0 z-10 flex items-start justify-between gap-4 px-6 py-5 bg-[#0E2440]/95 backdrop-blur-md border-b border-[#2E5280]">
+              <div class="space-y-1">
+                <div class="flex flex-wrap items-center gap-2 text-xs text-[#D0DAE6]">
+                  <span class="font-mono-data text-white">${esc(project.index)}</span>
+                  <span>·</span>
+                  <span>Case Study Sandbox</span>
+                  <span>·</span>
+                  <span>${esc(project.status)}</span>
+                </div>
+                <h2 class="font-oswald text-2xl uppercase font-bold text-white">${esc(project.title)}</h2>
+              </div>
+              <button type="button" data-close-modal class="p-2 rounded-lg text-[#D0DAE6] hover:text-white hover:bg-white/10 cursor-pointer">
+                <i data-lucide="x" class="w-4 h-4"></i>
+              </button>
+            </div>
+            <div class="p-6 space-y-6 flex-1">
+              ${createInteractiveWidgetHTML(project, false, 'drawer')}
+              <div class="space-y-3">
+                <div class="p-4 rounded-xl bg-[#0E2440] border border-[#2E5280]">
+                  <p class="text-xs font-mono-data text-white mb-1">01. PROBLEM FRAMING</p>
+                  <p class="text-sm text-[#D0DAE6] leading-relaxed">${esc(project.problem)}</p>
+                </div>
+                <div class="p-4 rounded-xl bg-[#0E2440] border border-[#2E5280]">
+                  <p class="text-xs font-mono-data text-white mb-1">02. SYSTEM ARCHITECTURE</p>
+                  <p class="text-sm text-[#D0DAE6] leading-relaxed">${esc(project.architecture)}</p>
+                </div>
+                <div class="p-4 rounded-xl bg-[#0E2440] border border-[#2E5280]">
+                  <p class="text-xs font-mono-data text-white mb-1">03. OUTCOME &amp; PROGRESS</p>
+                  <p class="text-sm text-[#D0DAE6] leading-relaxed">${esc(project.outcome)}</p>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <p class="text-xs text-[#D0DAE6]">Click a skill to highlight its applications across slides:</p>
+                <div class="flex flex-wrap gap-2">
+                  ${project.linkedSkills
+                    .map(
+                      (s) =>
+                        `<button type="button" data-drawer-skill="${esc(s)}" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white/10 hover:bg-white hover:text-[#153358] text-white border border-[#2E5280] transition-colors cursor-pointer">${esc(s)}</button>`
+                    )
+                    .join('')}
+                </div>
+              </div>
+              <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-[#2E5280]">
+                <span class="text-xs text-[#D0DAE6]">Tools: ${esc(project.tools.join(' · '))}</span>
+                <div id="drawer-link-box">
+                  ${
+                    customUrl
+                      ? `<a href="${esc(customUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-md bg-white text-[#153358]">Open Repository</a>`
+                      : `<button type="button" id="btn-drawer-add-link" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md bg-white/10 border border-[#2E5280] text-white cursor-pointer">[Add Link]</button>`
+                  }
+                </div>
+              </div>
+            </div>
+          `;
+
+          modal.classList.remove('hidden');
+          bindWidgetEvents(panel);
+          refreshIcons();
+
+          panel.querySelector('[data-close-modal]').addEventListener('click', closeAllModals);
+          panel.querySelectorAll('[data-drawer-skill]').forEach((b) => {
+            b.addEventListener('click', () => {
+              state.activeSkillTrace = b.getAttribute('data-drawer-skill');
+              closeAllModals();
+              updateAllDynamicSections();
+              document.getElementById('slide-4').scrollIntoView({ behavior: 'smooth' });
+            });
+          });
+
+          const addBtn = document.getElementById('btn-drawer-add-link');
+          if (addBtn) {
+            addBtn.addEventListener('click', () => {
+              const box = document.getElementById('drawer-link-box');
+              box.innerHTML = `
+                <form id="form-proj-url" class="flex items-center gap-2">
+                  <input type="url" id="input-proj-url" placeholder="https://github.com/..." class="px-3 py-1.5 text-xs bg-[#0E2440] border border-[#2E5280] rounded text-white w-48" />
+                  <button type="submit" class="px-3 py-1.5 text-xs font-semibold rounded bg-white text-[#153358] cursor-pointer">Save</button>
+                </form>
+              `;
+              document.getElementById('form-proj-url').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const val = document.getElementById('input-proj-url').value.trim();
+                if (val) state.projectUrls[project.id] = val;
+                openProjectModal(project);
+              });
+            });
+          }
+        }
+
+        function openCertificateModal(cert) {
+          const modal = document.getElementById('modal-certificate');
+          const panel = document.getElementById('modal-certificate-panel');
+
+          panel.innerHTML = `
+            <div class="flex items-start justify-between gap-4 px-6 py-5 bg-[#0E2440] border-b border-[#2E5280]">
+              <div class="space-y-1">
+                <p class="text-xs font-mono-data text-[#D0DAE6]">${esc(cert.category)} · ${esc(cert.date)}</p>
+                <h2 class="font-oswald text-2xl uppercase font-bold text-white">${esc(cert.title)}</h2>
+                <p class="text-xs text-[#D0DAE6]">${esc(cert.issuer)}</p>
+              </div>
+              <button type="button" data-close-modal class="p-2 rounded-lg text-[#D0DAE6] hover:text-white hover:bg-white/10 cursor-pointer">
+                <i data-lucide="x" class="w-4 h-4"></i>
+              </button>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6">
+              <div class="lg:col-span-7 rounded-xl bg-[#0B1B30] border border-[#2E5280] overflow-hidden flex flex-col">
+                <div class="min-h-[340px] flex items-center justify-center bg-[#091526]">
+                  ${
+                    cert.fileType === 'image'
+                      ? `<img src="${esc(cert.fileUrl)}" alt="${esc(cert.title)}" referrerpolicy="no-referrer" class="w-full max-h-[400px] object-contain p-3" />`
+                      : `<iframe src="${esc(cert.fileUrl)}#toolbar=0" title="${esc(cert.title)}" class="w-full h-[380px] bg-white"></iframe>`
+                  }
+                </div>
+                <div class="flex items-center justify-between gap-3 px-4 py-3 bg-[#0E2440] border-t border-[#2E5280]">
+                  <span class="text-xs font-mono-data text-[#D0DAE6]">Attached Original Document</span>
+                  <div class="flex items-center gap-2">
+                    <a href="${esc(cert.fileUrl)}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-xs font-medium rounded-md bg-white/10 text-white">Open Tab</a>
+                    <a href="${esc(cert.fileUrl)}" download class="px-3 py-1.5 text-xs font-semibold rounded-md bg-white text-[#153358]">Download</a>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-5 space-y-4 text-xs">
+                ${
+                  cert.teamOrHighlight
+                    ? `<p class="p-3 rounded-lg bg-[#153358] border border-white/25 text-white font-medium">${esc(cert.teamOrHighlight)}</p>`
+                    : ''
+                }
+                <div>
+                  <span class="text-[#D0DAE6] block mb-1">Credential ID</span>
+                  <p class="font-mono-data text-white break-all bg-[#0E2440] p-2.5 rounded border border-[#2E5280]">${esc(cert.certificateId)}</p>
+                </div>
+                <div>
+                  <span class="text-[#D0DAE6] block mb-1">Signatory / Authority</span>
+                  <p class="text-white">${esc(cert.signatory)}</p>
+                </div>
+                <div>
+                  <span class="text-[#D0DAE6] block mb-1">Verified Skills</span>
+                  <p class="text-white">${esc(cert.skillsCovered.join(' · '))}</p>
+                </div>
+              </div>
+            </div>
+          `;
+
+          modal.classList.remove('hidden');
+          refreshIcons();
+          panel.querySelector('[data-close-modal]').addEventListener('click', closeAllModals);
+        }
+
+        function openResumeModal() {
+          const modal = document.getElementById('modal-resume');
+          const panel = document.getElementById('modal-resume-panel');
+
+          panel.innerHTML = `
+            <div class="flex flex-wrap items-center justify-between gap-4 px-6 py-4 bg-[#0E2440] border-b border-[#2E5280]">
+              <div>
+                <h2 class="text-base font-semibold text-white">Curriculum Vitae — ${esc(PROFILE_DATA.fullName)}</h2>
+                <p class="text-xs text-[#D0DAE6]">Extracted directly from attached resume &amp; verified credentials</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button type="button" id="btn-print-resume" class="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium rounded-lg bg-white/10 hover:bg-white/20 text-white cursor-pointer">
+                  <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+                  <span>Print Sheet</span>
+                </button>
+                <a href="${esc(PROFILE_DATA.resumePdfUrl)}" download="Krisha_Patel_Resume.pdf" class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-white text-[#153358]">
+                  <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                  <span>Original PDF</span>
+                </a>
+                <button type="button" data-close-modal class="p-2 rounded-lg text-[#D0DAE6] hover:text-white cursor-pointer">
+                  <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+            <div class="max-h-[75vh] overflow-y-auto p-4 md:p-8 bg-[#0B1B30]">
+              <div id="printable-resume-sheet" class="bg-white text-[#141416] rounded-lg p-6 md:p-10 max-w-3xl mx-auto shadow-lg text-sm leading-relaxed">
+                <div class="text-center border-b border-neutral-300 pb-5 mb-6">
+                  <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-neutral-900">KRISHA PATEL</h1>
+                  <p class="text-xs md:text-sm text-neutral-600 mt-1.5">${esc(PROFILE_DATA.location)} · ${esc(PROFILE_DATA.phone)} · ${esc(PROFILE_DATA.email)}</p>
+                  <p class="text-xs text-neutral-600 mt-0.5 font-mono-data">${esc(PROFILE_DATA.linkedinDisplay)}</p>
+                </div>
+                <section class="mb-5">
+                  <h2 class="text-xs font-bold tracking-wider text-neutral-900 border-b border-neutral-200 pb-1 mb-2">SUMMARY</h2>
+                  <p class="text-neutral-700 text-xs md:text-sm">${esc(PROFILE_DATA.summary)}</p>
+                </section>
+                <section class="mb-5">
+                  <h2 class="text-xs font-bold tracking-wider text-neutral-900 border-b border-neutral-200 pb-1 mb-2">EDUCATION</h2>
+                  <div class="space-y-1.5">
+                    ${EDUCATION_DATA.map(
+                      (edu) => `
+                      <div class="flex flex-col sm:flex-row sm:justify-between text-xs md:text-sm">
+                        <span><strong>${esc(edu.degree)}</strong> — ${esc(edu.institution)}, ${esc(edu.location)}</span>
+                        <span class="font-mono-data text-xs text-neutral-600">${esc(edu.period)}${edu.detail ? ' · ' + esc(edu.detail) : ''}</span>
+                      </div>`
+                    ).join('')}
+                  </div>
+                </section>
+                <section class="mb-5">
+                  <h2 class="text-xs font-bold tracking-wider text-neutral-900 border-b border-neutral-200 pb-1 mb-2">PROJECTS &amp; CAD WORK</h2>
+                  <ul class="space-y-1.5 text-xs md:text-sm text-neutral-700 list-disc pl-4">
+                    ${PROJECTS_DATA.map((p) => `<li><strong>${esc(p.title)}:</strong> ${esc(p.summary)}</li>`).join('')}
+                  </ul>
+                </section>
+                <section class="mb-5">
+                  <h2 class="text-xs font-bold tracking-wider text-neutral-900 border-b border-neutral-200 pb-1 mb-2">EXPERIENCE</h2>
+                  <p class="text-xs md:text-sm font-semibold text-neutral-900">Social Media Manager — PAAJI KI KAKSHA, Ahmedabad (May 2026 – September 2026)</p>
+                  <ul class="mt-1 space-y-1 text-xs md:text-sm text-neutral-700 list-disc pl-4">
+                    <li>Coordinated social media content management across multiple channels to enhance brand visibility.</li>
+                    <li>Crafted engaging post captions and stories aligned with classroom learning themes.</li>
+                    <li>Used platform calendars and scheduling tools to plan content posts and analyzed engagement metrics.</li>
+                  </ul>
+                </section>
+                <section>
+                  <h2 class="text-xs font-bold tracking-wider text-neutral-900 border-b border-neutral-200 pb-1 mb-2">CERTIFICATIONS &amp; ACCOMPLISHMENTS</h2>
+                  <ul class="space-y-1 text-xs text-neutral-700 list-disc pl-4">
+                    ${CERTIFICATIONS_DATA.map((c) => `<li><strong>${esc(c.title)}</strong> (${esc(c.date)})</li>`).join('')}
+                    ${PROFILE_DATA.accomplishments.map((a) => `<li>${esc(a)}</li>`).join('')}
+                  </ul>
+                </section>
+              </div>
+            </div>
+          `;
+
+          modal.classList.remove('hidden');
+          refreshIcons();
+          panel.querySelector('[data-close-modal]').addEventListener('click', closeAllModals);
+          document.getElementById('btn-print-resume').addEventListener('click', () => window.print());
+        }
+
+        function openSummaryModal() {
+          const modal = document.getElementById('modal-summary');
+          const panel = document.getElementById('modal-summary-panel');
+
+          panel.innerHTML = `
+            <div class="flex items-start justify-between gap-4 px-6 py-5 bg-[#0E2440] border-b border-[#2E5280]">
+              <div>
+                <p class="text-xs font-mono-data text-[#D0DAE6] mb-1">30-SECOND EXECUTIVE BRIEF · PROFESSOR VIEW</p>
+                <h2 class="font-oswald text-2xl uppercase font-bold text-white">Krisha Patel — Technical Snapshot</h2>
+              </div>
+              <button type="button" data-close-modal class="p-2 rounded-lg text-[#D0DAE6] hover:text-white cursor-pointer">
+                <i data-lucide="x" class="w-4 h-4"></i>
+              </button>
+            </div>
+            <div class="p-6 space-y-4">
+              <p class="text-sm text-[#D0DAE6] leading-relaxed">${esc(PROFILE_DATA.summary)}</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <div class="p-3.5 rounded-xl bg-[#0E2440] border border-[#2E5280]">
+                  <p class="font-bold text-white mb-1">Academic Standing</p>
+                  <p class="text-[#D0DAE6]">B.Tech ECE, Karnavati University (Expected 2030) · Class XII 69% · Class X 88%.</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-[#0E2440] border border-[#2E5280]">
+                  <p class="font-bold text-white mb-1">CAD &amp; Hardware Craft</p>
+                  <p class="text-[#D0DAE6]">Quadcopter 3D in SOLIDWORKS 2024, Arduino digital &amp; servo control in C, Iron-Conveyor AI.</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-[#0E2440] border border-[#2E5280]">
+                  <p class="font-bold text-white mb-1">Hackathons &amp; Brand</p>
+                  <p class="text-[#D0DAE6]">Top 100 Teams (Team RuptureX, SIH 2026) · 52nd Rank First Hackathon · Paaji Ki Kaksha.</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-[#0E2440] border border-[#2E5280]">
+                  <p class="font-bold text-white mb-1">Verified Training</p>
+                  <p class="text-[#D0DAE6]">5 certificates across SOLIDWORKS 2024 (10h), LinkedIn Learning AI, Jio Institute, and PMI.</p>
+                </div>
+              </div>
+              <div class="flex justify-end gap-3 pt-2">
+                <button type="button" id="btn-sum-resume" class="px-4 py-2 text-xs font-semibold rounded-full bg-white text-[#153358] cursor-pointer">Open Resume</button>
+                <button type="button" id="btn-sum-contact" class="px-4 py-2 text-xs font-semibold rounded-full bg-[#153358] border border-white text-white cursor-pointer">Contact</button>
+              </div>
+            </div>
+          `;
+
+          modal.classList.remove('hidden');
+          refreshIcons();
+          panel.querySelector('[data-close-modal]').addEventListener('click', closeAllModals);
+          document.getElementById('btn-sum-resume').addEventListener('click', () => {
+            closeAllModals();
+            openResumeModal();
+          });
+          document.getElementById('btn-sum-contact').addEventListener('click', () => {
+            closeAllModals();
+            openContactModal();
+          });
+        }
+
+        function openContactModal() {
+          const modal = document.getElementById('modal-contact');
+          const panel = document.getElementById('modal-contact-panel');
+
+          panel.innerHTML = `
+            <div class="flex items-center justify-between px-6 py-5 bg-[#0E2440] border-b border-[#2E5280]">
+              <div>
+                <h2 class="font-oswald text-xl uppercase font-bold text-white">Send Me a Message</h2>
+                <p class="text-xs text-[#D0DAE6]">Direct reachout to ${esc(PROFILE_DATA.email)}</p>
+              </div>
+              <button type="button" data-close-modal class="p-2 rounded-lg text-[#D0DAE6] hover:text-white cursor-pointer">
+                <i data-lucide="x" class="w-4 h-4"></i>
+              </button>
+            </div>
+            <form id="form-contact" class="p-6 space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input type="text" id="c-name" required placeholder="Your Name" class="px-3.5 py-2.5 text-sm rounded-lg bg-[#0E2440] border border-[#2E5280] text-white" />
+                <input type="email" id="c-email" required placeholder="Your Email" class="px-3.5 py-2.5 text-sm rounded-lg bg-[#0E2440] border border-[#2E5280] text-white" />
+              </div>
+              <input type="text" id="c-sub" required placeholder="Subject" class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-[#0E2440] border border-[#2E5280] text-white" />
+              <textarea id="c-msg" rows="4" required placeholder="Share project details or collaboration inquiry..." class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-[#0E2440] border border-[#2E5280] text-white resize-none"></textarea>
+              <div class="flex justify-end gap-3">
+                <button type="submit" class="px-5 py-2.5 text-xs font-semibold uppercase tracking-wider rounded-full bg-white text-[#153358] cursor-pointer">Compose Email</button>
+              </div>
+            </form>
+          `;
+
+          modal.classList.remove('hidden');
+          refreshIcons();
+          panel.querySelector('[data-close-modal]').addEventListener('click', closeAllModals);
+          document.getElementById('form-contact').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const n = document.getElementById('c-name').value;
+            const em = document.getElementById('c-email').value;
+            const s = document.getElementById('c-sub').value;
+            const m = document.getElementById('c-msg').value;
+            window.location.href = `mailto:${PROFILE_DATA.email}?subject=${encodeURIComponent(s)}&body=${encodeURIComponent(`Name: ${n}\nEmail: ${em}\n\n${m}`)}`;
+          });
+        }
+
+        function openCommandPalette() {
+          const modal = document.getElementById('modal-command');
+          const panel = document.getElementById('modal-command-panel');
+
+          const items = [
+            { title: 'Professor Quick-Summary Mode (30s Brief)', group: 'Action', fn: openSummaryModal },
+            { title: state.inspectorMode ? 'Disable Inspector Mode' : 'Enable Inspector Mode', group: 'Action', fn: toggleInspectorMode },
+            { title: 'Open Printable Resume View', group: 'Action', fn: openResumeModal },
+            ...PROJECTS_DATA.map((p) => ({
+              title: `${p.index}. ${p.title}`,
+              group: 'Project',
+              fn: () => openProjectModal(p),
+            })),
+            ...SKILLS_DATA.map((s) => ({
+              title: `Highlight Skill: ${s.name}`,
+              group: 'Skill',
+              fn: () => {
+                state.activeSkillTrace = s.name;
+                updateAllDynamicSections();
+                document.getElementById('slide-4').scrollIntoView({ behavior: 'smooth' });
+              },
+            })),
+            ...CERTIFICATIONS_DATA.map((c) => ({
+              title: c.title,
+              group: 'Credential',
+              fn: () => openCertificateModal(c),
+            })),
+          ];
+
+          panel.innerHTML = `
+            <div class="flex items-center gap-3 px-4 py-3.5 border-b border-[#2E5280] bg-[#0E2440]">
+              <i data-lucide="search" class="w-4 h-4 text-[#D0DAE6]"></i>
+              <input id="cmd-input" type="text" placeholder="Search skills, Quadcopter CAD, certificates, or actions..." class="w-full bg-transparent text-sm text-white placeholder:text-[#94A3B8] focus:outline-none" />
+              <button type="button" data-close-modal class="p-1 text-[#D0DAE6] hover:text-white cursor-pointer"><i data-lucide="x" class="w-4 h-4"></i></button>
+            </div>
+            <div id="cmd-list" class="max-h-[54vh] overflow-y-auto divide-y divide-[#2E5280]/40 p-2"></div>
+          `;
+
+          modal.classList.remove('hidden');
+          refreshIcons();
+          const input = document.getElementById('cmd-input');
+          const list = document.getElementById('cmd-list');
+          panel.querySelector('[data-close-modal]').addEventListener('click', closeAllModals);
+
+          function renderList(q) {
+            const filtered = items.filter((it) => it.title.toLowerCase().includes(q.toLowerCase()));
+            list.innerHTML = filtered
+              .map(
+                (it, i) => `
+                <button type="button" data-cmd-idx="${i}" class="w-full text-left px-3.5 py-2.5 rounded-lg hover:bg-white/10 flex items-center justify-between gap-4 cursor-pointer">
+                  <span class="text-sm text-white">${esc(it.title)}</span>
+                  <span class="font-mono-data text-[11px] text-[#D0DAE6]">${esc(it.group)}</span>
+                </button>`
+              )
+              .join('');
+
+            list.querySelectorAll('[data-cmd-idx]').forEach((b) => {
+              b.addEventListener('click', () => {
+                const chosen = filtered[Number(b.getAttribute('data-cmd-idx'))];
+                closeAllModals();
+                chosen.fn();
+              });
+            });
+          }
+
+          renderList('');
+          input.focus();
+          input.addEventListener('input', () => renderList(input.value));
+        }
+
+        // 7. INSPECTOR MODE & TELEMETRY
+        let rafId = 0;
+        function toggleInspectorMode() {
+          state.inspectorMode = !state.inspectorMode;
+          document.body.classList.toggle('inspector-on', state.inspectorMode);
+          const btn = document.getElementById('btn-inspector-toggle');
+          btn.setAttribute('aria-checked', String(state.inspectorMode));
+          btn.className = state.inspectorMode
+            ? 'inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wide rounded-full border bg-white text-[#153358] border-white transition-colors whitespace-nowrap shrink-0 cursor-pointer'
+            : 'inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wide rounded-full border border-[#2E5280] bg-[#153358] text-[#D0DAE6] hover:border-white hover:text-white transition-colors whitespace-nowrap shrink-0 cursor-pointer';
+
+          if (rafId) cancelAnimationFrame(rafId);
+          if (state.inspectorMode) {
+            let frames = 0;
+            let last = performance.now();
+            const tick = (now) => {
+              frames += 1;
+              if (now - last >= 600) {
+                const fps = Math.min(120, Math.round((frames * 1000) / (now - last)));
+                document.getElementById('tel-fps').textContent = `FPS: ${fps}`;
+                document.getElementById('tel-dom').textContent = `DOM NODES: ${document.querySelectorAll('*').length}`;
+                document.getElementById('tel-vp').textContent = `VIEWPORT: ${window.innerWidth}×${window.innerHeight}`;
+                frames = 0;
+                last = now;
+              }
+              if (state.inspectorMode) rafId = requestAnimationFrame(tick);
+            };
+            rafId = requestAnimationFrame(tick);
+          }
+        }
+
+        // 8. PHOTO UPLOAD PREVIEW
+        const photoInput = document.getElementById('input-photo-file');
+        document.getElementById('btn-upload-photo').addEventListener('click', () => photoInput.click());
+        document.getElementById('btn-reset-photo').addEventListener('click', () => {
+          state.customPhoto = null;
+          updatePhotos(PROFILE_DATA.photoUrl);
+          document.getElementById('btn-reset-photo').classList.add('hidden');
+        });
+        photoInput.addEventListener('change', (e) => {
+          const f = e.target.files && e.target.files[0];
+          if (!f) return;
+          const reader = new FileReader();
+          reader.onload = () => {
+            if (typeof reader.result === 'string') {
+              state.customPhoto = reader.result;
+              updatePhotos(reader.result);
+              document.getElementById('btn-reset-photo').classList.remove('hidden');
+            }
+          };
+          reader.readAsDataURL(f);
+        });
+
+        function updatePhotos(src) {
+          ['profile-photo', 'about-polaroid-photo', 'skills-portrait-photo', 'phone-avatar-photo'].forEach((id) => {
+            const img = document.getElementById(id);
+            if (img) img.src = src;
+          });
+        }
+
+        // 9. WIRE STATIC CONTROLS & INITIALIZE
+        document.getElementById('btn-inspector-toggle').addEventListener('click', toggleInspectorMode);
+        document.getElementById('btn-open-resume').addEventListener('click', openResumeModal);
+        document.getElementById('btn-impact-resume').addEventListener('click', openResumeModal);
+        document.getElementById('btn-footer-resume').addEventListener('click', openResumeModal);
+        document.getElementById('btn-open-summary').addEventListener('click', openSummaryModal);
+        document.getElementById('btn-phone-summary').addEventListener('click', openSummaryModal);
+        document.getElementById('btn-impact-email').addEventListener('click', openContactModal);
+        document.getElementById('btn-footer-contact').addEventListener('click', openContactModal);
+        document.getElementById('btn-open-cmd').addEventListener('click', openCommandPalette);
+        document.getElementById('btn-inspect-quadcopter').addEventListener('click', () => openProjectModal(PROJECTS_DATA[0]));
+
+        document.getElementById('btn-clear-skill').addEventListener('click', () => {
+          state.activeSkillTrace = null;
+          updateAllDynamicSections();
+        });
+
+        document.getElementById('btn-copy-email').addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(PROFILE_DATA.email);
+            const label = document.getElementById('copy-email-text');
+            label.textContent = 'COPIED TO CLIPBOARD';
+            setTimeout(() => {
+              label.textContent = PROFILE_DATA.email;
+            }, 2000);
+          } catch (_) {}
+        });
+
+        // Backdrop & Escape closes modals
+        ['modal-project', 'modal-certificate', 'modal-resume', 'modal-summary', 'modal-contact', 'modal-command'].forEach((id) => {
+          const el = document.getElementById(id);
+          el.addEventListener('click', (e) => {
+            if (e.target === el) closeAllModals();
+          });
+        });
+
+        window.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') closeAllModals();
+          if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+            e.preventDefault();
+            openCommandPalette();
+          }
+        });
+
+        // Initial Render
+        renderEducation();
+        renderFeaturedVertical();
+        renderPassionQuadcopter();
+        renderGithubSlot();
+        updateAllDynamicSections();
+      })();
+    </script>
+  </body>
+</html>

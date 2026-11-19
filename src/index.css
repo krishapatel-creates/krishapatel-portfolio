@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #153358;
+    color: #FFFFFF;
+    overflow-x: hidden;
+  }
+}
+
+.font-fraunces {
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+.font-oswald {
+  font-family: 'Oswald', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-sans-body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-mono-data {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Polaroid Card Shadow & Transition */
+.polaroid-frame {
+  background-color: #FFFFFF;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.polaroid-frame:hover {
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.28);
+}
+
+/* Realistic Smartphone Mockup Bezel */
+.phone-mockup {
+  border: 4px solid #111111;
+  border-radius: 26px;
+  box-shadow: 0 18px 40px rgba(21, 51, 88, 0.24);
+}
+
+/* Rotating Circular Stamp */
+@keyframes stampSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-stamp-spin {
+  animation: stampSpin 24s linear infinite;
+}
+
+/* Subtle Corner Sticker Hover Lift */
+.sticker-badge {
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sticker-badge:hover {
+  transform: translateY(-4px) scale(1.04);
+}
+
+/* Inspector Mode Grid Overlay */
+.inspector-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.inspector-grid-light {
+  background-image:
+    linear-gradient(to right, rgba(21, 51, 88, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(21, 51, 88, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* 3D Flip Card utilities */
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-stamp-spin {
+    animation: none;
+  }
+  .polaroid-frame,
+  .sticker-badge {
+    transition: none;
+  }
+}
+
+/* Print styling for Resume View modal */
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  #printable-resume-sheet,
+  #printable-resume-sheet * {
+    visibility: visible !important;
+  }
+  #printable-resume-sheet {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 24px !important;
+    background: #ffffff !important;
+    color: #111111 !important;
+    box-shadow: none !important;
+    border: none !important;
+    overflow: visible !important;
+  }
+}
