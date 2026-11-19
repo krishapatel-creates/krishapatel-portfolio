@@ -357,39 +357,18 @@
                 <div class="w-full h-full rounded-t-full rounded-b-2xl overflow-hidden bg-[#0E2440] relative">
                   <img
                     id="profile-photo"
-                    src="./assets/aistudio/IMG_4539__1__b843ef36.jpeg"
+                    src="./assets/aistudio/IMG_4541_45cfd35c.jpeg"
                     alt="Krisha Patel portrait"
                     referrerpolicy="no-referrer"
-                    class="w-full h-full object-cover object-[50%_32%] scale-[1.18] transition-transform duration-300 group-hover:scale-[1.24]"
+                    class="w-full h-full object-cover object-[44%_50%] origin-[37%_62%] scale-[1.85] transition-transform duration-300 group-hover:scale-[1.92]"
                   />
 
                   <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#153358] via-[#153358]/80 to-transparent pt-10 pb-3 px-4 text-center">
                     <p class="font-oswald text-xl uppercase tracking-wide text-white">Krisha Patel</p>
                     <p class="text-[11px] text-[#D0DAE6]">B.Tech ECE · Karnavati University</p>
                   </div>
-
-                  <div class="absolute top-4 inset-x-0 flex justify-center gap-2 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity">
-                    <button
-                      type="button"
-                      id="btn-upload-photo"
-                      class="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-semibold rounded-full bg-white text-[#153358] shadow-lg cursor-pointer"
-                    >
-                      <i data-lucide="camera" class="w-3.5 h-3.5"></i>
-                      <span>Upload Photo</span>
-                    </button>
-                    <button
-                      type="button"
-                      id="btn-reset-photo"
-                      aria-label="Reset photo"
-                      class="hidden p-1.5 rounded-full bg-[#153358] text-white shadow-lg cursor-pointer"
-                    >
-                      <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
-                    </button>
-                  </div>
                 </div>
               </div>
-
-              <input id="input-photo-file" type="file" accept="image/*" class="hidden" aria-label="Upload custom profile photo preview" />
             </div>
 
             <!-- Hero Actions -->
@@ -441,10 +420,10 @@
               <div class="w-full aspect-[4/4] overflow-hidden bg-[#153358]">
                 <img
                   id="about-polaroid-photo"
-                  src="./assets/aistudio/IMG_4539__1__b843ef36.jpeg"
+                  src="./assets/aistudio/IMG_4541_45cfd35c.jpeg"
                   alt="Krisha Patel workspace portrait"
                   referrerpolicy="no-referrer"
-                  class="w-full h-full object-cover object-[50%_30%] scale-125"
+                  class="w-full h-full object-cover object-[44%_48%] origin-[37%_62%] scale-[1.75]"
                 />
               </div>
               <div class="pt-4 flex items-center justify-between text-xs text-[#3A434E]">
@@ -563,10 +542,10 @@
                 <div class="w-48 h-44 rounded-t-full overflow-hidden border-4 border-[#153358] border-b-0 bg-[#153358]">
                   <img
                     id="skills-portrait-photo"
-                    src="./assets/aistudio/IMG_4539__1__b843ef36.jpeg"
+                    src="./assets/aistudio/IMG_4541_45cfd35c.jpeg"
                     alt="Krisha Patel profile accent"
                     referrerpolicy="no-referrer"
-                    class="w-full h-full object-cover object-[50%_30%] scale-125"
+                    class="w-full h-full object-cover object-[44%_48%] origin-[37%_60%] scale-[1.8]"
                   />
                 </div>
               </div>
@@ -624,13 +603,15 @@
                 <div class="space-y-3">
                   <div class="w-16 h-1.5 rounded-full bg-white/25 mx-auto"></div>
                   <div class="flex items-center gap-3 pt-2">
-                    <img
-                      id="phone-avatar-photo"
-                      src="./assets/aistudio/IMG_4539__1__b843ef36.jpeg"
-                      alt="Krisha Patel avatar"
-                      referrerpolicy="no-referrer"
-                      class="w-11 h-11 rounded-full object-cover object-[50%_30%] border-2 border-white"
-                    />
+                    <div class="w-11 h-11 rounded-full overflow-hidden border-2 border-white shrink-0 bg-[#0E2440]">
+                      <img
+                        id="phone-avatar-photo"
+                        src="./assets/aistudio/IMG_4541_45cfd35c.jpeg"
+                        alt="Krisha Patel avatar"
+                        referrerpolicy="no-referrer"
+                        class="w-full h-full object-cover object-[44%_48%] origin-[39%_52%] scale-[2.2]"
+                      />
+                    </div>
                     <div>
                       <p class="font-oswald text-sm uppercase font-bold">Krisha Patel</p>
                       <p class="text-[10px] text-[#D0DAE6]">B.Tech ECE · Karnavati Univ.</p>
@@ -1023,7 +1004,7 @@
           email: 'krishakp1412@gmail.com',
           linkedinDisplay: 'linkedin.com/in/krisha-patel-a21534433',
           linkedinUrl: 'https://www.linkedin.com/in/krisha-patel-a21534433',
-          photoUrl: './assets/aistudio/IMG_4539__1__b843ef36.jpeg',
+          photoUrl: './assets/aistudio/IMG_4541_45cfd35c.jpeg',
           resumePdfUrl: './assets/aistudio/Krisha_Patel_Resume__5__771f14fc.pdf',
           summary:
             'First-year Electronics and Communication Engineering student at Karnavati University. Developing practical knowledge of Arduino, C programming, and SOLIDWORKS 3D CAD alongside core electronics fundamentals. Contributing through teamwork, clear communication, and structured problem-solving during project work.',
@@ -1305,7 +1286,6 @@
           projectUrls: {},
           githubUrl: '',
           editingGithub: false,
-          customPhoto: null,
           flippedCerts: {},
         };
 
@@ -2427,36 +2407,7 @@
           }
         }
 
-        // 8. PHOTO UPLOAD PREVIEW
-        const photoInput = document.getElementById('input-photo-file');
-        document.getElementById('btn-upload-photo').addEventListener('click', () => photoInput.click());
-        document.getElementById('btn-reset-photo').addEventListener('click', () => {
-          state.customPhoto = null;
-          updatePhotos(PROFILE_DATA.photoUrl);
-          document.getElementById('btn-reset-photo').classList.add('hidden');
-        });
-        photoInput.addEventListener('change', (e) => {
-          const f = e.target.files && e.target.files[0];
-          if (!f) return;
-          const reader = new FileReader();
-          reader.onload = () => {
-            if (typeof reader.result === 'string') {
-              state.customPhoto = reader.result;
-              updatePhotos(reader.result);
-              document.getElementById('btn-reset-photo').classList.remove('hidden');
-            }
-          };
-          reader.readAsDataURL(f);
-        });
-
-        function updatePhotos(src) {
-          ['profile-photo', 'about-polaroid-photo', 'skills-portrait-photo', 'phone-avatar-photo'].forEach((id) => {
-            const img = document.getElementById(id);
-            if (img) img.src = src;
-          });
-        }
-
-        // 9. WIRE STATIC CONTROLS & INITIALIZE
+        // 8. WIRE STATIC CONTROLS & INITIALIZE
         document.getElementById('btn-inspector-toggle').addEventListener('click', toggleInspectorMode);
         document.getElementById('btn-open-resume').addEventListener('click', openResumeModal);
         document.getElementById('btn-impact-resume').addEventListener('click', openResumeModal);

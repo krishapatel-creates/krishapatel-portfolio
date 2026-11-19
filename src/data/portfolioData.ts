@@ -70,7 +70,7 @@ export const PROFILE_DATA = {
   email: 'krishakp1412@gmail.com',
   linkedinDisplay: 'linkedin.com/in/krisha-patel-a21534433',
   linkedinUrl: 'https://www.linkedin.com/in/krisha-patel-a21534433',
-  photoUrl: '/assets/aistudio/IMG_4539__1__b843ef36.jpeg',
+  photoUrl: '/assets/aistudio/IMG_4541_45cfd35c.jpeg',
   resumePdfUrl: '/assets/aistudio/Krisha_Patel_Resume__5__771f14fc.pdf',
   summary:
     'First-year Electronics and Communication Engineering student at Karnavati University. Developing practical knowledge of Arduino, C programming, and SOLIDWORKS 3D CAD alongside core electronics fundamentals. Contributing through teamwork, clear communication, and structured problem-solving during project work.',
