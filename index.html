@@ -1337,6 +1337,231 @@
           </div>
         </div>
 
+        <!-- Hardware & Embedded Systems Prototypes: Belt Guard AI & Autonomous Line-Maze Robot -->
+        <div class="space-y-10 mb-16">
+          <!-- 01. Belt Guard AI (Industrial Monitoring) -->
+          <article id="beltguard-showcase" class="rounded-[24px] border border-[#242826] bg-[#0D0F0E] overflow-hidden shadow-[0_28px_70px_rgba(0,0,0,0.65)]">
+            <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+              <!-- Left 7 Cols: Interactive 3D Conveyor Assembly Viewport -->
+              <div id="beltguard-3d-viewport" class="lg:col-span-7 relative h-[410px] sm:h-[470px] bg-[#0E1110] overflow-hidden border-b lg:border-b-0 lg:border-r border-[#1E2220]">
+                <div id="beltguard-3d-mount" class="absolute inset-0"></div>
+
+                <!-- Top Minimal HUD Labels (Solid background, zero backdrop-blur) -->
+                <div class="pointer-events-none absolute top-4 left-4 right-4 z-10 flex items-center justify-between text-[11px] font-mono tracking-[0.18em] uppercase text-[#A3ABA6]">
+                  <span class="px-2.5 py-1 rounded-md bg-[#0A0C0B]/90 border border-[#242927]">01 / 02</span>
+                  <span class="px-2.5 py-1 rounded-md bg-[#0A0C0B]/90 border border-[#242927]">Illustrative Conveyor Assembly</span>
+                </div>
+
+                <!-- Collapsible Unified Bottom Control Dock -->
+                <div
+                  id="beltguard-dock-wrapper"
+                  class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center w-[94%] max-w-[580px] transition-transform duration-300"
+                >
+                  <button
+                    id="beltguard-dock-toggle"
+                    type="button"
+                    class="mb-1.5 px-3 py-0.5 rounded-full bg-[#131715] border border-[#2C3330] text-[10px] font-semibold text-[#C8D0CB] hover:text-white transition-colors"
+                  >
+                    &#9662; Hide Controls
+                  </button>
+                  <div
+                    id="beltguard-dock-panel"
+                    class="w-full rounded-2xl bg-[#0D100F]/95 border border-[#272D2A] px-3.5 py-2.5 shadow-[0_14px_34px_rgba(0,0,0,0.6)] flex flex-wrap items-center justify-between gap-2 text-[11px]"
+                  >
+                    <button
+                      id="beltguard-explode-btn"
+                      type="button"
+                      class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#191E1C] border border-[#3A433E] hover:border-[#F5E8D5] text-white font-semibold transition-colors"
+                    >
+                      <span id="beltguard-explode-label">Explode assembly</span>
+                      <span aria-hidden="true">&#8635;</span>
+                    </button>
+
+                    <button
+                      id="beltguard-run-btn"
+                      type="button"
+                      class="px-3 py-1.5 rounded-full bg-[#FF6B00] hover:bg-[#e55f00] text-white font-bold transition-colors"
+                    >
+                      Belt Drive: On
+                    </button>
+
+                    <div class="flex items-center gap-1 rounded-full bg-[#141816] border border-[#2A302D] p-0.5">
+                      <button type="button" data-belt-cam="iso" class="belt-cam-btn px-2.5 py-1 rounded-full bg-white text-black font-bold">Iso</button>
+                      <button type="button" data-belt-cam="side" class="belt-cam-btn px-2.5 py-1 rounded-full text-[#B8C2BC] hover:text-white font-semibold">Side</button>
+                      <button type="button" data-belt-cam="top" class="belt-cam-btn px-2.5 py-1 rounded-full text-[#B8C2BC] hover:text-white font-semibold">Top</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right 5 Cols: Editorial Engineering Spec & Technical Approach -->
+              <div class="lg:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-[#0B0D0C]">
+                <div>
+                  <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D7C4A3]">
+                    Industrial Monitoring
+                  </p>
+                  <h3 class="text-[32px] sm:text-[40px] font-extrabold text-white tracking-[-0.03em] leading-[1.06] mt-2.5">
+                    Belt Guard AI
+                  </h3>
+                  <p class="text-[17px] sm:text-[18px] font-semibold text-white/95 leading-[1.45] mt-4">
+                    An embedded prototype exploring early signs of conveyor belt damage.
+                  </p>
+                  <p class="text-[14px] text-[#A3ABA6] leading-[1.65] mt-3.5">
+                    A damaged belt joint can interrupt a line. The question is whether several small changes in the mechanism could give an earlier indication of trouble.
+                  </p>
+
+                  <!-- Expandable Technical Approach Accordion -->
+                  <div class="mt-6 border-t border-b border-[#232826]">
+                    <button
+                      id="beltguard-tech-toggle"
+                      type="button"
+                      aria-expanded="false"
+                      aria-controls="beltguard-tech-panel"
+                      class="w-full py-3.5 flex items-center justify-between text-left text-[14px] font-semibold text-white hover:text-[#D7C4A3] transition-colors"
+                    >
+                      <span>Technical approach</span>
+                      <span id="beltguard-tech-icon" class="font-mono text-[18px] leading-none text-[#A3ABA6]">+</span>
+                    </button>
+                    <div id="beltguard-tech-panel" class="hidden pb-4 text-[13px] text-[#B8C0BB] leading-relaxed space-y-2">
+                      <p>
+                        <strong class="text-white">Optical &amp; Splice Inspection:</strong> Overhead gantry optical module monitors splice seam continuity and surface tear anomalies per belt revolution.
+                      </p>
+                      <p>
+                        <strong class="text-white">Load &amp; Relay Interlock:</strong> ESP32 samples motor current &amp; roller telemetry, triggering hardware relay motor shutdown before tear propagation stalls the line.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-6 flex flex-wrap items-center justify-between gap-3">
+                  <p class="font-mono text-[12px] text-[#9AA39E] tracking-wide">
+                    ESP32 &nbsp;&middot;&nbsp; Sensor integration &nbsp;&middot;&nbsp; Motor control &nbsp;&middot;&nbsp; Relay shutdown
+                  </p>
+                  <button
+                    type="button"
+                    data-open-beltguard-dossier
+                    class="inline-flex items-center gap-1.5 rounded-full border border-[#343B37] bg-[#141816] hover:border-[#FF6B00] hover:text-[#FF6B00] text-white text-[12px] font-semibold px-4 py-2 transition-colors"
+                  >
+                    <span>System Architecture</span>
+                    <span aria-hidden="true">↗</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 02. Autonomous Line-Maze Robot (Robotics / Embedded Programming) -->
+          <article id="mazebot-showcase" class="rounded-[24px] border border-[#242826] bg-[#0D0F0E] overflow-hidden shadow-[0_28px_70px_rgba(0,0,0,0.65)]">
+            <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+              <!-- Left 7 Cols: Interactive 3D Component Layout Viewport -->
+              <div id="mazebot-3d-viewport" class="lg:col-span-7 relative h-[410px] sm:h-[470px] bg-[#0D100F] overflow-hidden border-b lg:border-b-0 lg:border-r border-[#1E2220]">
+                <div id="mazebot-3d-mount" class="absolute inset-0"></div>
+
+                <!-- Top Minimal HUD Labels (Solid background, zero backdrop-blur) -->
+                <div class="pointer-events-none absolute top-4 left-4 right-4 z-10 flex items-center justify-between text-[11px] font-mono tracking-[0.18em] uppercase text-[#A3ABA6]">
+                  <span class="px-2.5 py-1 rounded-md bg-[#0A0C0B]/90 border border-[#242927]">02 / 02</span>
+                  <span class="px-2.5 py-1 rounded-md bg-[#0A0C0B]/90 border border-[#242927]">Illustrative Component Layout</span>
+                </div>
+
+                <!-- Collapsible Unified Bottom Control Dock -->
+                <div
+                  id="mazebot-dock-wrapper"
+                  class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center w-[94%] max-w-[580px] transition-transform duration-300"
+                >
+                  <button
+                    id="mazebot-dock-toggle"
+                    type="button"
+                    class="mb-1.5 px-3 py-0.5 rounded-full bg-[#131715] border border-[#2C3330] text-[10px] font-semibold text-[#C8D0CB] hover:text-white transition-colors"
+                  >
+                    &#9662; Hide Controls
+                  </button>
+                  <div
+                    id="mazebot-dock-panel"
+                    class="w-full rounded-2xl bg-[#0D100F]/95 border border-[#272D2A] px-3.5 py-2.5 shadow-[0_14px_34px_rgba(0,0,0,0.6)] flex flex-wrap items-center justify-between gap-2 text-[11px]"
+                  >
+                    <button
+                      id="mazebot-separate-btn"
+                      type="button"
+                      class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#191E1C] border border-[#3A433E] hover:border-[#F5E8D5] text-white font-semibold transition-colors"
+                    >
+                      <span id="mazebot-separate-label">Separate layers</span>
+                      <span aria-hidden="true">&#8635;</span>
+                    </button>
+
+                    <button
+                      id="mazebot-sweep-btn"
+                      type="button"
+                      class="px-3 py-1.5 rounded-full bg-[#FF6B00] hover:bg-[#e55f00] text-white font-bold transition-colors"
+                    >
+                      QTR Scan: On
+                    </button>
+
+                    <div class="flex items-center gap-1 rounded-full bg-[#141816] border border-[#2A302D] p-0.5">
+                      <button type="button" data-maze-cam="iso" class="maze-cam-btn px-2.5 py-1 rounded-full bg-white text-black font-bold">Iso</button>
+                      <button type="button" data-maze-cam="top" class="maze-cam-btn px-2.5 py-1 rounded-full text-[#B8C2BC] hover:text-white font-semibold">Top</button>
+                      <button type="button" data-maze-cam="front" class="maze-cam-btn px-2.5 py-1 rounded-full text-[#B8C2BC] hover:text-white font-semibold">Front</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right 5 Cols: Editorial Engineering Spec & Technical Approach -->
+              <div class="lg:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-[#0B0D0C]">
+                <div>
+                  <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D7C4A3]">
+                    Robotics / Embedded Programming
+                  </p>
+                  <h3 class="text-[32px] sm:text-[40px] font-extrabold text-white tracking-[-0.03em] leading-[1.06] mt-2.5">
+                    Autonomous Line-Maze Robot
+                  </h3>
+                  <p class="text-[17px] sm:text-[18px] font-semibold text-white/95 leading-[1.45] mt-4">
+                    A compact mobile platform exploring line sensing, motor control and navigation through a line maze.
+                  </p>
+                  <p class="text-[14px] text-[#A3ABA6] leading-[1.65] mt-3.5">
+                    The robot needs to distinguish the path beneath it, translate changes in the line into steering and make decisions at intersections.
+                  </p>
+
+                  <!-- Expandable Technical Approach Accordion -->
+                  <div class="mt-6 border-t border-b border-[#232826]">
+                    <button
+                      id="mazebot-tech-toggle"
+                      type="button"
+                      aria-expanded="false"
+                      aria-controls="mazebot-tech-panel"
+                      class="w-full py-3.5 flex items-center justify-between text-left text-[14px] font-semibold text-white hover:text-[#D7C4A3] transition-colors"
+                    >
+                      <span>Technical approach</span>
+                      <span id="mazebot-tech-icon" class="font-mono text-[18px] leading-none text-[#A3ABA6]">+</span>
+                    </button>
+                    <div id="mazebot-tech-panel" class="hidden pb-4 text-[13px] text-[#B8C0BB] leading-relaxed space-y-2">
+                      <p>
+                        <strong class="text-white">PID Line Tracking &amp; Solver:</strong> Raspberry Pi Pico 2 samples the 8-channel QTR-8 IR bar at 1 kHz to compute weighted path error and log L/R/S/B turns for shortest-path maze replay.
+                      </p>
+                      <p>
+                        <strong class="text-white">Dual-Deck Power &amp; Drive:</strong> 2S LiPo regulated via an MP1584 buck converter powers a TB6612FNG dual H-bridge driving twin N20 geared motors with quadrature encoders.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-6 flex flex-wrap items-center justify-between gap-3">
+                  <p class="font-mono text-[12px] text-[#9AA39E] tracking-wide">
+                    Pico 2 &nbsp;&middot;&nbsp; QTR-8 &nbsp;&middot;&nbsp; TB6612FNG &nbsp;&middot;&nbsp; N20 encoders &nbsp;&middot;&nbsp; 2S LiPo &nbsp;&middot;&nbsp; MP1584
+                  </p>
+                  <button
+                    type="button"
+                    data-open-mazebot-dossier
+                    class="inline-flex items-center gap-1.5 rounded-full border border-[#343B37] bg-[#141816] hover:border-[#FF6B00] hover:text-[#FF6B00] text-white text-[12px] font-semibold px-4 py-2 transition-colors"
+                  >
+                    <span>Hardware Stack</span>
+                    <span aria-hidden="true">↗</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
         <!-- Interactive Category Filter Tabs -->
         <div id="project-tabs" role="tablist" aria-label="Project Filter Categories" class="flex flex-wrap items-center gap-3.5 mb-12"></div>
 
@@ -1928,6 +2153,36 @@
       },
       {
         categoryIndex: 0,
+        isBeltGuardElaborated: true,
+        title: 'Belt Guard AI',
+        subtitle: 'Industrial Monitoring · ESP32, Optical Splice Sensing & Relay Interlock',
+        badge: 'Industrial AI & ESP32',
+        theme: 'beltguard',
+        summary:
+          'An embedded prototype exploring early signs of conveyor belt damage. Monitors belt splice joints, roller load variations, and overhead optical anomalies to interrupt hazardous operation before full belt failure.',
+        insight:
+          'A damaged belt joint can interrupt a line. Integrating incremental mechanism-level changes—roller bearing vibration, motor current drift, and top-gantry optical checks—gives an earlier indication of trouble.',
+        outcome:
+          'Combined ESP32 telemetry, sensor integration, motorized conveyor drive control, and automated relay shutdown logic.',
+        pdfUrl: './assets/aistudio/KU202605162_KRISHA_PATEL__FAI_LINKEDIN_CERTIFICATION_4d7435b9.pdf',
+      },
+      {
+        categoryIndex: 0,
+        isMazeBotElaborated: true,
+        title: 'Autonomous Line-Maze Robot',
+        subtitle: 'Robotics / Embedded Programming · Pico 2, QTR-8 & TB6612FNG',
+        badge: 'Robotics & Firmware',
+        theme: 'mazebot',
+        summary:
+          'A compact mobile platform exploring line sensing, motor control and navigation through a line maze—distinguishing paths beneath it, converting line error into PID steering, and deciding turns at intersections.',
+        insight:
+          'Paired an 8-channel QTR-8 IR reflectance array with twin N20 quadrature-encoded gearmotors driven by a TB6612FNG dual H-bridge and MP1584 buck regulator powered from a 2S LiPo battery.',
+        outcome:
+          'Deterministic 1 kHz PID path tracking and intersection decision loop executing on a Raspberry Pi Pico 2.',
+        pdfUrl: './assets/aistudio/KU202605162_KRISHA_PATEL_PPS_LINKEDIN_CERTIFICATE_32318c2e.pdf',
+      },
+      {
+        categoryIndex: 0,
         title: 'Potentiometer-Based Servo Motor Control',
         subtitle: 'Analog Input (A0) → PWM Angular Actuation',
         badge: 'Embedded & Arduino',
@@ -1939,20 +2194,6 @@
         outcome:
           'Verified smooth real-time mechanical response across full 180-degree sweeps using Arduino, C Programming & Basic Electronics.',
         pdfUrl: './assets/aistudio/KU202605162_KRISHA_PATEL_PPS_LINKEDIN_CERTIFICATE_32318c2e.pdf',
-      },
-      {
-        categoryIndex: 0,
-        title: 'Iron-Conveyor Belt AI',
-        subtitle: 'Team Project · AI & Automated Sorting Concept',
-        badge: 'AI & Concept',
-        theme: 'blue',
-        summary:
-          'Collaborated across a multidisciplinary engineering team on an AI-integrated conveyor-belt concept linking feed mechanics with automated detection logic.',
-        insight:
-          'Coordinated workflow framing between sensor inspection stages and AI classification thresholds.',
-        outcome:
-          'Bridged foundational AI & ML knowledge (LinkedIn Learning + Jio Institute) with hardware automation teamwork.',
-        pdfUrl: './assets/aistudio/KU202605162_KRISHA_PATEL__FAI_LINKEDIN_CERTIFICATION_4d7435b9.pdf',
       },
       {
         categoryIndex: 0,
@@ -1980,6 +2221,20 @@
         outcome:
           'Certificate ID: KU-SIH36H-ACH-2026-0311 (10th–11th Sep 2026).',
         pdfUrl: './assets/aistudio/Krisha_Patel_-_RuptureX_76f9848d.pdf',
+      },
+      {
+        categoryIndex: 0,
+        title: 'Arduino LED Control',
+        subtitle: 'Digital GPIO Pin 13 · Deterministic Hardware Lab',
+        badge: 'Arduino & C',
+        theme: 'amber',
+        summary:
+          'Programmed an Arduino microcontroller in C to drive LED indicators cleanly with deterministic HIGH (5V) and LOW (0V) timing intervals.',
+        insight:
+          'Validated breadboard polarity and current-limiting resistor values to protect microcontroller GPIO pins.',
+        outcome:
+          'Foundational hardware verification lab supporting C Programming Foundations.',
+        pdfUrl: './assets/aistudio/KU202605162_KRISHA_PATEL_PPS_LINKEDIN_CERTIFICATE_32318c2e.pdf',
       },
 
       // Tab 1: CAD & Mechanical (2 Cards)
@@ -2015,7 +2270,37 @@
         pdfUrl: './assets/aistudio/KU202605162_KRISHA_PATEL_EDG_LINKEDIN_CERTIFICATION_39ceca03.pdf',
       },
 
-      // Tab 2: Embedded & Arduino (3 Cards)
+      // Tab 2: Embedded & Arduino (5 Cards)
+      {
+        categoryIndex: 2,
+        isBeltGuardElaborated: true,
+        title: 'Belt Guard AI',
+        subtitle: 'ESP32 · Sensor Integration · Relay Shutdown',
+        badge: 'Industrial Embedded',
+        theme: 'beltguard',
+        summary:
+          'Embedded conveyor prototype combining gantry optical monitoring, drive load sensing, and ESP32 relay shutdown for early detection of belt joint damage.',
+        insight:
+          'Detects splice anomalies and drive deviations ahead of catastrophic belt interruption.',
+        outcome:
+          'Interactive 3D exploded conveyor assembly with real-time relay & optical status logic.',
+        pdfUrl: './assets/aistudio/KU202605162_KRISHA_PATEL__FAI_LINKEDIN_CERTIFICATION_4d7435b9.pdf',
+      },
+      {
+        categoryIndex: 2,
+        isMazeBotElaborated: true,
+        title: 'Autonomous Line-Maze Robot',
+        subtitle: 'Pico 2 · QTR-8 · TB6612FNG · N20 Encoders',
+        badge: 'Robotics & PID',
+        theme: 'mazebot',
+        summary:
+          'Compact differential-drive line-maze robot using QTR-8 reflectance sensing, N20 geared encoder motors, and Raspberry Pi Pico 2 intersection navigation.',
+        insight:
+          'Dual-deck PCB stack separates 2S LiPo + MP1584 regulation and TB6612FNG power stage from upper logic.',
+        outcome:
+          'Interactive multi-layer 3D hardware stack with smooth PID steering & maze decision logic.',
+        pdfUrl: './assets/aistudio/KU202605162_KRISHA_PATEL_PPS_LINKEDIN_CERTIFICATE_32318c2e.pdf',
+      },
       {
         categoryIndex: 2,
         title: 'Arduino LED Control',
@@ -2458,6 +2743,93 @@
       let activeCategoryIndex = 0;
 
       function getCaseVisualHtml(project) {
+        if (project.theme === 'beltguard') {
+          return `
+            <div class="relative w-full h-full bg-[#0D100F] overflow-hidden">
+              <svg viewBox="0 0 600 380" class="w-full h-full object-cover opacity-90" aria-hidden="true">
+                <defs>
+                  <linearGradient id="beltguardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#171C1B"/>
+                    <stop offset="100%" stop-color="#090B0A"/>
+                  </linearGradient>
+                </defs>
+                <rect width="600" height="380" fill="url(#beltguardBg)"/>
+                <!-- Conveyor Belt & Silver Rails -->
+                <polygon points="140,210 420,145 480,185 200,255" fill="#2A2E2D" stroke="#525B58" stroke-width="2"/>
+                <line x1="195" y1="262" x2="485" y2="190" stroke="#CBD5E1" stroke-width="10" stroke-linecap="round"/>
+                <!-- Brass Bearing Hubs -->
+                <circle cx="245" cy="249" r="11" fill="#D4A359" stroke="#1F2422" stroke-width="3"/>
+                <circle cx="345" cy="224" r="11" fill="#D4A359" stroke="#1F2422" stroke-width="3"/>
+                <circle cx="445" cy="199" r="11" fill="#D4A359" stroke="#1F2422" stroke-width="3"/>
+                <!-- Cyan Finned Drive Motor -->
+                <ellipse cx="145" cy="240" rx="28" ry="34" fill="#2DD4BF" fill-opacity="0.85" stroke="#0F766E" stroke-width="3"/>
+                <!-- Overhead Gantry + Optical Sensor + ESP32 PCB -->
+                <polyline points="265,205 265,105 385,78 385,165" fill="none" stroke="#CBD5E1" stroke-width="9" stroke-linejoin="round"/>
+                <rect x="295" y="95" width="44" height="30" rx="4" fill="#18181B" stroke="#52525B"/>
+                <rect x="352" y="102" width="46" height="24" rx="3" fill="#15803D" stroke="#4ADE80"/>
+                <path d="M 358 102 C 350 75, 325 75, 317 95" fill="none" stroke="#EA580C" stroke-width="3"/>
+              </svg>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#090B0A] via-[#0D100F]/40 to-black/30 p-6 sm:p-8 flex flex-col justify-between">
+                <div class="flex items-start justify-between gap-2">
+                  <span class="px-3 py-1 rounded-full bg-[#FF6B00] text-white text-[11px] font-bold shadow-lg">${project.badge}</span>
+                  <span class="px-3 py-1 rounded-full bg-[#131715]/90 border border-[#343B37] text-[#D7C4A3] font-mono font-bold text-[10px] tracking-wider uppercase">
+                    Explode Assembly
+                  </span>
+                </div>
+                <div class="flex items-end justify-between gap-4">
+                  <div>
+                    <p class="text-[#D7C4A3] text-[12px] font-semibold mb-1">${project.subtitle}</p>
+                    <h3 class="text-white font-extrabold text-[22px] sm:text-[26px] leading-tight tracking-tight">${project.title}</h3>
+                    <p class="text-white/75 text-[12px] mt-1.5">Click for ESP32 Interlock &amp; Conveyor Sensor Architecture</p>
+                  </div>
+                  <span class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center font-bold shrink-0 group-hover:bg-[#FF6B00] group-hover:text-white transition-colors">↗</span>
+                </div>
+              </div>
+            </div>`;
+        }
+
+        if (project.theme === 'mazebot') {
+          return `
+            <div class="relative w-full h-full bg-[#0D100F] overflow-hidden">
+              <svg viewBox="0 0 600 380" class="w-full h-full object-cover opacity-90" aria-hidden="true">
+                <defs>
+                  <linearGradient id="mazebotBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#141819"/>
+                    <stop offset="100%" stop-color="#080A0A"/>
+                  </linearGradient>
+                </defs>
+                <rect width="600" height="380" fill="url(#mazebotBg)"/>
+                <!-- Lower Chassis + Wheels -->
+                <ellipse cx="420" cy="245" rx="34" ry="44" fill="#1E2422" stroke="#525B58" stroke-width="3"/>
+                <polygon points="180,220 350,150 455,215 285,290" fill="#1A1F1D" stroke="#3F4744" stroke-width="2"/>
+                <!-- Upper Carbon Deck + Pico 2 + 2S LiPo -->
+                <polygon points="180,165 345,95 450,155 285,225" fill="#232826" stroke="#64748B" stroke-width="2"/>
+                <polygon points="245,155 315,125 360,152 290,182" fill="#15803D" stroke="#4ADE80" stroke-width="1.5"/>
+                <rect x="330" y="95" width="76" height="38" rx="6" transform="rotate(24 368 114)" fill="#2563EB" stroke="#93C5FD" stroke-width="2"/>
+                <!-- Front QTR-8 Sensor Array -->
+                <polygon points="115,245 260,315 280,295 135,225" fill="#15803D" stroke="#4ADE80" stroke-width="2"/>
+                <path d="M 380 155 C 405 180, 395 235, 345 265" fill="none" stroke="#F97316" stroke-width="4"/>
+                <path d="M 372 162 C 397 187, 387 242, 337 272" fill="none" stroke="#2DD4BF" stroke-width="4"/>
+              </svg>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A0A] via-[#0D100F]/40 to-black/30 p-6 sm:p-8 flex flex-col justify-between">
+                <div class="flex items-start justify-between gap-2">
+                  <span class="px-3 py-1 rounded-full bg-[#FF6B00] text-white text-[11px] font-bold shadow-lg">${project.badge}</span>
+                  <span class="px-3 py-1 rounded-full bg-[#131715]/90 border border-[#343B37] text-[#D7C4A3] font-mono font-bold text-[10px] tracking-wider uppercase">
+                    Separate Layers
+                  </span>
+                </div>
+                <div class="flex items-end justify-between gap-4">
+                  <div>
+                    <p class="text-[#D7C4A3] text-[12px] font-semibold mb-1">${project.subtitle}</p>
+                    <h3 class="text-white font-extrabold text-[22px] sm:text-[26px] leading-tight tracking-tight">${project.title}</h3>
+                    <p class="text-white/75 text-[12px] mt-1.5">Click for QTR-8 PID Loop &amp; Dual-Deck Component Stack</p>
+                  </div>
+                  <span class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center font-bold shrink-0 group-hover:bg-[#FF6B00] group-hover:text-white transition-colors">↗</span>
+                </div>
+              </div>
+            </div>`;
+        }
+
         if (project.theme === 'studhexa') {
           return `
             <div class="relative w-full h-full bg-[#120C07] overflow-hidden">
@@ -2996,6 +3368,74 @@
         });
       }
 
+      function renderBeltGuardElaboratedPanel() {
+        if (!caseEngineering) return;
+        caseEngineering.classList.remove('hidden');
+        caseEngineering.innerHTML = `
+          <div class="rounded-2xl border border-[#2A302D] bg-[#0D100F] p-5 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-[#222725] pb-3">
+              <div>
+                <p class="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#D7C4A3]">Industrial Monitoring Architecture</p>
+                <p class="text-[14px] text-white font-bold mt-0.5">Belt Guard AI &mdash; Embedded Conveyor Fault Detection</p>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-[#FF6B00]/15 border border-[#FF6B00]/45 text-[#FF6B00] text-[11px] font-bold">
+                ESP32 + Relay Interlock
+              </span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-[12px]">
+              <div class="rounded-xl bg-[#141816] border border-[#272D2A] p-3.5">
+                <p class="text-[10px] font-mono uppercase tracking-wider text-[#D7C4A3]">Gantry Sensor Pod</p>
+                <p class="text-white font-bold mt-1">Optical Splice Watch</p>
+                <p class="text-[#A3ABA6] mt-1">Overhead camera/IR node tracks belt splice gaps and surface tear edges before full rupture.</p>
+              </div>
+              <div class="rounded-xl bg-[#141816] border border-[#272D2A] p-3.5">
+                <p class="text-[10px] font-mono uppercase tracking-wider text-[#D7C4A3]">Drive &amp; Idlers</p>
+                <p class="text-white font-bold mt-1">Finned BLDC + Brass Hubs</p>
+                <p class="text-[#A3ABA6] mt-1">Motor draw spikes &amp; roller speed dips cross-check optical alerts against mechanical drag.</p>
+              </div>
+              <div class="rounded-xl bg-[#141816] border border-[#272D2A] p-3.5">
+                <p class="text-[10px] font-mono uppercase tracking-wider text-[#D7C4A3]">Fault Protection</p>
+                <p class="text-white font-bold mt-1">ESP32 Relay Shutdown</p>
+                <p class="text-[#A3ABA6] mt-1">Latches hardware relay interlock within milliseconds to prevent conveyor belt snap.</p>
+              </div>
+            </div>
+          </div>`;
+      }
+
+      function renderMazeBotElaboratedPanel() {
+        if (!caseEngineering) return;
+        caseEngineering.classList.remove('hidden');
+        caseEngineering.innerHTML = `
+          <div class="rounded-2xl border border-[#2A302D] bg-[#0D100F] p-5 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-[#222725] pb-3">
+              <div>
+                <p class="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#D7C4A3]">Robotics / Embedded Programming</p>
+                <p class="text-[14px] text-white font-bold mt-0.5">Autonomous Line-Maze Robot &mdash; Layer Stack</p>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-[#38BDF8]/15 border border-[#38BDF8]/40 text-[#7DD3FC] text-[11px] font-bold">
+                RP2350 Pico 2 &bull; 1 kHz PID
+              </span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-[12px]">
+              <div class="rounded-xl bg-[#141816] border border-[#272D2A] p-3.5">
+                <p class="text-[10px] font-mono uppercase tracking-wider text-[#D7C4A3]">Front Sensing Bar</p>
+                <p class="text-white font-bold mt-1">QTR-8 8-Ch IR Array</p>
+                <p class="text-[#A3ABA6] mt-1">Distinguishes line contrast beneath the nose for sub-mm PID tracking &amp; T/cross detection.</p>
+              </div>
+              <div class="rounded-xl bg-[#141816] border border-[#272D2A] p-3.5">
+                <p class="text-[10px] font-mono uppercase tracking-wider text-[#D7C4A3]">Lower Drive &amp; Power</p>
+                <p class="text-white font-bold mt-1">TB6612FNG + N20 Encoders</p>
+                <p class="text-[#A3ABA6] mt-1">Twin N20 geared motors with quadrature feedback powered from a 2S LiPo &amp; MP1584 buck stage.</p>
+              </div>
+              <div class="rounded-xl bg-[#141816] border border-[#272D2A] p-3.5">
+                <p class="text-[10px] font-mono uppercase tracking-wider text-[#D7C4A3]">Upper Compute Deck</p>
+                <p class="text-white font-bold mt-1">Raspberry Pi Pico 2</p>
+                <p class="text-[#A3ABA6] mt-1">Executes steering PID + Left-Hand / shortest-path pruning across maze intersections.</p>
+              </div>
+            </div>
+          </div>`;
+      }
+
       function openCaseModal(project) {
         if (!caseModal) return;
         document.getElementById('case-modal-banner').innerHTML = getCaseVisualHtml(project);
@@ -3013,6 +3453,14 @@
           caseDialog?.classList.remove('max-w-2xl');
           caseDialog?.classList.add('max-w-4xl');
           renderStudHexaElaboratedPanel();
+        } else if (project.isBeltGuardElaborated) {
+          caseDialog?.classList.remove('max-w-2xl');
+          caseDialog?.classList.add('max-w-4xl');
+          renderBeltGuardElaboratedPanel();
+        } else if (project.isMazeBotElaborated) {
+          caseDialog?.classList.remove('max-w-2xl');
+          caseDialog?.classList.add('max-w-4xl');
+          renderMazeBotElaboratedPanel();
         } else {
           caseDialog?.classList.remove('max-w-4xl');
           caseDialog?.classList.add('max-w-2xl');
@@ -3223,6 +3671,30 @@
           e.preventDefault();
           openCaseModal(PROJECTS_DATA.find((p) => p.isStudHexaElaborated) || PROJECTS_DATA[0]);
         }
+        if (e.target.closest('[data-open-beltguard-dossier]')) {
+          e.preventDefault();
+          openCaseModal(PROJECTS_DATA.find((p) => p.isBeltGuardElaborated) || PROJECTS_DATA[0]);
+        }
+        if (e.target.closest('[data-open-mazebot-dossier]')) {
+          e.preventDefault();
+          openCaseModal(PROJECTS_DATA.find((p) => p.isMazeBotElaborated) || PROJECTS_DATA[0]);
+        }
+      });
+
+      // Technical Approach Accordions (Belt Guard AI & Line-Maze Robot)
+      [
+        ['beltguard-tech-toggle', 'beltguard-tech-panel', 'beltguard-tech-icon'],
+        ['mazebot-tech-toggle', 'mazebot-tech-panel', 'mazebot-tech-icon'],
+      ].forEach(([btnId, panelId, iconId]) => {
+        const btn = document.getElementById(btnId);
+        const panel = document.getElementById(panelId);
+        const icon = document.getElementById(iconId);
+        btn?.addEventListener('click', () => {
+          const isOpen = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!isOpen));
+          panel?.classList.toggle('hidden', isOpen);
+          if (icon) icon.textContent = isOpen ? '+' : '−';
+        });
       });
       document.getElementById('close-resume-modal')?.addEventListener('click', closeResume);
       resumeModal?.addEventListener('click', (e) => {
@@ -5381,6 +5853,1020 @@
           rotaryDialGroup.rotation.y = THREE.MathUtils.damp(rotaryDialGroup.rotation.y, state.dialAngle, 8, dt);
 
           // Smooth Camera Preset Transitions
+          if (targetCamPos && targetCamLook) {
+            camera.position.x = THREE.MathUtils.damp(camera.position.x, targetCamPos.x, 6, dt);
+            camera.position.y = THREE.MathUtils.damp(camera.position.y, targetCamPos.y, 6, dt);
+            camera.position.z = THREE.MathUtils.damp(camera.position.z, targetCamPos.z, 6, dt);
+            controls.target.x = THREE.MathUtils.damp(controls.target.x, targetCamLook.x, 6, dt);
+            controls.target.y = THREE.MathUtils.damp(controls.target.y, targetCamLook.y, 6, dt);
+            controls.target.z = THREE.MathUtils.damp(controls.target.z, targetCamLook.z, 6, dt);
+            if (camera.position.distanceTo(targetCamPos) < 0.025) {
+              targetCamPos = null;
+              targetCamLook = null;
+            }
+          }
+
+          controls.update();
+          renderer.render(scene, camera);
+        }
+
+        if (isSoftwareGl) afterDraw(tick);
+        else frameId = requestAnimationFrame(tick);
+      }
+
+      tick();
+    })();
+  </script>
+
+  <!-- Interactive Three.js 3D Studio: Belt Guard AI (Conveyor Assembly) -->
+  <script>
+    (async function initBeltGuard3DStudio() {
+      const mount = document.getElementById('beltguard-3d-mount');
+      const viewport = document.getElementById('beltguard-3d-viewport');
+      if (!mount || !viewport) return;
+
+      let THREE, OrbitControls, RoomEnvironment;
+      try {
+        [THREE, { OrbitControls }, { RoomEnvironment }] = await Promise.all([
+          import(/* @vite-ignore */ 'https://esm.sh/three@0.170.0'),
+          import(/* @vite-ignore */ 'https://esm.sh/three@0.170.0/examples/jsm/controls/OrbitControls.js'),
+          import(/* @vite-ignore */ 'https://esm.sh/three@0.170.0/examples/jsm/environments/RoomEnvironment.js'),
+        ]);
+      } catch (_) {
+        return;
+      }
+
+      const isSoftwareGl = (() => {
+        try {
+          const probe = document.createElement('canvas');
+          const gl = probe.getContext('webgl2') || probe.getContext('webgl');
+          if (!gl) return true;
+          const ext = gl.getExtension('WEBGL_debug_renderer_info');
+          const gpu = String(gl.getParameter(ext ? ext.UNMASKED_RENDERER_WEBGL : gl.RENDERER) || '');
+          gl.getExtension('WEBGL_lose_context')?.loseContext();
+          return /SwiftShader|llvmpipe|softpipe|Software|Basic Render/i.test(gpu);
+        } catch (_) {
+          return true;
+        }
+      })();
+
+      let renderer;
+      try {
+        renderer = new THREE.WebGLRenderer({ antialias: !isSoftwareGl, powerPreference: 'high-performance' });
+      } catch (_) {
+        return;
+      }
+
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.18;
+      renderer.setPixelRatio(isSoftwareGl ? 1 : Math.min(window.devicePixelRatio || 1, 2));
+      renderer.shadowMap.enabled = !isSoftwareGl;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      renderer.setSize(viewport.clientWidth, viewport.clientHeight);
+      mount.appendChild(renderer.domElement);
+
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x111413);
+      scene.fog = new THREE.FogExp2(0x111413, 0.036);
+
+      const camera = new THREE.PerspectiveCamera(
+        35,
+        viewport.clientWidth / Math.max(1, viewport.clientHeight),
+        0.1,
+        100
+      );
+      camera.position.set(3.55, 2.35, 3.85);
+
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.target.set(0.0, 0.62, 0.0);
+      controls.enableDamping = !isSoftwareGl;
+      controls.dampingFactor = 0.06;
+      controls.minDistance = 2.4;
+      controls.maxDistance = 8.5;
+      controls.maxPolarAngle = Math.PI * 0.485;
+      controls.update();
+
+      const pmremGenerator = new THREE.PMREMGenerator(renderer);
+      scene.environment = pmremGenerator.fromScene(new RoomEnvironment(), 0.04).texture;
+      pmremGenerator.dispose();
+
+      // Warm/Cool 3-point studio lighting
+      scene.add(new THREE.HemisphereLight(0xcbe4dc, 0x1a1510, 0.72));
+
+      const keyLight = new THREE.DirectionalLight(0xfff4e6, 2.25);
+      keyLight.position.set(4.2, 6.8, 4.4);
+      keyLight.castShadow = !isSoftwareGl;
+      keyLight.shadow.mapSize.set(1024, 1024);
+      keyLight.shadow.camera.left = -3;
+      keyLight.shadow.camera.right = 3;
+      keyLight.shadow.camera.top = 3;
+      keyLight.shadow.camera.bottom = -3;
+      keyLight.shadow.bias = -0.0005;
+      keyLight.shadow.normalBias = 0.02;
+      scene.add(keyLight);
+
+      const rimLight = new THREE.DirectionalLight(0x5eead4, 1.1);
+      rimLight.position.set(-4.5, 3.0, -3.5);
+      scene.add(rimLight);
+
+      const maxAniso = renderer.capabilities.getMaxAnisotropy();
+
+      // Radial contact shadow plane
+      const shadowCanvas = document.createElement('canvas');
+      shadowCanvas.width = 256;
+      shadowCanvas.height = 256;
+      const sctx = shadowCanvas.getContext('2d');
+      const sGrad = sctx.createRadialGradient(128, 128, 12, 128, 128, 124);
+      sGrad.addColorStop(0, 'rgba(0,0,0,0.68)');
+      sGrad.addColorStop(0.55, 'rgba(0,0,0,0.28)');
+      sGrad.addColorStop(1, 'rgba(0,0,0,0)');
+      sctx.fillStyle = sGrad;
+      sctx.fillRect(0, 0, 256, 256);
+      const shadowTex = new THREE.CanvasTexture(shadowCanvas);
+      shadowTex.colorSpace = THREE.SRGBColorSpace;
+      const shadowPlane = new THREE.Mesh(
+        new THREE.PlaneGeometry(5.6, 3.6),
+        new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, depthWrite: false, opacity: 0.72 })
+      );
+      shadowPlane.rotation.x = -Math.PI / 2;
+      shadowPlane.position.y = 0.004;
+      scene.add(shadowPlane);
+
+      // Procedural Conveyor Belt Texture (with damaged splice joint marker)
+      const beltCanvas = document.createElement('canvas');
+      beltCanvas.width = 512;
+      beltCanvas.height = 256;
+      const bctx = beltCanvas.getContext('2d');
+      bctx.fillStyle = '#262928';
+      bctx.fillRect(0, 0, 512, 256);
+      bctx.strokeStyle = 'rgba(255,255,255,0.045)';
+      bctx.lineWidth = 3;
+      for (let x = 0; x < 512; x += 28) {
+        bctx.beginPath();
+        bctx.moveTo(x, 0);
+        bctx.lineTo(x + 14, 128);
+        bctx.lineTo(x, 256);
+        bctx.stroke();
+      }
+      // Splice seam line + minor nick indicator monitored by Belt Guard AI
+      bctx.fillStyle = '#3b3733';
+      bctx.fillRect(244, 0, 12, 256);
+      bctx.fillStyle = '#ff6b00';
+      bctx.fillRect(246, 98, 8, 34);
+      const beltTex = new THREE.CanvasTexture(beltCanvas);
+      beltTex.colorSpace = THREE.SRGBColorSpace;
+      beltTex.wrapS = THREE.RepeatWrapping;
+      beltTex.wrapT = THREE.RepeatWrapping;
+      beltTex.repeat.set(2, 1);
+      beltTex.anisotropy = maxAniso;
+
+      // Procedural ESP32 + Relay Green PCB Texture
+      const espCanvas = document.createElement('canvas');
+      espCanvas.width = 256;
+      espCanvas.height = 160;
+      const ectx = espCanvas.getContext('2d');
+      ectx.fillStyle = '#1b5e37';
+      ectx.fillRect(0, 0, 256, 160);
+      ectx.strokeStyle = '#34d399';
+      ectx.lineWidth = 2;
+      ectx.strokeRect(8, 8, 240, 144);
+      ectx.fillStyle = '#d1d5db';
+      ectx.fillRect(28, 34, 78, 92); // RF Shield Can
+      ectx.fillStyle = '#111827';
+      ectx.fillRect(136, 36, 54, 48); // Relay / Power IC
+      ectx.fillStyle = '#e5a93b';
+      for (let i = 0; i < 10; i++) {
+        ectx.fillRect(24 + i * 20, 14, 10, 10);
+        ectx.fillRect(24 + i * 20, 136, 10, 10);
+      }
+      ectx.fillStyle = '#ffffff';
+      ectx.font = 'bold 14px monospace';
+      ectx.fillText('ESP32-BELTGUARD', 112, 114);
+      const espTex = new THREE.CanvasTexture(espCanvas);
+      espTex.colorSpace = THREE.SRGBColorSpace;
+      espTex.anisotropy = maxAniso;
+
+      // Materials (varied roughness & metalness >= 0.25 contrast)
+      const aluminumMat = new THREE.MeshStandardMaterial({ color: 0xcbd5e1, metalness: 0.88, roughness: 0.24 });
+      const darkAnodizedMat = new THREE.MeshStandardMaterial({ color: 0x1f2423, metalness: 0.65, roughness: 0.36 });
+      const brassMat = new THREE.MeshStandardMaterial({ color: 0xd9a441, metalness: 0.92, roughness: 0.22 });
+      const cyanMotorMat = new THREE.MeshStandardMaterial({ color: 0x2dd4bf, metalness: 0.72, roughness: 0.28 });
+      const rubberBeltMat = new THREE.MeshStandardMaterial({ map: beltTex, metalness: 0.08, roughness: 0.84 });
+      const redCableMat = new THREE.MeshStandardMaterial({ color: 0xdc4c34, metalness: 0.1, roughness: 0.55 });
+      const orangeWireMat = new THREE.MeshStandardMaterial({ color: 0xf97316, metalness: 0.1, roughness: 0.48 });
+      const pcbMat = new THREE.MeshStandardMaterial({ map: espTex, metalness: 0.25, roughness: 0.42 });
+      const lensMat = new THREE.MeshStandardMaterial({ color: 0x090d16, metalness: 0.9, roughness: 0.1 });
+      const scanEmissiveMat = new THREE.MeshStandardMaterial({
+        color: 0x38bdf8,
+        emissive: 0x38bdf8,
+        emissiveIntensity: 1.5,
+        roughness: 0.2,
+      });
+
+      const root = new THREE.Group();
+      scene.add(root);
+
+      // 1. Conveyor Belt & Drive Rollers
+      const beltGroup = new THREE.Group();
+      root.add(beltGroup);
+
+      const beltTop = new THREE.Mesh(new THREE.BoxGeometry(2.75, 0.06, 0.98), rubberBeltMat);
+      beltTop.position.set(0, 0.78, 0);
+      beltTop.castShadow = true;
+      beltTop.receiveShadow = true;
+      beltGroup.add(beltTop);
+
+      const beltBottom = new THREE.Mesh(new THREE.BoxGeometry(2.75, 0.04, 0.96), rubberBeltMat);
+      beltBottom.position.set(0, 0.52, 0);
+      beltGroup.add(beltBottom);
+
+      const rollerGeo = new THREE.CylinderGeometry(0.15, 0.15, 1.02, 28);
+      rollerGeo.rotateX(Math.PI / 2);
+      const rollerLeft = new THREE.Mesh(rollerGeo, darkAnodizedMat);
+      rollerLeft.position.set(-1.38, 0.65, 0);
+      rollerLeft.castShadow = true;
+      beltGroup.add(rollerLeft);
+
+      const rollerRight = new THREE.Mesh(rollerGeo, darkAnodizedMat);
+      rollerRight.position.set(1.38, 0.65, 0);
+      rollerRight.castShadow = true;
+      beltGroup.add(rollerRight);
+
+      // 2. Extruded Silver Side Rails + Brass Bearing Hubs
+      const railFrontGroup = new THREE.Group();
+      const railBackGroup = new THREE.Group();
+      root.add(railFrontGroup, railBackGroup);
+
+      function populateRail(grp, zSign) {
+        const beam = new THREE.Mesh(new THREE.BoxGeometry(2.96, 0.18, 0.08), aluminumMat);
+        beam.position.set(0, 0.65, zSign * 0.55);
+        beam.castShadow = true;
+        grp.add(beam);
+
+        const capGeo = new THREE.CylinderGeometry(0.09, 0.09, 0.08, 20);
+        capGeo.rotateX(Math.PI / 2);
+        [-1.48, 1.48].forEach((xPos) => {
+          const cap = new THREE.Mesh(capGeo, aluminumMat);
+          cap.position.set(xPos, 0.65, zSign * 0.55);
+          grp.add(cap);
+        });
+
+        [-0.9, 0.0, 0.9].forEach((xHub) => {
+          const outerCollar = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.14, 0.055, 24), aluminumMat);
+          outerCollar.rotation.x = Math.PI / 2;
+          outerCollar.position.set(xHub, 0.62, zSign * 0.61);
+          grp.add(outerCollar);
+
+          const brassRing = new THREE.Mesh(new THREE.CylinderGeometry(0.085, 0.085, 0.068, 20), brassMat);
+          brassRing.rotation.x = Math.PI / 2;
+          brassRing.position.set(xHub, 0.62, zSign * 0.615);
+          grp.add(brassRing);
+
+          const hexNut = new THREE.Mesh(new THREE.CylinderGeometry(0.038, 0.038, 0.08, 6), darkAnodizedMat);
+          hexNut.rotation.x = Math.PI / 2;
+          hexNut.position.set(xHub, 0.62, zSign * 0.62);
+          grp.add(hexNut);
+        });
+      }
+      populateRail(railFrontGroup, 1);
+      populateRail(railBackGroup, -1);
+
+      // 3. Four Flanged Support Legs (grounded at y = 0)
+      const legsGroup = new THREE.Group();
+      root.add(legsGroup);
+      const legCoords = [
+        [-1.08, 0.55],
+        [1.08, 0.55],
+        [-1.08, -0.55],
+        [1.08, -0.55],
+      ];
+      legCoords.forEach(([lx, lz]) => {
+        const post = new THREE.Mesh(new THREE.BoxGeometry(0.11, 0.58, 0.09), aluminumMat);
+        post.position.set(lx, 0.31, lz);
+        post.castShadow = true;
+        legsGroup.add(post);
+
+        const foot = new THREE.Mesh(new THREE.BoxGeometry(0.22, 0.04, 0.18), aluminumMat);
+        foot.position.set(lx, 0.02, lz);
+        foot.castShadow = true;
+        foot.receiveShadow = true;
+        legsGroup.add(foot);
+      });
+
+      // 4. Finned Cyan Drive Motor + Red Power Conduit
+      const motorGroup = new THREE.Group();
+      motorGroup.position.set(-1.66, 0.65, 0);
+      root.add(motorGroup);
+
+      const motorBody = new THREE.Mesh(new THREE.CylinderGeometry(0.23, 0.23, 0.44, 28), darkAnodizedMat);
+      motorBody.rotation.z = Math.PI / 2;
+      motorBody.castShadow = true;
+      motorGroup.add(motorBody);
+
+      for (let i = -3; i <= 3; i++) {
+        const fin = new THREE.Mesh(new THREE.CylinderGeometry(0.275, 0.275, 0.026, 28), cyanMotorMat);
+        fin.rotation.z = Math.PI / 2;
+        fin.position.x = i * 0.056;
+        fin.castShadow = true;
+        motorGroup.add(fin);
+      }
+      const motorShaft = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.22, 16), aluminumMat);
+      motorShaft.rotation.z = Math.PI / 2;
+      motorShaft.position.x = 0.24;
+      motorGroup.add(motorShaft);
+
+      const motorCap = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.22, 0.07, 24), aluminumMat);
+      motorCap.rotation.z = Math.PI / 2;
+      motorCap.position.x = -0.24;
+      motorGroup.add(motorCap);
+
+      const cableCurve = new THREE.CatmullRomCurve3([
+        new THREE.Vector3(-0.22, -0.05, 0.1),
+        new THREE.Vector3(-0.08, -0.26, 0.38),
+        new THREE.Vector3(0.45, -0.24, 0.56),
+        new THREE.Vector3(0.95, -0.1, 0.56),
+      ]);
+      const cableMesh = new THREE.Mesh(new THREE.TubeGeometry(cableCurve, 28, 0.026, 10, false), redCableMat);
+      motorGroup.add(cableMesh);
+
+      // 5. Overhead Inspection Gantry
+      const gantryGroup = new THREE.Group();
+      root.add(gantryGroup);
+
+      const pillarLeft = new THREE.Mesh(new THREE.BoxGeometry(0.085, 0.84, 0.085), aluminumMat);
+      pillarLeft.position.set(0.15, 1.12, -0.55);
+      pillarLeft.castShadow = true;
+      gantryGroup.add(pillarLeft);
+
+      const pillarRight = new THREE.Mesh(new THREE.BoxGeometry(0.085, 0.84, 0.085), aluminumMat);
+      pillarRight.position.set(0.15, 1.12, 0.55);
+      pillarRight.castShadow = true;
+      gantryGroup.add(pillarRight);
+
+      const crossbar = new THREE.Mesh(new THREE.BoxGeometry(0.095, 0.09, 1.2), aluminumMat);
+      crossbar.position.set(0.15, 1.54, 0);
+      crossbar.castShadow = true;
+      gantryGroup.add(crossbar);
+
+      // 6. Optical Vision Sensor Pod & ESP32 Relay PCB
+      const sensorGroup = new THREE.Group();
+      root.add(sensorGroup);
+
+      const camPod = new THREE.Mesh(new THREE.BoxGeometry(0.32, 0.22, 0.34), darkAnodizedMat);
+      camPod.position.set(0.12, 1.38, -0.14);
+      camPod.castShadow = true;
+      sensorGroup.add(camPod);
+
+      const lensRing = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.09, 0.06, 20), aluminumMat);
+      lensRing.position.set(0.12, 1.25, -0.14);
+      sensorGroup.add(lensRing);
+
+      const lensGlass = new THREE.Mesh(new THREE.CylinderGeometry(0.065, 0.065, 0.02, 20), lensMat);
+      lensGlass.position.set(0.12, 1.22, -0.14);
+      sensorGroup.add(lensGlass);
+
+      const scanLine = new THREE.Mesh(new THREE.BoxGeometry(0.02, 0.012, 0.82), scanEmissiveMat);
+      scanLine.position.set(0.12, 0.818, 0);
+      sensorGroup.add(scanLine);
+
+      const espBoardGroup = new THREE.Group();
+      espBoardGroup.position.set(0.24, 1.36, 0.28);
+      sensorGroup.add(espBoardGroup);
+
+      const espPcb = new THREE.Mesh(new THREE.BoxGeometry(0.38, 0.032, 0.24), pcbMat);
+      espPcb.castShadow = true;
+      espBoardGroup.add(espPcb);
+
+      const espRelay = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.09, 0.1), darkAnodizedMat);
+      espRelay.position.set(0.08, 0.06, 0);
+      espBoardGroup.add(espRelay);
+
+      // Twin curved orange jumper wires between ESP32 PCB & Vision Pod
+      [-0.04, 0.04].forEach((offset) => {
+        const wCurve = new THREE.CatmullRomCurve3([
+          new THREE.Vector3(0.22 + offset, 1.39, 0.2),
+          new THREE.Vector3(0.2 + offset, 1.66, 0.04),
+          new THREE.Vector3(0.14 + offset, 1.5, -0.1),
+        ]);
+        sensorGroup.add(new THREE.Mesh(new THREE.TubeGeometry(wCurve, 20, 0.016, 8, false), orangeWireMat));
+      });
+
+      root.traverse((obj) => {
+        if (obj.isMesh) obj.receiveShadow = true;
+      });
+
+      if (!isSoftwareGl) {
+        try { renderer.compile(scene, camera); } catch (_) {}
+      }
+
+      // Interactive State + Controls
+      let exploded = false;
+      let explodeFactor = 0;
+      let running = true;
+      let isVisible = true;
+      let targetCamPos = null;
+      let targetCamLook = null;
+
+      const camPresets = {
+        iso: { pos: new THREE.Vector3(3.55, 2.35, 3.85), look: new THREE.Vector3(0.0, 0.62, 0.0) },
+        side: { pos: new THREE.Vector3(0.0, 1.15, 4.9), look: new THREE.Vector3(0.0, 0.72, 0.0) },
+        top: { pos: new THREE.Vector3(0.05, 5.2, 0.65), look: new THREE.Vector3(0.0, 0.65, 0.0) },
+      };
+
+      controls.addEventListener('start', () => {
+        targetCamPos = null;
+        targetCamLook = null;
+      });
+
+      const explodeBtn = document.getElementById('beltguard-explode-btn');
+      const explodeLabel = document.getElementById('beltguard-explode-label');
+      explodeBtn?.addEventListener('click', () => {
+        exploded = !exploded;
+        if (explodeLabel) explodeLabel.textContent = exploded ? 'Collapse assembly' : 'Explode assembly';
+      });
+
+      const runBtn = document.getElementById('beltguard-run-btn');
+      runBtn?.addEventListener('click', () => {
+        running = !running;
+        runBtn.textContent = running ? 'Belt Drive: On' : 'Belt Drive: Paused';
+        runBtn.className = running
+          ? 'px-3 py-1.5 rounded-full bg-[#FF6B00] hover:bg-[#e55f00] text-white font-bold transition-colors'
+          : 'px-3 py-1.5 rounded-full bg-[#1C2220] border border-[#343B37] text-[#C8D0CB] font-bold transition-colors';
+      });
+
+      document.querySelectorAll('.belt-cam-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const preset = camPresets[btn.dataset.beltCam];
+          if (!preset) return;
+          targetCamPos = preset.pos.clone();
+          targetCamLook = preset.look.clone();
+          document.querySelectorAll('.belt-cam-btn').forEach((b) => {
+            b.className = b === btn
+              ? 'belt-cam-btn px-2.5 py-1 rounded-full bg-white text-black font-bold'
+              : 'belt-cam-btn px-2.5 py-1 rounded-full text-[#B8C2BC] hover:text-white font-semibold';
+          });
+        });
+      });
+
+      const dockWrap = document.getElementById('beltguard-dock-wrapper');
+      const dockToggle = document.getElementById('beltguard-dock-toggle');
+      const dockPanel = document.getElementById('beltguard-dock-panel');
+      let dockOpen = true;
+      dockToggle?.addEventListener('click', () => {
+        dockOpen = !dockOpen;
+        dockPanel?.classList.toggle('hidden', !dockOpen);
+        dockToggle.innerHTML = dockOpen ? '&#9662; Hide Controls' : '&#9652; Show Controls';
+        if (dockWrap) dockWrap.style.transform = dockOpen ? 'translate(-50%, 0)' : 'translate(-50%, 6px)';
+      });
+
+      if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver(
+          (entries) => { isVisible = Boolean(entries[0]?.isIntersecting); },
+          { threshold: 0.05 }
+        );
+        obs.observe(viewport);
+      }
+
+      new ResizeObserver(() => {
+        const w = viewport.clientWidth;
+        const h = Math.max(1, viewport.clientHeight);
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h);
+      }).observe(viewport);
+
+      const clock = new THREE.Clock();
+      let frameId = 0;
+      function afterDraw(cb) {
+        const gl = renderer.getContext();
+        const sync = gl.fenceSync ? gl.fenceSync(gl.SYNC_GPU_COMMANDS_COMPLETE, 0) : null;
+        if (!sync) { frameId = window.setTimeout(cb, 80); return; }
+        gl.flush();
+        const poll = () => {
+          const st = gl.getSyncParameter(sync, gl.SYNC_STATUS);
+          if (st === gl.UNSIGNALED) frameId = window.setTimeout(poll, 5);
+          else { gl.deleteSync(sync); frameId = window.setTimeout(cb, 80); }
+        };
+        frameId = window.setTimeout(poll, 5);
+      }
+
+      function tick() {
+        const dt = Math.min(clock.getDelta(), 0.05);
+        if (isVisible) {
+          explodeFactor = THREE.MathUtils.damp(explodeFactor, exploded ? 1 : 0, 6.5, dt);
+
+          beltGroup.position.y = explodeFactor * 0.16;
+          railFrontGroup.position.z = explodeFactor * 0.48;
+          railBackGroup.position.z = -explodeFactor * 0.48;
+          legsGroup.position.y = -explodeFactor * 0.24;
+          motorGroup.position.x = -1.66 - explodeFactor * 0.58;
+          gantryGroup.position.y = explodeFactor * 0.44;
+          sensorGroup.position.y = explodeFactor * 0.72;
+          espBoardGroup.position.z = 0.28 + explodeFactor * 0.24;
+
+          if (running) {
+            beltTex.offset.x = (beltTex.offset.x - dt * 0.24) % 1;
+            rollerLeft.rotation.z -= dt * 1.9;
+            rollerRight.rotation.z -= dt * 1.9;
+          }
+
+          if (targetCamPos && targetCamLook) {
+            camera.position.x = THREE.MathUtils.damp(camera.position.x, targetCamPos.x, 6, dt);
+            camera.position.y = THREE.MathUtils.damp(camera.position.y, targetCamPos.y, 6, dt);
+            camera.position.z = THREE.MathUtils.damp(camera.position.z, targetCamPos.z, 6, dt);
+            controls.target.x = THREE.MathUtils.damp(controls.target.x, targetCamLook.x, 6, dt);
+            controls.target.y = THREE.MathUtils.damp(controls.target.y, targetCamLook.y, 6, dt);
+            controls.target.z = THREE.MathUtils.damp(controls.target.z, targetCamLook.z, 6, dt);
+            if (camera.position.distanceTo(targetCamPos) < 0.025) {
+              targetCamPos = null;
+              targetCamLook = null;
+            }
+          }
+
+          controls.update();
+          renderer.render(scene, camera);
+        }
+
+        if (isSoftwareGl) afterDraw(tick);
+        else frameId = requestAnimationFrame(tick);
+      }
+
+      tick();
+    })();
+  </script>
+
+  <!-- Interactive Three.js 3D Studio: Autonomous Line-Maze Robot -->
+  <script>
+    (async function initMazeBot3DStudio() {
+      const mount = document.getElementById('mazebot-3d-mount');
+      const viewport = document.getElementById('mazebot-3d-viewport');
+      if (!mount || !viewport) return;
+
+      let THREE, OrbitControls, RoomEnvironment;
+      try {
+        [THREE, { OrbitControls }, { RoomEnvironment }] = await Promise.all([
+          import(/* @vite-ignore */ 'https://esm.sh/three@0.170.0'),
+          import(/* @vite-ignore */ 'https://esm.sh/three@0.170.0/examples/jsm/controls/OrbitControls.js'),
+          import(/* @vite-ignore */ 'https://esm.sh/three@0.170.0/examples/jsm/environments/RoomEnvironment.js'),
+        ]);
+      } catch (_) {
+        return;
+      }
+
+      const isSoftwareGl = (() => {
+        try {
+          const probe = document.createElement('canvas');
+          const gl = probe.getContext('webgl2') || probe.getContext('webgl');
+          if (!gl) return true;
+          const ext = gl.getExtension('WEBGL_debug_renderer_info');
+          const gpu = String(gl.getParameter(ext ? ext.UNMASKED_RENDERER_WEBGL : gl.RENDERER) || '');
+          gl.getExtension('WEBGL_lose_context')?.loseContext();
+          return /SwiftShader|llvmpipe|softpipe|Software|Basic Render/i.test(gpu);
+        } catch (_) {
+          return true;
+        }
+      })();
+
+      let renderer;
+      try {
+        renderer = new THREE.WebGLRenderer({ antialias: !isSoftwareGl, powerPreference: 'high-performance' });
+      } catch (_) {
+        return;
+      }
+
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.18;
+      renderer.setPixelRatio(isSoftwareGl ? 1 : Math.min(window.devicePixelRatio || 1, 2));
+      renderer.shadowMap.enabled = !isSoftwareGl;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      renderer.setSize(viewport.clientWidth, viewport.clientHeight);
+      mount.appendChild(renderer.domElement);
+
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x101212);
+      scene.fog = new THREE.FogExp2(0x101212, 0.036);
+
+      const camera = new THREE.PerspectiveCamera(
+        35,
+        viewport.clientWidth / Math.max(1, viewport.clientHeight),
+        0.1,
+        100
+      );
+      camera.position.set(2.95, 2.25, 3.25);
+
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.target.set(0.0, 0.45, 0.1);
+      controls.enableDamping = !isSoftwareGl;
+      controls.dampingFactor = 0.06;
+      controls.minDistance = 2.0;
+      controls.maxDistance = 7.5;
+      controls.maxPolarAngle = Math.PI * 0.485;
+      controls.update();
+
+      const pmremGenerator = new THREE.PMREMGenerator(renderer);
+      scene.environment = pmremGenerator.fromScene(new RoomEnvironment(), 0.04).texture;
+      pmremGenerator.dispose();
+
+      scene.add(new THREE.HemisphereLight(0xcbe2f6, 0x1a1510, 0.72));
+
+      const keyLight = new THREE.DirectionalLight(0xfff5e8, 2.25);
+      keyLight.position.set(3.8, 6.2, 3.8);
+      keyLight.castShadow = !isSoftwareGl;
+      keyLight.shadow.mapSize.set(1024, 1024);
+      keyLight.shadow.camera.left = -2.6;
+      keyLight.shadow.camera.right = 2.6;
+      keyLight.shadow.camera.top = 2.6;
+      keyLight.shadow.camera.bottom = -2.6;
+      keyLight.shadow.bias = -0.0005;
+      keyLight.shadow.normalBias = 0.02;
+      scene.add(keyLight);
+
+      const rimLight = new THREE.DirectionalLight(0x60a5fa, 1.05);
+      rimLight.position.set(-4.0, 2.8, -3.2);
+      scene.add(rimLight);
+
+      const maxAniso = renderer.capabilities.getMaxAnisotropy();
+
+      // Contact Shadow Disc
+      const shadowCanvas = document.createElement('canvas');
+      shadowCanvas.width = 256;
+      shadowCanvas.height = 256;
+      const sctx = shadowCanvas.getContext('2d');
+      const sGrad = sctx.createRadialGradient(128, 128, 12, 128, 128, 124);
+      sGrad.addColorStop(0, 'rgba(0,0,0,0.72)');
+      sGrad.addColorStop(0.55, 'rgba(0,0,0,0.28)');
+      sGrad.addColorStop(1, 'rgba(0,0,0,0)');
+      sctx.fillStyle = sGrad;
+      sctx.fillRect(0, 0, 256, 256);
+      const shadowTex = new THREE.CanvasTexture(shadowCanvas);
+      shadowTex.colorSpace = THREE.SRGBColorSpace;
+      const shadowPlane = new THREE.Mesh(
+        new THREE.PlaneGeometry(4.4, 4.4),
+        new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, depthWrite: false, opacity: 0.75 })
+      );
+      shadowPlane.rotation.x = -Math.PI / 2;
+      shadowPlane.position.y = 0.004;
+      scene.add(shadowPlane);
+
+      // Procedural Pico 2 PCB Texture
+      const picoCanvas = document.createElement('canvas');
+      picoCanvas.width = 256;
+      picoCanvas.height = 512;
+      const pctx = picoCanvas.getContext('2d');
+      pctx.fillStyle = '#156c3b';
+      pctx.fillRect(0, 0, 256, 512);
+      pctx.strokeStyle = '#34d399';
+      pctx.lineWidth = 3;
+      pctx.strokeRect(10, 10, 236, 492);
+      pctx.fillStyle = '#e5a93b';
+      for (let i = 0; i < 20; i++) {
+        pctx.fillRect(14, 24 + i * 23, 18, 12);
+        pctx.fillRect(224, 24 + i * 23, 18, 12);
+      }
+      pctx.fillStyle = '#18181b';
+      pctx.fillRect(76, 175, 104, 104); // RP2350 QFN
+      pctx.fillStyle = '#d1d5db';
+      pctx.fillRect(92, 12, 72, 48); // USB-C Port
+      pctx.fillStyle = '#ffffff';
+      pctx.font = 'bold 20px monospace';
+      pctx.fillText('PICO 2', 88, 330);
+      const picoTex = new THREE.CanvasTexture(picoCanvas);
+      picoTex.colorSpace = THREE.SRGBColorSpace;
+      picoTex.anisotropy = maxAniso;
+
+      // Procedural QTR-8 IR Array PCB Texture
+      const qtrCanvas = document.createElement('canvas');
+      qtrCanvas.width = 512;
+      qtrCanvas.height = 96;
+      const qctx = qtrCanvas.getContext('2d');
+      qctx.fillStyle = '#197542';
+      qctx.fillRect(0, 0, 512, 96);
+      qctx.strokeStyle = '#4ade80';
+      qctx.lineWidth = 2;
+      qctx.strokeRect(6, 6, 500, 84);
+      qctx.fillStyle = '#e5e7eb';
+      qctx.font = 'bold 18px monospace';
+      qctx.fillText('QTR-8A ARRAY', 180, 26);
+      const qtrTex = new THREE.CanvasTexture(qtrCanvas);
+      qtrTex.colorSpace = THREE.SRGBColorSpace;
+      qtrTex.anisotropy = maxAniso;
+
+      // Materials
+      const carbonDeckMat = new THREE.MeshStandardMaterial({ color: 0x1c201f, metalness: 0.25, roughness: 0.62 });
+      const brassMat = new THREE.MeshStandardMaterial({ color: 0xd9a441, metalness: 0.9, roughness: 0.24 });
+      const steelMat = new THREE.MeshStandardMaterial({ color: 0xcbd5e1, metalness: 0.88, roughness: 0.25 });
+      const tireRubberMat = new THREE.MeshStandardMaterial({ color: 0x181a1a, metalness: 0.05, roughness: 0.88 });
+      const picoPcbMat = new THREE.MeshStandardMaterial({ map: picoTex, metalness: 0.25, roughness: 0.45 });
+      const qtrPcbMat = new THREE.MeshStandardMaterial({ map: qtrTex, metalness: 0.25, roughness: 0.45 });
+      const driverPcbMat = new THREE.MeshStandardMaterial({ color: 0x0f766e, metalness: 0.28, roughness: 0.45 });
+      const lipoBlueMat = new THREE.MeshStandardMaterial({ color: 0x2563eb, metalness: 0.18, roughness: 0.38 });
+      const harnessColors = [0xf97316, 0x2dd4bf, 0x92400e, 0x334155];
+
+      const root = new THREE.Group();
+      scene.add(root);
+
+      // Helper for chamfered carbon plate
+      function createPlate(w, d, h, r) {
+        const s = new THREE.Shape();
+        s.moveTo(-w / 2 + r, -d / 2);
+        s.lineTo(w / 2 - r, -d / 2);
+        s.quadraticCurveTo(w / 2, -d / 2, w / 2, -d / 2 + r);
+        s.lineTo(w / 2, d / 2 - r);
+        s.quadraticCurveTo(w / 2, d / 2, w / 2 - r, d / 2);
+        s.lineTo(-w / 2 + r, d / 2);
+        s.quadraticCurveTo(-w / 2, d / 2, -w / 2, d / 2 - r);
+        s.lineTo(-w / 2, -d / 2 + r);
+        s.quadraticCurveTo(-w / 2, -d / 2, -w / 2 + r, -d / 2);
+        const geo = new THREE.ExtrudeGeometry(s, { depth: h, bevelEnabled: true, bevelThickness: 0.012, bevelSize: 0.012, bevelSegments: 2 });
+        geo.rotateX(Math.PI / 2);
+        return geo;
+      }
+
+      // Layer 1: Bottom Deck + N20 Motors
+      const bottomDeckGroup = new THREE.Group();
+      root.add(bottomDeckGroup);
+
+      const bottomPlate = new THREE.Mesh(createPlate(1.56, 1.56, 0.055, 0.14), carbonDeckMat);
+      bottomPlate.position.y = 0.24;
+      bottomPlate.castShadow = true;
+      bottomDeckGroup.add(bottomPlate);
+
+      // Twin N20 Motors & Encoder Discs
+      [-1, 1].forEach((side) => {
+        const n20Gear = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.14, 0.16), brassMat);
+        n20Gear.position.set(side * 0.62, 0.28, -0.22);
+        bottomDeckGroup.add(n20Gear);
+
+        const n20Can = new THREE.Mesh(new THREE.CylinderGeometry(0.068, 0.068, 0.26, 16), steelMat);
+        n20Can.rotation.z = Math.PI / 2;
+        n20Can.position.set(side * 0.4, 0.28, -0.22);
+        bottomDeckGroup.add(n20Can);
+
+        const encDisc = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 0.02, 16), carbonDeckMat);
+        encDisc.rotation.z = Math.PI / 2;
+        encDisc.position.set(side * 0.25, 0.28, -0.22);
+        bottomDeckGroup.add(encDisc);
+      });
+
+      // Caster Sphere at front underside
+      const caster = new THREE.Mesh(new THREE.SphereGeometry(0.09, 16, 16), steelMat);
+      caster.position.set(0, 0.09, 0.62);
+      bottomDeckGroup.add(caster);
+
+      // Layer 1b: Treaded Wheels Group (slides outward on Separate Layers)
+      const wheelsLeft = new THREE.Group();
+      const wheelsRight = new THREE.Group();
+      wheelsLeft.position.set(-0.92, 0.3, -0.22);
+      wheelsRight.position.set(0.92, 0.3, -0.22);
+      root.add(wheelsLeft, wheelsRight);
+
+      function buildTreadWheel(grp) {
+        const rim = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.24, 0.17, 28), steelMat);
+        rim.rotation.z = Math.PI / 2;
+        grp.add(rim);
+        const tire = new THREE.Mesh(new THREE.CylinderGeometry(0.29, 0.29, 0.18, 28), tireRubberMat);
+        tire.rotation.z = Math.PI / 2;
+        tire.castShadow = true;
+        grp.add(tire);
+        for (let i = 0; i < 16; i++) {
+          const ang = (i / 16) * Math.PI * 2;
+          const lug = new THREE.Mesh(new THREE.BoxGeometry(0.185, 0.04, 0.055), tireRubberMat);
+          lug.position.set(0, Math.cos(ang) * 0.295, Math.sin(ang) * 0.295);
+          lug.rotation.x = -ang;
+          grp.add(lug);
+        }
+      }
+      buildTreadWheel(wheelsLeft);
+      buildTreadWheel(wheelsRight);
+
+      // Layer 2: Front QTR-8 IR Reflectance Array
+      const qtrGroup = new THREE.Group();
+      root.add(qtrGroup);
+
+      const qtrPcb = new THREE.Mesh(new THREE.BoxGeometry(1.56, 0.04, 0.28), qtrPcbMat);
+      qtrPcb.position.set(0, 0.14, 1.02);
+      qtrPcb.castShadow = true;
+      qtrGroup.add(qtrPcb);
+
+      [-0.45, 0.45].forEach((bx) => {
+        const strut = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.04, 0.38), steelMat);
+        strut.position.set(bx, 0.18, 0.78);
+        qtrGroup.add(strut);
+      });
+
+      const qtrLeds = [];
+      for (let i = 0; i < 8; i++) {
+        const sx = -0.63 + i * 0.18;
+        const sensorChip = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.05, 0.09), carbonDeckMat);
+        sensorChip.position.set(sx, 0.18, 1.04);
+        qtrGroup.add(sensorChip);
+
+        const irMat = new THREE.MeshStandardMaterial({
+          color: 0xff3b30,
+          emissive: 0xff3b30,
+          emissiveIntensity: i === 3 || i === 4 ? 1.8 : 0.15,
+        });
+        const irDot = new THREE.Mesh(new THREE.SphereGeometry(0.02, 10, 10), irMat);
+        irDot.position.set(sx, 0.11, 1.04);
+        qtrGroup.add(irDot);
+        qtrLeds.push(irMat);
+      }
+
+      // Layer 3: Mid Layer — Brass Standoffs, TB6612FNG Driver & MP1584 Buck Converter
+      const midLayerGroup = new THREE.Group();
+      root.add(midLayerGroup);
+
+      [
+        [-0.62, -0.62],
+        [0.62, -0.62],
+        [-0.62, 0.62],
+        [0.62, 0.62],
+      ].forEach(([sx, sz]) => {
+        const standoff = new THREE.Mesh(new THREE.CylinderGeometry(0.042, 0.042, 0.4, 6), brassMat);
+        standoff.position.set(sx, 0.45, sz);
+        standoff.castShadow = true;
+        midLayerGroup.add(standoff);
+      });
+
+      const tbBoard = new THREE.Mesh(new THREE.BoxGeometry(0.46, 0.036, 0.42), driverPcbMat);
+      tbBoard.position.set(-0.24, 0.34, -0.1);
+      midLayerGroup.add(tbBoard);
+
+      const tbChip = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.04, 0.16), carbonDeckMat);
+      tbChip.position.set(-0.24, 0.37, -0.1);
+      midLayerGroup.add(tbChip);
+
+      const mpBoard = new THREE.Mesh(new THREE.BoxGeometry(0.44, 0.036, 0.34), driverPcbMat);
+      mpBoard.position.set(0.3, 0.34, 0.22);
+      midLayerGroup.add(mpBoard);
+
+      const inductor = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.1, 0.16), carbonDeckMat);
+      inductor.position.set(0.3, 0.4, 0.22);
+      midLayerGroup.add(inductor);
+
+      // Layer 4: Top Carbon Deck + Pico 2 + 2S LiPo + Ribbon Harness
+      const topDeckGroup = new THREE.Group();
+      root.add(topDeckGroup);
+
+      const topPlate = new THREE.Mesh(createPlate(1.56, 1.56, 0.055, 0.14), carbonDeckMat);
+      topPlate.position.y = 0.68;
+      topPlate.castShadow = true;
+      topDeckGroup.add(topPlate);
+
+      const picoBoard = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.035, 0.94), picoPcbMat);
+      picoBoard.position.set(-0.28, 0.72, 0.04);
+      picoBoard.castShadow = true;
+      topDeckGroup.add(picoBoard);
+
+      const lipoPack = new THREE.Mesh(new THREE.BoxGeometry(0.56, 0.24, 1.02), lipoBlueMat);
+      lipoPack.position.set(0.32, 0.81, -0.05);
+      lipoPack.castShadow = true;
+      topDeckGroup.add(lipoPack);
+
+      [-0.28, 0.28].forEach((sz) => {
+        const strap = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.26, 0.075), carbonDeckMat);
+        strap.position.set(0.32, 0.81, -0.05 + sz);
+        topDeckGroup.add(strap);
+      });
+
+      // Curved Silicone Wire Harness routing from Top Deck to Lower Deck
+      harnessColors.forEach((col, idx) => {
+        const off = (idx - 1.5) * 0.045;
+        const hCurve = new THREE.CatmullRomCurve3([
+          new THREE.Vector3(0.3 + off, 0.76, 0.46),
+          new THREE.Vector3(0.32 + off, 0.62, 0.88),
+          new THREE.Vector3(0.24 + off, 0.26, 0.95),
+          new THREE.Vector3(0.18 + off, 0.16, 0.78),
+        ]);
+        const wireMat = new THREE.MeshStandardMaterial({ color: col, metalness: 0.1, roughness: 0.52 });
+        topDeckGroup.add(new THREE.Mesh(new THREE.TubeGeometry(hCurve, 22, 0.018, 8, false), wireMat));
+      });
+
+      root.traverse((obj) => {
+        if (obj.isMesh) obj.receiveShadow = true;
+      });
+
+      if (!isSoftwareGl) {
+        try { renderer.compile(scene, camera); } catch (_) {}
+      }
+
+      // Interactive Controls
+      let separated = false;
+      let sepFactor = 0;
+      let scanning = true;
+      let isVisible = true;
+      let targetCamPos = null;
+      let targetCamLook = null;
+
+      const camPresets = {
+        iso: { pos: new THREE.Vector3(2.95, 2.25, 3.25), look: new THREE.Vector3(0.0, 0.45, 0.1) },
+        top: { pos: new THREE.Vector3(0.05, 4.35, 0.55), look: new THREE.Vector3(0.0, 0.45, 0.1) },
+        front: { pos: new THREE.Vector3(0.0, 1.35, 3.85), look: new THREE.Vector3(0.0, 0.48, 0.15) },
+      };
+
+      controls.addEventListener('start', () => {
+        targetCamPos = null;
+        targetCamLook = null;
+      });
+
+      const sepBtn = document.getElementById('mazebot-separate-btn');
+      const sepLabel = document.getElementById('mazebot-separate-label');
+      sepBtn?.addEventListener('click', () => {
+        separated = !separated;
+        if (sepLabel) sepLabel.textContent = separated ? 'Stack layers' : 'Separate layers';
+      });
+
+      const sweepBtn = document.getElementById('mazebot-sweep-btn');
+      sweepBtn?.addEventListener('click', () => {
+        scanning = !scanning;
+        sweepBtn.textContent = scanning ? 'QTR Scan: On' : 'QTR Scan: Off';
+        sweepBtn.className = scanning
+          ? 'px-3 py-1.5 rounded-full bg-[#FF6B00] hover:bg-[#e55f00] text-white font-bold transition-colors'
+          : 'px-3 py-1.5 rounded-full bg-[#1C2220] border border-[#343B37] text-[#C8D0CB] font-bold transition-colors';
+      });
+
+      document.querySelectorAll('.maze-cam-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const preset = camPresets[btn.dataset.mazeCam];
+          if (!preset) return;
+          targetCamPos = preset.pos.clone();
+          targetCamLook = preset.look.clone();
+          document.querySelectorAll('.maze-cam-btn').forEach((b) => {
+            b.className = b === btn
+              ? 'maze-cam-btn px-2.5 py-1 rounded-full bg-white text-black font-bold'
+              : 'maze-cam-btn px-2.5 py-1 rounded-full text-[#B8C2BC] hover:text-white font-semibold';
+          });
+        });
+      });
+
+      const dockWrap = document.getElementById('mazebot-dock-wrapper');
+      const dockToggle = document.getElementById('mazebot-dock-toggle');
+      const dockPanel = document.getElementById('mazebot-dock-panel');
+      let dockOpen = true;
+      dockToggle?.addEventListener('click', () => {
+        dockOpen = !dockOpen;
+        dockPanel?.classList.toggle('hidden', !dockOpen);
+        dockToggle.innerHTML = dockOpen ? '&#9662; Hide Controls' : '&#9652; Show Controls';
+        if (dockWrap) dockWrap.style.transform = dockOpen ? 'translate(-50%, 0)' : 'translate(-50%, 6px)';
+      });
+
+      if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver(
+          (entries) => { isVisible = Boolean(entries[0]?.isIntersecting); },
+          { threshold: 0.05 }
+        );
+        obs.observe(viewport);
+      }
+
+      new ResizeObserver(() => {
+        const w = viewport.clientWidth;
+        const h = Math.max(1, viewport.clientHeight);
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h);
+      }).observe(viewport);
+
+      const clock = new THREE.Clock();
+      let frameId = 0;
+      let elapsed = 0;
+      function afterDraw(cb) {
+        const gl = renderer.getContext();
+        const sync = gl.fenceSync ? gl.fenceSync(gl.SYNC_GPU_COMMANDS_COMPLETE, 0) : null;
+        if (!sync) { frameId = window.setTimeout(cb, 80); return; }
+        gl.flush();
+        const poll = () => {
+          const st = gl.getSyncParameter(sync, gl.SYNC_STATUS);
+          if (st === gl.UNSIGNALED) frameId = window.setTimeout(poll, 5);
+          else { gl.deleteSync(sync); frameId = window.setTimeout(cb, 80); }
+        };
+        frameId = window.setTimeout(poll, 5);
+      }
+
+      function tick() {
+        const dt = Math.min(clock.getDelta(), 0.05);
+        elapsed += dt;
+        if (isVisible) {
+          sepFactor = THREE.MathUtils.damp(sepFactor, separated ? 1 : 0, 6.5, dt);
+
+          topDeckGroup.position.y = sepFactor * 0.78;
+          midLayerGroup.position.y = sepFactor * 0.36;
+          qtrGroup.position.z = sepFactor * 0.42;
+          qtrGroup.position.y = sepFactor * 0.14;
+          wheelsLeft.position.x = -0.92 - sepFactor * 0.24;
+          wheelsRight.position.x = 0.92 + sepFactor * 0.24;
+
+          if (scanning) {
+            const beamCenter = 3.5 + Math.sin(elapsed * 2.4) * 2.8;
+            for (let i = 0; i < qtrLeds.length; i++) {
+              const dist = Math.abs(i - beamCenter);
+              qtrLeds[i].emissiveIntensity = dist < 1.2 ? 2.1 - dist * 1.1 : 0.15;
+            }
+            wheelsLeft.rotation.x += dt * 1.1;
+            wheelsRight.rotation.x += dt * 1.1;
+          }
+
           if (targetCamPos && targetCamLook) {
             camera.position.x = THREE.MathUtils.damp(camera.position.x, targetCamPos.x, 6, dt);
             camera.position.y = THREE.MathUtils.damp(camera.position.y, targetCamPos.y, 6, dt);
